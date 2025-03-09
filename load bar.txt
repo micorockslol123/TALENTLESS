@@ -90,9 +90,9 @@ G2L["2"].Size = UDim2.new(0, 0, 0, 0)
 popOutEffect(0.5)
 
 wait(0.5)
-tweenLoadProgress(3)
+tweenLoadProgress(1)
 
-wait(3.5)
+wait(1)
 
 G2L["1"]:Destroy()
 
