@@ -1,9 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/loader_main.lua"))()
 
-bpm = 99
-
-
--- 1
 
 keypress("f", 0.165, bpm)
 rest(1, bpm)
