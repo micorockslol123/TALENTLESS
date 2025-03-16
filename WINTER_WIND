@@ -45,7 +45,8 @@ rest(1, bpm)
 rest(1, bpm)
 
 
-bpm = bpm = bpm -5
+
+bpm = bpm -5
 
 
 
