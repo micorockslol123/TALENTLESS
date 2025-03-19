@@ -1895,3 +1895,5 @@ rest(1, bpm)
 rest(1, bpm)
 keypress("O370rua", 0.25, bpm)
 rest(0.25, bpm)
+
+finishedSong()
