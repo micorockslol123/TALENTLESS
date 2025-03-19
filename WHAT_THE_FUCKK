@@ -7353,3 +7353,5 @@ rest(1, bpm)
 rest(1, bpm)
 keypress("3u!%*TOS", 4, bpm)
 rest(4, bpm)
+
+finishedSong()
