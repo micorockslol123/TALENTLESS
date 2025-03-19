@@ -4277,3 +4277,5 @@ keypress("VH", 0.25, bpm)
 rest(0.25, bpm)
 keypress("jb", 0.25, bpm)
 rest(0.25, bpm)
+
+finishedSong()
