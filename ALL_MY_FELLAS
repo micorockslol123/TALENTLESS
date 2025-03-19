@@ -433,3 +433,5 @@ keypress("6eyip",1, bpm)
 rest(1, bpm)
 keypress("u%WTO",1, bpm)
 rest(2, bpm)
+
+finishedSong()
