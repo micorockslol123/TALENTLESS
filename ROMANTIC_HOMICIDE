@@ -1178,3 +1178,5 @@ rest(0.1, bpm)
 keypress("H", 4, bpm)
 rest(0.1, bpm)
 keypress("J", 4, bpm)
+
+finishedSong()
