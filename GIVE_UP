@@ -1536,3 +1536,5 @@ keypress("TSLc", 0.1883, bpm)
 rest(1, bpm)
 keypress("i!TOS", 0.1883, bpm)
 rest(0.25, bpm)
+
+finishedSong()
