@@ -368,3 +368,5 @@ keypress("e", 0.225, bpm)
 rest(0.75, bpm)
 keypress("17r", 0.225, bpm)
 rest(0.25, bpm)
+
+finishedSong()
