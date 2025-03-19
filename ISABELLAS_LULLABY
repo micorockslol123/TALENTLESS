@@ -555,3 +555,5 @@ rest(1, bpm)
 rest(1, bpm)
 keypress("^Jgzc", 0.187, bpm)
 rest(0.25, bpm)
+
+finishedSong()
