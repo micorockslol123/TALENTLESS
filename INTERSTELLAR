@@ -1433,3 +1433,5 @@ pressnote("A", 1, 8, bpm)
 pressnote("E", 2, 8, bpm)
 pressnote("E", 3, 8, bpm)
 pressnote("E", 4, 8, bpm)
+
+finishedSong()
