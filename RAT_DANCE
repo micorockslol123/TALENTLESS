@@ -221,3 +221,5 @@ keypress("34y", 0.5, bpm)
 rest(0.5, bpm)
 keypress("580t", 0.5, bpm)
 rest(0.5, bpm)
+
+finishedSong()
