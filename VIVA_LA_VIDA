@@ -2438,3 +2438,5 @@ keypress("4qi", 0.23, bpm)
 rest(1, bpm)
 keypress("P", 0.23, bpm)
 rest(0.25, bpm)
+
+finishedSong()
