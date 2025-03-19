@@ -2233,3 +2233,5 @@ pressnote("C#", 5, 0.2, bpm + 80)
 pressnote("A#", 4, 0.2, bpm + 80)
 pressnote("A#", 1, 0.2, bpm + 80)
 rest(1, bpm + 80)
+
+finishedSong()
