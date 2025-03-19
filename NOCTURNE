@@ -1161,3 +1161,5 @@ rest(1, bpm * 2)
 rest(1, bpm * 2)
 keypress("YPDJZhv", 0.207, bpm * 2)
 rest(0.25, bpm * 2)
+
+finishedSong()
