@@ -1252,3 +1252,5 @@ keypress("af", 0.11, bpm)
 rest(0.5, bpm)
 keypress("pd", 0.11, bpm)
 rest(0.25, bpm)
+
+finishedSong()
