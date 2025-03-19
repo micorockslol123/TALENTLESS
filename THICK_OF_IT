@@ -1083,3 +1083,5 @@ keypress("9d", 0.243, bpm)
 rest(0.5, bpm)
 keypress("7a", 0.243, bpm)
 rest(0.25, bpm)
+
+finishedSong()
