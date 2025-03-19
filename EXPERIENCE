@@ -3246,3 +3246,5 @@ keypress("e", 0.153, bpm)
 rest(0.5, bpm)
 keypress("Id", 0.153, bpm)
 rest(0.25, bpm)
+
+finishedSong()
