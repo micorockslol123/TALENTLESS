@@ -4179,3 +4179,5 @@ rest(0.5, bpm)
 rest(0.5, bpm)
 
 rest(0.5, bpm)
+
+finishedSong()
