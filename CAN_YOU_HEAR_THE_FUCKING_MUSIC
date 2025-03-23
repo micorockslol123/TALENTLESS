@@ -103,6 +103,7 @@ keypress("fh", 0.18, bpm)
 rest(0.25, bpm)
 
 bpm = bpm + 20
+updatebpmtext()
 
 keypress("dz", 0.23, bpm)
 rest(0.25, bpm)
@@ -316,6 +317,7 @@ keypress("fh", 0.23, bpm)
 rest(0.25, bpm)
 
 bpm = bpm + 25
+updatebpmtext()
 
 keypress("1", 4, bpm)
 keypress("z", 0.24, bpm)
@@ -527,6 +529,7 @@ keypress("h", 0.24, bpm)
 rest(0.25, bpm)
 
 bpm = bpm + 15
+updatebpmtext()
 
 keypress("3z", 0.26, bpm)
 rest(0.25, bpm)
@@ -737,6 +740,7 @@ keypress("QIh", 0.26, bpm)
 rest(0.25, bpm)
 
 bpm = bpm + 20
+updatebpmtext()
 
 keypress("z", 0.28, bpm)
 rest(0.25, bpm)
@@ -1363,6 +1367,7 @@ keypress("h", 0.28, bpm)
 rest(0.25, bpm)
 
 bpm = bpm + 10
+updatebpmtext()
 
 keypress("1z", 0.3, bpm)
 rest(0.25, bpm)
@@ -1692,6 +1697,7 @@ keypress("158uosf", 0.3, bpm)
 rest(1, bpm)
 
 bpm = bpm + 50
+updatebpmtext()
 
 keypress("29rQI", 0.27, bpm)
 rest(1, bpm)
