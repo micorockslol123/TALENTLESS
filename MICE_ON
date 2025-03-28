@@ -327,6 +327,7 @@ keypress("1", 0.09333333333333334, bpm)
 rest(2, bpm)
 
 bpm = bpm + 52
+updatebpmtext()
 
 keypress("q", 0.09333333333333334, bpm)
 rest(1, bpm)
