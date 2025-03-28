@@ -325,6 +325,9 @@ keypress("o", 0.09333333333333334, bpm)
 keypress("s", 0.09333333333333334, bpm)
 keypress("1", 0.09333333333333334, bpm)
 rest(2, bpm)
+
+bpm = bpm + 52
+
 keypress("q", 0.09333333333333334, bpm)
 rest(1, bpm)
 keypress("t", 0.09333333333333334, bpm)
