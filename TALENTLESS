@@ -1,7 +1,3 @@
--- yes some is chatgpt but i made most of it
--- yes i am a lazy coder
--- dont even try to steal it, the main loader is still obfuscated and has my name on it, besides this script is huge and no one is going to believe it's yours LMFAO
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/discordpopup/main/discordpopup.lua", true))()
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/notif_lib.lua"))()
@@ -10,9 +6,14 @@ local function playSound(soundId, loudness)
     local sound = Instance.new("Sound")
     sound.SoundId = "rbxassetid://" .. soundId
     sound.Parent = game.Players.LocalPlayer.Character or game.Players.LocalPlayer
-    sound.Volume = loudness or 1
+    sound.Volume = loudness or 1  -- Default to full volume if no loudness is provided
     sound:Play()
 end
+
+coroutine.wrap(function()
+wait(5)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/midi2lua", true))()
+end)()
 
 -- StarterGui.ScreenGui
 local screengui = Instance.new("ScreenGui", game:GetService("CoreGui"));
@@ -37,18 +38,6 @@ closeButton.TextScaled = true
 closeButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 closeButton.Font = Enum.Font.SourceSansBold
 closeButton.ZIndex = 5
-
--- StarterGui.ScreenGui.Frame.infoButton
-local infoButton = Instance.new("TextButton", frame)
-infoButton.Name = "infoButton"
-infoButton.Size = UDim2.new(0, 30, 0, 30)
-infoButton.Position = UDim2.new(0, 5, 0, 5) -- Top-left corner
-infoButton.BackgroundTransparency = 1
-infoButton.Text = "?"
-infoButton.TextScaled = true
-infoButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-infoButton.Font = Enum.Font.SourceSansBold
-infoButton.ZIndex = 5
 
 -- StarterGui.ScreenGui.Frame.ImageLabel
 local imagelabel = Instance.new("ImageLabel", frame);
@@ -105,6 +94,7 @@ categoriesPadding.PaddingTop = UDim.new(0, 5)
 categoriesPadding.PaddingLeft = UDim.new(0, 5)
 categoriesPadding.PaddingRight = UDim.new(0, 5)
 
+-- StarterGui.talentles.Frame.scrolltab (moved to far right)
 local bar = Instance.new("ScrollingFrame", frame);
 bar["Active"] = true;
 bar["ZIndex"] = 0;
@@ -114,7 +104,7 @@ bar["Name"] = [[scrolltab]];
 bar["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
 bar["Size"] = UDim2.new(0, 160, 0, 152);
 bar["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-bar["Position"] = UDim2.new(1, -173, 0.18382, 0); 
+bar["Position"] = UDim2.new(1, -173, 0.18382, 0); -- Far right position
 bar["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 -- StarterGui.talentles.Frame.scrolltab.songname
@@ -164,15 +154,16 @@ playsong["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 playsong["Text"] = [[play song !]];
 playsong["Position"] = UDim2.new(0.06891, 0, 0.38816, 0);
 
+-- StarterGui.ScreenGui.Frame.ScrollingFrame (moved to center)
 local scroll = Instance.new("ScrollingFrame", frame);
 scroll["Active"] = true;
 scroll["BorderSizePixel"] = 0;
 scroll["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
 scroll["HorizontalScrollBarInset"] = Enum.ScrollBarInset.Always;
 scroll["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-scroll["Size"] = UDim2.new(0, 220, 0, 152);
+scroll["Size"] = UDim2.new(0, 220, 0, 152); -- Adjusted width
 scroll["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-scroll["Position"] = UDim2.new(0.21666, 0, 0.18382, 0);
+scroll["Position"] = UDim2.new(0.21666, 0, 0.18382, 0); -- Centered position
 scroll["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 local listLayout = Instance.new("UIListLayout", scroll)
@@ -223,7 +214,7 @@ creds["AnchorPoint"] = Vector2.new(0.5, 0.5)
 
 local function newSongButton(name, textsize, alternateNames)
     local button = Instance.new("TextButton")
-    button.Parent = scroll
+    button.Parent = scroll -- Make sure 'scroll' exists
     button.BorderSizePixel = 4
     button.TextColor3 = Color3.fromRGB(255, 255, 255)
     button.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
@@ -242,16 +233,19 @@ end
 
 
 local function filterSongs(query)
-    query = query:lower()
+    query = query:lower() -- Convert query to lowercase for case-insensitive search
     for _, button in pairs(scroll:GetChildren()) do
         if button:IsA("TextButton") and button.Name ~= "PLAYALL" then
             local songName = button.Text:lower()
             local alternateNamesStr = button:GetAttribute("AlternateNames") or ""
-            local alternateNames = alternateNamesStr:split(",")
+            local alternateNames = alternateNamesStr:split(",") -- Split the string into a table
             local matchFound = false
+
+            -- Check if the main song name matches the query
             if songName:find(query) then
                 matchFound = true
             else
+                -- Check if any alternate name matches the query
                 for _, altName in pairs(alternateNames) do
                     if altName:lower():find(query) then
                         matchFound = true
@@ -259,15 +253,19 @@ local function filterSongs(query)
                     end
                 end
             end
+
+            -- Show or hide the button based on whether a match was found
             button.Visible = matchFound or query == ""
         end
     end
 end
 
+-- Trigger the filter function whenever the search bar text changes
 searchbar:GetPropertyChangedSignal("Text"):Connect(function()
     filterSongs(searchbar.Text)
 end)
 
+-- Initialize by showing all songs when the script starts
 filterSongs("")
 
 
@@ -564,7 +562,7 @@ local songs = {
     {button = GOOD_MORNING, bpm = "90", var = "goodmorningsong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/GOOD_MORNING", cat = {"video games", "omori"}},
     {button = FUR_ELISE, bpm = "72", var = "furelisesong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FUR_ELISE", cat = {"classical"}},
     {button = MOONLIGHT, bpm = "51", var = "moonlightsong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MOONLIGHT", cat = {"classical"}},
-    {button = FANTAISIE, bpm = "168", var = "", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FANTAISIE", cat = {"classical", "best"}}
+    {button = FANTAISIE, bpm = "168", var = "", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FANTAISIE", cat = {"classical"}}
     
 --[[
 {button = , bpm = "", var = "", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/", cat = {""}}
@@ -575,6 +573,8 @@ local songs = {
 
 local folderexists = false
 local customsongs = {}
+
+pcall(function()
 
 for _, file in ipairs(listfiles()) do
     print(file)
@@ -645,6 +645,8 @@ for _, songbutton in ipairs(scroll:GetChildren()) do
     end
 else end
 end
+
+end)
 
 
 
@@ -929,9 +931,4 @@ closeButton.MouseButton1Click:Connect(function()
     playingall = false
     playsong = nil -- so the rgb wont get messed up[]
     stopAllSongs()
-end)
-
-
-infoButton.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/info.lua", true))()
 end)
