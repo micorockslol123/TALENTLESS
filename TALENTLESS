@@ -581,7 +581,7 @@ NEWSONGBUTTON.MouseButton1Click:Connect(function()
     
 end)
 
-
+print("fetching songs")
 
 local categories = {"best", "sad", "video games", "memes", "cinematic", "classical", "pop", "anime/jpop", "electronic", "undertale", "omori", "minecraft"}  -- The main table for unique categories
 
