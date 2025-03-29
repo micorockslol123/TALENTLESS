@@ -90,7 +90,7 @@ cancelButton.Parent = newsongframe
 
 -- Function for the cancel button (closes the popup)
 cancelButton.MouseButton1Click:Connect(function()
-    screengui:Destroy()
+    newsongframe.Visible = false
 end)
 
 
@@ -103,7 +103,7 @@ submitSong.MouseButton1Click:Connect(function()
     local folderExists = false
     
     for _, file in ipairs(listfiles()) do
-        if file.Name == "TALENTLESS_CUSTOM_SONGS" then
+        if file == [[\TALENTLESS_CUSTOM_SONGS]] then
             folderExists = true
             break
         end
@@ -116,7 +116,7 @@ end
 songexists = false
 
 for _, file in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
-	if tostring(file) == [[/TALENTLESS_CUSTOM_SONGS\]] .. songName .. ".txt" then -- if there is already a file with path//name /TALENTLESS_CUSTOM_SONGS\songname.txt then
+	if file == [[/TALENTLESS_CUSTOM_SONGS\]] .. songName .. ".txt" then -- if there is already a file with path//name /TALENTLESS_CUSTOM_SONGS\songname.txt then
         playSound("6493287948", 0.1) 
         NotificationLibrary:SendNotification("Error", "You already have a song with this name.", 3)
         songexists = true -- song does exist
