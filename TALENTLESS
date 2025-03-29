@@ -951,7 +951,7 @@ table.insert(customsongs, NEWSONGBUTTON)
 pcall(function()
 
 for _, file in ipairs(listfiles()) do
-    print(file)
+    print(tostring(file))
     if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then folderexists = true print("custom songs folder found") break end
 end
 
@@ -960,14 +960,14 @@ print("searching for custom song files...")
 
 if folderexists then
 for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
-    print("song file found: " .. custom)
+    print("song file found: " .. tostring(custom))
     
-    local filepath = custom -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
+    local filepath = tostring(custom) -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
 
-    if custom:match("%.txt$") then -- if it has .txt at the end
+    if filepath:match("%.txt$") then -- if it has .txt at the end
     print("its a txt file, continuing")
     
-    local tsongname = custom:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "error" -- remove the /, \, and .txt 
+    local tsongname = filepath:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "error" -- remove the /, \, and .txt 
     print("song name: " .. tsongname)
     
     local songbutton = newSongButton(tsongname, 25, {}) -- make the song button
