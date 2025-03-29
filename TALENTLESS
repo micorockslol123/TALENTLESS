@@ -573,86 +573,6 @@ print("initiating buttons")
 
 
 
-coroutine.wrap(function()
-    
-pcall(function()
-
-for _, file in ipairs(listfiles()) do
-    print(file)
-    if file == [[\TALENTLESS_CUSTOM_SONGS]] then folderexists = true print("folder found") break end
-end
-
-if folderexists then
-for _, custom in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
-    
-    local filepath = custom -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
-
-    print(tostring(custom))
-    if custom:match("%.txt$") then -- if it has .txt at the end
-    
-    print("its a txt")
-    
-    local tsongname = custom:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "error" -- remove the /, \, and .txt 
-
-    print(tsongname)
-    
-    local songbutton = newSongButton(tsongname, 25, {}) -- make the song button
-    table.insert(customsongs, songbutton)
-    songbutton.TextScaled = true 
-    songbutton.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
-    songbutton.Visible = false
-    
-    local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "error" -- read the file and look for the string after bpm = 
-    print(songbpm)
-    
-    songbutton.MouseButton1Click:Connect(function()
-        print("clicked!")
-        
-        if songisplaying then
-            playSound("6493287948", 0.1) 
-            NotificationLibrary:SendNotification("Error", "A song is already playing.", 1) return
-        else 
-        
-        local songcode = readfile(filepath) -- define the contents of the song file
-        local func, err = load(songcode) -- load it
-
-        if func then
-            print("running scrip....")
-            songname.Text = tsongname
-            bpmbox.Text = songbpm
-            playSound("6493287948", 0.1) 
-            NotificationLibrary:SendNotification("Success", "Began playing song.", 1)
-            songisplaying = true
-            func()
-        else
-            print("invalid script") 
-            playSound("6493287948", 0.1) 
-            NotificationLibrary:SendNotification("Error", "Your song script is broken. If confused, contact support in the discord.", 5)
-            end
-        end
-    end)
-    else print("its not a txt, skipping") end
-end
-
-else end
-
-NEWSONGBUTTON = newSongButton("+", 30, {""})
-NEWSONGBUTTON.Visible = false
-
-for _, songbutton in ipairs(scroll:GetChildren()) do
-    if songbutton:IsA("TextButton") then
-        if songbutton.Text == "error" then
-        songbutton:Destroy()
-    end
-else end
-end
-
-end)
-
-end)()
-
-
-
 NEWSONGBUTTON.MouseButton1Click:Connect(function()
     
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/add_song.lua", true))()
@@ -934,4 +854,80 @@ closeButton.MouseButton1Click:Connect(function()
     playingall = false
     playsong = nil -- so the rgb wont get messed up[]
     stopAllSongs()
+end)
+
+
+    
+pcall(function()
+
+for _, file in ipairs(listfiles()) do
+    print(file)
+    if file == [[\TALENTLESS_CUSTOM_SONGS]] then folderexists = true print("folder found") break end
+end
+
+if folderexists then
+for _, custom in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
+    
+    local filepath = custom -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
+
+    print(tostring(custom))
+    if custom:match("%.txt$") then -- if it has .txt at the end
+    
+    print("its a txt")
+    
+    local tsongname = custom:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "error" -- remove the /, \, and .txt 
+
+    print(tsongname)
+    
+    local songbutton = newSongButton(tsongname, 25, {}) -- make the song button
+    table.insert(customsongs, songbutton)
+    songbutton.TextScaled = true 
+    songbutton.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
+    songbutton.Visible = false
+    
+    local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "error" -- read the file and look for the string after bpm = 
+    print(songbpm)
+    
+    songbutton.MouseButton1Click:Connect(function()
+        print("clicked!")
+        
+        if songisplaying then
+            playSound("6493287948", 0.1) 
+            NotificationLibrary:SendNotification("Error", "A song is already playing.", 1) return
+        else 
+        
+        local songcode = readfile(filepath) -- define the contents of the song file
+        local func, err = load(songcode) -- load it
+
+        if func then
+            print("running scrip....")
+            songname.Text = tsongname
+            bpmbox.Text = songbpm
+            playSound("6493287948", 0.1) 
+            NotificationLibrary:SendNotification("Success", "Began playing song.", 1)
+            songisplaying = true
+            func()
+        else
+            print("invalid script") 
+            playSound("6493287948", 0.1) 
+            NotificationLibrary:SendNotification("Error", "Your song script is broken. If confused, contact support in the discord.", 5)
+            end
+        end
+    end)
+    else print("its not a txt, skipping") end
+end
+
+else end
+
+NEWSONGBUTTON = newSongButton("+", 30, {""})
+NEWSONGBUTTON.Visible = false
+
+for _, songbutton in ipairs(scroll:GetChildren()) do
+    if songbutton:IsA("TextButton") then
+        if songbutton.Text == "error" then
+        songbutton:Destroy()
+    end
+else end
+end
+
 end)
