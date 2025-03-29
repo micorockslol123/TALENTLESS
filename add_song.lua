@@ -28,7 +28,7 @@ insertscript["TextSize"] = 14;
 insertscript["TextColor3"] = Color3.fromRGB(255, 255, 255);
 insertscript["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
 insertscript["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-insertscript["PlaceholderText"] = "Paste the script here [MAKE SURE YOU PASTE THE FULL AND EXACT SCRIPT YOU GET FROM MIDI2LUA]";
+insertscript["PlaceholderText"] = "Convert a MIDI file into a song script using MIDI2LUA (bit.ly/midi2lua). Then, paste the full, unedited script here to add the song to your GUI in TALENTLESS!";
 insertscript["Size"] = UDim2.new(0, 218, 0, 123);
 insertscript["Position"] = UDim2.new(0.07087, 0, 0.25767, 0);
 insertscript["BorderColor3"] = Color3.fromRGB(255, 255, 255);
@@ -59,7 +59,7 @@ insertsongName["TextSize"] = 22;
 insertsongName["TextColor3"] = Color3.fromRGB(255, 255, 255);
 insertsongName["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
 insertsongName["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-insertsongName["PlaceholderText"] = [[Insert song name...]];
+insertsongName["PlaceholderText"] = [[What's the name off your song?]];
 insertsongName["Size"] = UDim2.new(0, 218, 0, 32);
 insertsongName["Position"] = UDim2.new(0.07087, 0, 0.69325, 0);
 insertsongName["BorderColor3"] = Color3.fromRGB(255, 255, 255);
@@ -105,6 +105,11 @@ submitSong.MouseButton1Click:Connect(function()
     local songName = insertsongName.Text
     
     local folderExists = false
+    
+    if songName == "" then
+        playSound("6493287948", 0.1) 
+        NotificationLibrary:SendNotification("Error", "Please give your song a name.", 5)
+    end
     
     for _, file in ipairs(listfiles()) do
         if file == [[\TALENTLESS_CUSTOM_SONGS]] then
