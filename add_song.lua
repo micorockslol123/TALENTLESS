@@ -81,11 +81,15 @@ submitSong["Position"] = UDim2.new(0.07087, 0, 0.83436, 0);
 -- Create the cancel button
 local cancelButton = Instance.new("TextButton")
 cancelButton.Size = UDim2.new(0, 40, 0, 40)
-cancelButton.Position = UDim2.new(1, -50, 0, -50)
+cancelButton.AnchorPoint = Vector2.new(1, 0)
+cancelButton.Position = UDim2.new(1, 10, 0, -10)
 cancelButton.Text = "X"
 cancelButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+cancelButton.BorderSizePixel = 1
+cancelButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
 cancelButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-cancelButton.TextSize = 18
+cancelButton.TextSize = 45
+cancelButton.FontFace = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 cancelButton.Parent = newsongframe
 
 -- Function for the cancel button (closes the popup)
@@ -128,8 +132,8 @@ if not songexists then
     writefile("TALENTLESS_CUSTOM_SONGS/" .. songName .. ".txt", scriptInput) -- write the file in the song folder as a .txt
     playSound("6493287948", 0.1) 
     NotificationLibrary:SendNotification("Success", "You have added the song " .. songName .. ". Re-execute the script to see it.", 10)
-end
-
     insertscript.Text = ""
     insertsongName.Text = ""
+end
+
 end)
