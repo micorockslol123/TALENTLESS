@@ -572,6 +572,8 @@ local customsongs = {}
 print("initiating buttons")
 
 
+NEWSONGBUTTON = newSongButton("+", 30, {""})
+NEWSONGBUTTON.Visible = false
 
 NEWSONGBUTTON.MouseButton1Click:Connect(function()
     
@@ -918,9 +920,6 @@ for _, custom in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
 end
 
 else end
-
-NEWSONGBUTTON = newSongButton("+", 30, {""})
-NEWSONGBUTTON.Visible = false
 
 for _, songbutton in ipairs(scroll:GetChildren()) do
     if songbutton:IsA("TextButton") then
