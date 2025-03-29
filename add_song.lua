@@ -109,7 +109,7 @@ submitSong.MouseButton1Click:Connect(function()
     if songName == "" then
         playSound("6493287948", 0.1) 
         NotificationLibrary:SendNotification("Error", "Please give your song a name.", 5)
-    end
+    return end
     
     for _, file in ipairs(listfiles()) do
         if file == [[\TALENTLESS_CUSTOM_SONGS]] then
