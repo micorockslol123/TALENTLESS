@@ -34,6 +34,18 @@ closeButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 closeButton.Font = Enum.Font.SourceSansBold
 closeButton.ZIndex = 5
 
+-- StarterGui.ScreenGui.Frame.infoButton
+local infoButton = Instance.new("TextButton", frame)
+infoButton.Name = "infoButton"
+infoButton.Size = UDim2.new(0, 30, 0, 30)
+infoButton.Position = UDim2.new(0, 5, 0, 5) -- Top-left corner
+infoButton.BackgroundTransparency = 1
+infoButton.Text = "?"
+infoButton.TextScaled = true
+infoButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+infoButton.Font = Enum.Font.SourceSansBold
+infoButton.ZIndex = 5
+
 -- StarterGui.ScreenGui.Frame.ImageLabel
 local imagelabel = Instance.new("ImageLabel", frame);
 imagelabel["BorderSizePixel"] = 0;
@@ -843,6 +855,11 @@ closeButton.MouseButton1Click:Connect(function()
     playsong = nil -- so the rgb wont get messed up[]
     stopAllSongs()
 end)
+
+infoButton.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/info.lua", true))()
+end)
+
     
     
 -- testing if the executor supports
@@ -935,14 +952,14 @@ pcall(function()
 
 for _, file in ipairs(listfiles()) do
     print(file)
-    if file == [[\TALENTLESS_CUSTOM_SONGS]] then folderexists = true print("custom songs folder found") break end
+    if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then folderexists = true print("custom songs folder found") break end
 end
 
 print("searching for custom song files...")
 
 
 if folderexists then
-for _, custom in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
+for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
     print("song file found: " .. custom)
     
     local filepath = custom -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
