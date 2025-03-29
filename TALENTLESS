@@ -351,7 +351,7 @@ end
 -- newSongButton("", 27, {})
 
 PLAYALL = newSongButton("LOOP ALL SONGS", 27, {})
-
+LOOPRANDOM = newSongButton("SHUFFLE PLAY SONGS", 22, {})
 PLAYRANDOM = newSongButton("PLAY A RANDOM SONG", 22, {})
 
 local seperator = Instance.new("Frame")
@@ -594,7 +594,7 @@ customnotice.Text = "Your executor does not support this feature."
 
 
 local customcat = Instance.new("TextButton", categoriesFrame)
-customcat.Text = "custom songs"
+customcat.Text = "custom songs (0)"
 customcat.Size = UDim2.new(0, 100, 0, 25)
 customcat.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
 customcat.BorderColor3 = Color3.fromRGB(207, 48, 43)
@@ -615,9 +615,14 @@ customcat.MouseButton1Click:Connect(function()
 
     PLAYALL.Visible = false
     PLAYRANDOM.Visible = false
+    LOOPRANDOM.Visible = false
     customnotice.Visible = true
     
 end)
+
+local function updatecustomcount()
+    customcat.Text = "custom songs (" .. tostring(#customsongs - 1) .. ")"
+end
 
 
 local othercats = Instance.new("TextButton", categoriesFrame)
@@ -640,6 +645,7 @@ othercats.MouseButton1Click:Connect(function()
     
     PLAYALL.Visible = true
     PLAYRANDOM.Visible = true
+    LOOPRANDOM.Visible = true
     customnotice.Visible = false
     
 end)
@@ -647,7 +653,7 @@ end)
 
 
 local allcats = Instance.new("TextButton", categoriesFrame)
-allcats.Text = "all"
+allcats.Text = "all (" .. tostring(#songs) .. ")"
 allcats.Size = UDim2.new(0, 100, 0, 25)
 allcats.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
 allcats.BorderColor3 = Color3.fromRGB(207, 48, 43)
@@ -667,6 +673,7 @@ allcats.MouseButton1Click:Connect(function()
 
     PLAYALL.Visible = true
     PLAYRANDOM.Visible = true
+    LOOPRANDOM.Visible = true
     customnotice.Visible = false
     
 end)
@@ -677,8 +684,18 @@ local existing = {}
 
 
 for _, categoryName in pairs(categories) do
+    
+    local numsongs = {}
+    for _, song in ipairs(songs) do
+        for _, category in ipairs(song.cat) do
+            if category == categoryName then
+                table.insert(numsongs, song.button.Name)
+            end
+        end
+    end
+    
     local categoryButton = Instance.new("TextButton", categoriesFrame)
-    categoryButton.Text = categoryName
+    categoryButton.Text = categoryName .. " (" .. tostring(#numsongs) .. ")"
     categoryButton.Size = UDim2.new(0, 100, 0, 25)
     categoryButton.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
     categoryButton.BorderColor3 = Color3.fromRGB(207, 48, 43)
@@ -687,9 +704,11 @@ for _, categoryName in pairs(categories) do
     categoryButton.Font = Enum.Font.SourceSansBold
     categoryButton.TextSize = 14
     
+    
     categoryButton.MouseButton1Click:Connect(function()
         PLAYALL.Visible = false
         PLAYRANDOM.Visible = false
+        LOOPRANDOM.Visible = false
         
         for _, song in ipairs(songs) do
             song.button.Visible = false
@@ -844,6 +863,30 @@ end)
 
 
 
+LOOPRANDOM.MouseButton1Click:Connect(function()
+    if playingall then return end
+    playingall = true
+    createstopbutton()
+    
+    while true do
+        local function getRandomSong()
+            local ransong = math.random(1, #songs)
+            return songs[ransong]
+        end
+        local randomSong = getRandomSong()
+        if not playingall then break end
+        
+        disable()
+        _G[randomSong.var] = true
+        songname.Text = randomSong.button.Name
+        bpmbox.Text = randomSong.bpm
+        playbuttonclicked()
+        wait(1)
+    end
+end)
+
+
+
 -- close function
 
 
@@ -944,13 +987,11 @@ end)
 
 table.insert(customsongs, NEWSONGBUTTON)
 
-
-
 -- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
 
 pcall(function()
 
-for _, file in ipairs(listfiles()) do
+for _, file in ipairs(listfiles(".")) do
     print(tostring(file))
     if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then folderexists = true print("custom songs folder found") break end
 end
@@ -975,6 +1016,7 @@ for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
     songbutton.TextScaled = true 
     songbutton.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
     songbutton.Visible = false
+    updatecustomcount()
     print("created song button for " .. tsongname)
     
     local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "error" -- read the file and look for the string after bpm = 
@@ -989,7 +1031,7 @@ for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
         else 
         
         local songcode = readfile(filepath) -- define the contents of the song file
-        local func, err = load(songcode) -- load it
+        local func, err = loadstring(songcode) -- load it
 
         if func then
             print("running scrip....")
