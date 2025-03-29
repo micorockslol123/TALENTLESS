@@ -6,7 +6,7 @@ local function playSound(soundId, loudness)
     local sound = Instance.new("Sound")
     sound.SoundId = "rbxassetid://" .. soundId
     sound.Parent = game.Players.LocalPlayer.Character or game.Players.LocalPlayer
-    sound.Volume = loudness or 1  -- Default to full volume if no loudness is provided
+    sound.Volume = loudness or 1 
     sound:Play()
 end
 
@@ -18,7 +18,7 @@ screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 local frame = Instance.new("Frame", screengui);
 frame["BorderSizePixel"] = 0;
 frame["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
-frame["Size"] = UDim2.new(0, 500, 0, 272); -- Stretched horizontally
+frame["Size"] = UDim2.new(0, 500, 0, 272);
 frame["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 frame["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
@@ -26,7 +26,7 @@ frame["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 local closeButton = Instance.new("TextButton", frame)
 closeButton.Name = "closebutton"
 closeButton.Size = UDim2.new(0, 30, 0, 30)
-closeButton.Position = UDim2.new(1, -35, 0, 5) -- Top-right corner
+closeButton.Position = UDim2.new(1, -35, 0, 5)
 closeButton.BackgroundTransparency = 1
 closeButton.Text = "X"
 closeButton.TextScaled = true
@@ -39,7 +39,7 @@ local imagelabel = Instance.new("ImageLabel", frame);
 imagelabel["BorderSizePixel"] = 0;
 imagelabel["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 imagelabel["Image"] = [[rbxassetid://99301557478296]];
-imagelabel["Size"] = UDim2.new(1, 0, 0, 73); -- Stretched to full width
+imagelabel["Size"] = UDim2.new(1, 0, 0, 73);
 imagelabel["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 imagelabel["Position"] = UDim2.new(0, 0, 0.74299, 0);
 
@@ -50,7 +50,7 @@ title["BackgroundColor3"] = Color3.fromRGB(207, 48, 43);
 title["TextSize"] = 46;
 title["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 title["TextColor3"] = Color3.fromRGB(0, 0, 0);
-title["Size"] = UDim2.new(1, 0, 0, 50); -- Stretched to full width
+title["Size"] = UDim2.new(1, 0, 0, 50);
 title["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 title["Text"] = [[TALENTLESS]];
 title["Name"] = [[title]];
@@ -67,7 +67,6 @@ uic2["CornerRadius"] = UDim.new(0, 4);
 local uic3 = Instance.new("UICorner", title);
 uic3["CornerRadius"] = UDim.new(0, 4);
 
--- New Categories Scrolling Frame (left side)
 local categoriesFrame = Instance.new("ScrollingFrame", frame);
 categoriesFrame["Active"] = true;
 categoriesFrame["ZIndex"] = 0;
@@ -89,7 +88,6 @@ categoriesPadding.PaddingTop = UDim.new(0, 5)
 categoriesPadding.PaddingLeft = UDim.new(0, 5)
 categoriesPadding.PaddingRight = UDim.new(0, 5)
 
--- StarterGui.talentles.Frame.scrolltab (moved to far right)
 local bar = Instance.new("ScrollingFrame", frame);
 bar["Active"] = true;
 bar["ZIndex"] = 0;
@@ -99,7 +97,7 @@ bar["Name"] = [[scrolltab]];
 bar["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
 bar["Size"] = UDim2.new(0, 160, 0, 152);
 bar["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-bar["Position"] = UDim2.new(1, -173, 0.18382, 0); -- Far right position
+bar["Position"] = UDim2.new(1, -173, 0.18382, 0);
 bar["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 -- StarterGui.talentles.Frame.scrolltab.songname
@@ -149,16 +147,15 @@ playsong["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 playsong["Text"] = [[play song !]];
 playsong["Position"] = UDim2.new(0.06891, 0, 0.38816, 0);
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame (moved to center)
 local scroll = Instance.new("ScrollingFrame", frame);
 scroll["Active"] = true;
 scroll["BorderSizePixel"] = 0;
 scroll["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
 scroll["HorizontalScrollBarInset"] = Enum.ScrollBarInset.Always;
 scroll["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-scroll["Size"] = UDim2.new(0, 220, 0, 152); -- Adjusted width
+scroll["Size"] = UDim2.new(0, 220, 0, 152); 
 scroll["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-scroll["Position"] = UDim2.new(0.21666, 0, 0.18382, 0); -- Centered position
+scroll["Position"] = UDim2.new(0.21666, 0, 0.18382, 0);
 scroll["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 local listLayout = Instance.new("UIListLayout", scroll)
@@ -209,7 +206,7 @@ creds["AnchorPoint"] = Vector2.new(0.5, 0.5)
 
 local function newSongButton(name, textsize, alternateNames)
     local button = Instance.new("TextButton")
-    button.Parent = scroll -- Make sure 'scroll' exists
+    button.Parent = scroll
     button.BorderSizePixel = 4
     button.TextColor3 = Color3.fromRGB(255, 255, 255)
     button.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
@@ -228,19 +225,17 @@ end
 
 
 local function filterSongs(query)
-    query = query:lower() -- Convert query to lowercase for case-insensitive search
+    query = query:lower() 
     for _, button in pairs(scroll:GetChildren()) do
         if button:IsA("TextButton") and button.Name ~= "PLAYALL" then
             local songName = button.Text:lower()
             local alternateNamesStr = button:GetAttribute("AlternateNames") or ""
-            local alternateNames = alternateNamesStr:split(",") -- Split the string into a table
+            local alternateNames = alternateNamesStr:split(",") 
             local matchFound = false
 
-            -- Check if the main song name matches the query
             if songName:find(query) then
                 matchFound = true
             else
-                -- Check if any alternate name matches the query
                 for _, altName in pairs(alternateNames) do
                     if altName:lower():find(query) then
                         matchFound = true
@@ -248,24 +243,20 @@ local function filterSongs(query)
                     end
                 end
             end
-
-            -- Show or hide the button based on whether a match was found
             button.Visible = matchFound or query == ""
         end
     end
 end
 
--- Trigger the filter function whenever the search bar text changes
 searchbar:GetPropertyChangedSignal("Text"):Connect(function()
     filterSongs(searchbar.Text)
 end)
 
--- Initialize by showing all songs when the script starts
 filterSongs("")
 
 
 
--- drag script
+-- drag script (not mince)
 
 
 
@@ -311,7 +302,7 @@ end)
 
 
 
--- RGB button
+-- RGB button (not mine)
 
 coroutine.wrap(function()
 
@@ -360,9 +351,7 @@ seperator.Size = UDim2.new(0, 200, 0, 8)
 
 if game.Players.LocalPlayer.Name == "4BCQA" or game.Players.LocalPlayer.Name == "fredoggins" then
     AVRIL_14 = newSongButton("AVRIL 14", 27, {})
-else
-    -- Do nothing if the condition is not met
-end
+else end
 
 ALL_MY_FELLAS = newSongButton("ALL MY FELLAS", 27, {"meme", "popular"})
 ENIGMATIC = newSongButton("AN ENIGMATIC ENCOUNTER", 17, {"video game", "epic", "undertale"})
@@ -571,27 +560,27 @@ local customsongs = {}
 
 print("initiating buttons")
 
-
-NEWSONGBUTTON = newSongButton("+", 30, {""})
-NEWSONGBUTTON.Visible = false
-
-NEWSONGBUTTON.MouseButton1Click:Connect(function()
-    
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/add_song.lua", true))()
-    
-end)
-
 print("fetching songs")
 
 local categories = {"best", "sad", "video games", "memes", "cinematic", "classical", "pop", "anime/jpop", "electronic", "undertale", "omori", "minecraft"}  -- The main table for unique categories
-
-
 
 local specsong = {button = AVRIL_14, bpm = "79", var = "avril14song", url = "https://pastefy.app/NY5KqR8m/raw", cat = {}}
 if game.Players.LocalPlayer.Name == "4BCQA" or game.Players.LocalPlayer.Name == "fredoggins" then
     table.insert(songs, specsong)
 end
 
+
+local customnotice = Instance.new("TextLabel")
+customnotice.Parent = scroll -- Make sure 'scroll' exists
+customnotice.BorderSizePixel = 4
+customnotice.TextColor3 = Color3.fromRGB(255, 255, 255)
+customnotice.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+customnotice.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+customnotice.Size = UDim2.new(0, 175, 0, 75)
+customnotice.BorderColor3 = Color3.fromRGB(207, 48, 43)
+customnotice.TextSize = 25
+customnotice.TextWrapped = true
+customnotice.Text = "Your executor does not support this feature."
 
 
 local customcat = Instance.new("TextButton", categoriesFrame)
@@ -616,10 +605,9 @@ customcat.MouseButton1Click:Connect(function()
 
     PLAYALL.Visible = false
     PLAYRANDOM.Visible = false
-    NEWSONGBUTTON.Visible = true
+    customnotice.Visible = true
     
 end)
-
 
 
 local othercats = Instance.new("TextButton", categoriesFrame)
@@ -642,7 +630,7 @@ othercats.MouseButton1Click:Connect(function()
     
     PLAYALL.Visible = true
     PLAYRANDOM.Visible = true
-    NEWSONGBUTTON.Visible = false
+    customnotice.Visible = false
     
 end)
 
@@ -669,7 +657,7 @@ allcats.MouseButton1Click:Connect(function()
 
     PLAYALL.Visible = true
     PLAYRANDOM.Visible = true
-    NEWSONGBUTTON.Visible = false
+    customnotice.Visible = false
     
 end)
 
@@ -705,7 +693,7 @@ for _, categoryName in pairs(categories) do
         for _, song in ipairs(customsongs) do
         song.Visible = false
         end
-        NEWSONGBUTTON.Visible = false
+        customnotice.Visible = false
     end)
 end
 
@@ -857,39 +845,59 @@ closeButton.MouseButton1Click:Connect(function()
     playsong = nil -- so the rgb wont get messed up[]
     stopAllSongs()
 end)
-
+    
+    
+-- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
 
     
 pcall(function()
 
 for _, file in ipairs(listfiles()) do
     print(file)
-    if file == [[\TALENTLESS_CUSTOM_SONGS]] then folderexists = true print("folder found") break end
+    if file == [[\TALENTLESS_CUSTOM_SONGS]] then folderexists = true print("custom songs folder found") break end
 end
+
+print("searching for custom song files...")
 
 if folderexists then
 for _, custom in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
+    print("song file found: " .. custom)
     
     local filepath = custom -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
 
-    print(tostring(custom))
     if custom:match("%.txt$") then -- if it has .txt at the end
-    
-    print("its a txt")
+    print("its a txt file, continuing")
     
     local tsongname = custom:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "error" -- remove the /, \, and .txt 
-
-    print(tsongname)
+    print("song name: " .. tsongname)
     
     local songbutton = newSongButton(tsongname, 25, {}) -- make the song button
     table.insert(customsongs, songbutton)
     songbutton.TextScaled = true 
     songbutton.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
     songbutton.Visible = false
+    print("created song button for " .. tsongname)
     
     local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "error" -- read the file and look for the string after bpm = 
-    print(songbpm)
+    print("songbpm found: " .. songbpm)
+
+    customnotice:Destroy()
+
+    print("this executor supports custom songs.")
     
+    NEWSONGBUTTON = newSongButton("+", 30, {""})
+    NEWSONGBUTTON.Visible = false
+    
+    print("loaded NEWSONGBUTTON")
+
+    NEWSONGBUTTON.MouseButton1Click:Connect(function()
+    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/add_song.lua", true))()
+    
+    end)
+    
+    table.insert(customsongs, NEWSONGBUTTON)
+
     songbutton.MouseButton1Click:Connect(function()
         print("clicked!")
         
