@@ -1,5 +1,4 @@
 
-
 keypress("y", 0.25, bpm)
 keypress("5", 0.25, bpm)
 rest(0.5, bpm)
@@ -624,6 +623,10 @@ keypress("9", 0.25, bpm)
 keypress("q", 0.25, bpm)
 keypress("E", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("Q", 0.25, bpm)
@@ -632,6 +635,10 @@ keypress("e", 0.25, bpm)
 keypress("t", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("9", 0.25, bpm)
@@ -640,6 +647,10 @@ keypress("e", 0.25, bpm)
 keypress("t", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("D", 0.25, bpm)
 keypress("l", 0.25, bpm)
 keypress("Q", 0.25, bpm)
@@ -657,6 +668,10 @@ keypress("e", 0.25, bpm)
 keypress("t", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("(", 0.25, bpm)
@@ -667,6 +682,10 @@ keypress("w", 0.25, bpm)
 keypress("E", 0.25, bpm)
 keypress("Y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("^", 0.25, bpm)
 rest(0.5, bpm)
 keypress("p", 0.25, bpm)
@@ -678,6 +697,10 @@ rest(0.25, bpm)
 keypress("P", 0.25, bpm)
 keypress("h", 0.25, bpm)
 rest(0.25, bpm)
+
+bpm = bpm - 3
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("(", 0.25, bpm)
@@ -694,6 +717,10 @@ rest(0.25, bpm)
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 rest(0.25, bpm)
+
+bpm = bpm - 3
+updatebpmtext()
+
 keypress("P", 0.25, bpm)
 keypress("d", 0.25, bpm)
 keypress("h", 0.25, bpm)
@@ -703,6 +730,10 @@ keypress("w", 0.25, bpm)
 keypress("E", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm + 31
+updatebpmtext()
+
 keypress("d", 0.25, bpm)
 keypress("G", 0.25, bpm)
 keypress("j", 0.25, bpm)
@@ -899,6 +930,10 @@ keypress("9", 0.25, bpm)
 keypress("q", 0.25, bpm)
 keypress("E", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("Q", 0.25, bpm)
@@ -907,6 +942,10 @@ keypress("e", 0.25, bpm)
 keypress("t", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("9", 0.25, bpm)
@@ -915,6 +954,10 @@ keypress("e", 0.25, bpm)
 keypress("t", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("D", 0.25, bpm)
 keypress("l", 0.25, bpm)
 keypress("Q", 0.25, bpm)
@@ -932,6 +975,10 @@ keypress("e", 0.25, bpm)
 keypress("t", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("(", 0.25, bpm)
@@ -942,6 +989,10 @@ keypress("w", 0.25, bpm)
 keypress("E", 0.25, bpm)
 keypress("Y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 5
+updatebpmtext()
+
 keypress("^", 0.25, bpm)
 rest(0.5, bpm)
 keypress("p", 0.25, bpm)
@@ -953,6 +1004,10 @@ rest(0.25, bpm)
 keypress("P", 0.25, bpm)
 keypress("h", 0.25, bpm)
 rest(0.25, bpm)
+
+bpm = bpm - 3
+updatebpmtext()
+
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 keypress("(", 0.25, bpm)
@@ -969,6 +1024,10 @@ rest(0.25, bpm)
 keypress("s", 0.25, bpm)
 keypress("j", 0.25, bpm)
 rest(0.25, bpm)
+
+bpm = bpm - 3
+updatebpmtext()
+
 keypress("P", 0.25, bpm)
 keypress("d", 0.25, bpm)
 keypress("h", 0.25, bpm)
@@ -978,6 +1037,10 @@ keypress("w", 0.25, bpm)
 keypress("E", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm + 31
+updatebpmtext()
+
 keypress("d", 0.25, bpm)
 keypress("G", 0.25, bpm)
 keypress("j", 0.25, bpm)
@@ -1036,6 +1099,10 @@ keypress("^", 0.25, bpm)
 keypress("9", 0.25, bpm)
 keypress("w", 0.25, bpm)
 rest(1, bpm)
+
+bpm = bpm + 10
+updatebpmtext()
+
 keypress("d", 0.25, bpm)
 keypress("h", 0.25, bpm)
 keypress("5", 0.25, bpm)
@@ -1268,6 +1335,10 @@ keypress("y", 0.25, bpm)
 keypress("o", 0.25, bpm)
 keypress("9", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 80
+updatebpmtext()
+
 keypress("a", 0.25, bpm)
 keypress("5", 0.25, bpm)
 rest(0.5, bpm)
@@ -1300,6 +1371,10 @@ keypress("I", 0.25, bpm)
 keypress("5", 0.25, bpm)
 keypress("9", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm + 80
+updatebpmtext()
+
 keypress("a", 0.25, bpm)
 keypress("h", 0.25, bpm)
 keypress("k", 0.25, bpm)
@@ -1341,6 +1416,10 @@ keypress("w", 0.25, bpm)
 keypress("r", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm - 80
+updatebpmtext()
+
 keypress("a", 0.25, bpm)
 keypress("5", 0.25, bpm)
 rest(0.5, bpm)
@@ -1373,6 +1452,10 @@ keypress("a", 0.25, bpm)
 keypress("5", 0.25, bpm)
 keypress("9", 0.25, bpm)
 rest(0.5, bpm)
+
+bpm = bpm + 80
+updatebpmtext()
+
 keypress("d", 0.25, bpm)
 keypress("k", 0.25, bpm)
 keypress("z", 0.25, bpm)
@@ -1408,6 +1491,10 @@ keypress("w", 0.25, bpm)
 keypress("r", 0.25, bpm)
 keypress("y", 0.25, bpm)
 rest(1, bpm)
+
+bpm = bpm - 10
+updatebpmtext()
+
 keypress("a", 0.25, bpm)
 keypress("5", 0.25, bpm)
 rest(0.5, bpm)
