@@ -10,11 +10,6 @@ local function playSound(soundId, loudness)
     sound:Play()
 end
 
-coroutine.wrap(function()
-wait(5)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/midi2lua", true))()
-end)()
-
 -- StarterGui.ScreenGui
 local screengui = Instance.new("ScreenGui", game:GetService("CoreGui"));
 screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
@@ -574,6 +569,12 @@ local songs = {
 local folderexists = false
 local customsongs = {}
 
+print("initiating buttons")
+
+
+
+coroutine.wrap(function()
+    
 pcall(function()
 
 for _, file in ipairs(listfiles()) do
@@ -647,6 +648,8 @@ else end
 end
 
 end)
+
+end)()
 
 
 
