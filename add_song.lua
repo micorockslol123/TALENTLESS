@@ -106,29 +106,24 @@ submitSong.MouseButton1Click:Connect(function()
     
     local folderExists = false
     
-    if songName == "" then
-        playSound("6493287948", 0.1) 
-        NotificationLibrary:SendNotification("Error", "Please give your song a name.", 5)
-    return end
-    
-    for _, file in ipairs(listfiles()) do
-        if file == [[\TALENTLESS_CUSTOM_SONGS]] then
-            folderExists = true
-            break
-        end
-    end
+local success, filesOrErr = pcall(function()
+    return listfiles("./TALENTLESS_CUSTOM_SONGS")
+end)
 
-if not folderExists then
+if not success then
     makefolder("TALENTLESS_CUSTOM_SONGS")
+    print("created custom song folder")
 end
 
 songexists = false
 
-for _, file in ipairs(listfiles([[\TALENTLESS_CUSTOM_SONGS]])) do
-	if file == [[/TALENTLESS_CUSTOM_SONGS\]] .. songName .. ".txt" then -- if there is already a file with path//name /TALENTLESS_CUSTOM_SONGS\songname.txt then
+for _, file in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
+    print(tostring(file))
+	if string.find(tostring(file), songName .. ".txt") then -- if there is already a file with songname.txt in it then
         playSound("6493287948", 0.1) 
         NotificationLibrary:SendNotification("Error", "You already have a song with this name.", 3)
         songexists = true -- song does exist
+        print("found a song file with the same name.")
         break
     end
 end
