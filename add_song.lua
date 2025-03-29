@@ -90,7 +90,7 @@ cancelButton.Parent = newsongframe
 
 -- Function for the cancel button (closes the popup)
 cancelButton.MouseButton1Click:Connect(function()
-    newsongframe.Visible = false
+    screengui:Destroy()
 end)
 
 
