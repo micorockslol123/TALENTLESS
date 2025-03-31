@@ -1084,7 +1084,7 @@ table.insert(customsongs, NEWSONGBUTTON)
 
 pcall(function()
 
-for _, file in ipairs(listfiles(".")) do
+for _, file in ipairs(listfiles("")) do
     print(tostring(file))
     if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then folderexists = true print("custom songs folder found") break end
 end
