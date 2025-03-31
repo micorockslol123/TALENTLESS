@@ -152,11 +152,13 @@ submitSong.MouseButton1Click:Connect(function()
     
     local folderExists = false
     
-local success, filesOrErr = pcall(function()
-    return listfiles("./TALENTLESS_CUSTOM_SONGS")
-end)
+for _, file in ipairs(listfiles("")) do
+    if string.match(tostring(file), "TALENTLESS_CUSTOM_SONGS") then folderExists = true
+    end
+end
 
-if not success then
+if not folderExists then
+    print("making custom songs folder")
     makefolder("TALENTLESS_CUSTOM_SONGS")
     print("created custom song folder")
 end
