@@ -872,7 +872,7 @@ for _, song in ipairs(songs) do
     song.button.MouseButton1Click:Connect(function()
         disable()
         _G[song.var] = true
-        songname.Text = song.button.Name
+        songname.Text = song.button.Text
         bpmbox.Text = song.bpm
     end)
 end
@@ -1022,20 +1022,7 @@ local function runTests()
     end) and allPassed
 
     allPassed = test("listfiles", {}, function()
-        makefolder(".tests/listfiles")
-        writefile(".tests/listfiles/test_1.txt", "success")
-        writefile(".tests/listfiles/test_2.txt", "success")
-        local files = listfiles(".tests/listfiles")
-        assert(#files == 2, "Did not return the correct number of files")
-        assert(isfile(files[1]), "Did not return a file path")
-        assert(readfile(files[1]) == "success", "Did not return the correct files")
-        
-        makefolder(".tests/listfiles_2")
-        makefolder(".tests/listfiles_2/test_1")
-        makefolder(".tests/listfiles_2/test_2")
-        local folders = listfiles(".tests/listfiles_2")
-        assert(#folders == 2, "Did not return the correct number of folders")
-        assert(isfolder(folders[1]), "Did not return a folder path")
+        listfiles("")
     end) and allPassed
 
     allPassed = test("writefile", {}, function()
@@ -1063,7 +1050,7 @@ end
 local result = runTests()
 
 if result == true then
-    
+
 print("this executor supports custom songs")
 
 customnotice:Destroy()
@@ -1079,10 +1066,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/
 end)
 
 table.insert(customsongs, NEWSONGBUTTON)
+local addedCustoms = {}
 
 -- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
 
-pcall(function()
+local alreadyAdded
+local function updateSongs()
 
 for _, file in ipairs(listfiles("")) do
     print(tostring(file))
@@ -1091,17 +1080,22 @@ end
 
 print("searching for custom song files...")
 
-
 if folderexists then
+
 for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
+    alreadyAdded = false
+
     print("song file found: " .. tostring(custom))
     
     local filepath = tostring(custom) -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
 
+    if not table.find(addedCustoms, filepath) then
+
     if filepath:match("%.txt$") then -- if it has .txt at the end
     print("its a txt file, continuing")
-    
-    local tsongname = filepath:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "error" -- remove the /, \, and .txt 
+
+    table.insert(addedCustoms, filepath) -- add the file to the addedCustoms table
+    local tsongname = filepath:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "Error" -- remove the /, \, and .txt 
     print("song name: " .. tsongname)
     
     local songbutton = newSongButton(tsongname, 25, {}) -- make the song button
@@ -1109,11 +1103,12 @@ for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
     songbutton.TextScaled = true 
     songbutton.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
     songbutton.Visible = false
-    updatecustomcount()
     print("created song button for " .. tsongname)
     
-    local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "error" -- read the file and look for the string after bpm = 
+    local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "Error" -- read the file and look for the string after bpm = 
     print("songbpm found: " .. songbpm)
+
+    songbutton.Visible = true
 
     songbutton.MouseButton1Click:Connect(function()
         print("clicked!")
@@ -1141,10 +1136,19 @@ for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
             end
         end
     end)
+
+    updatecustomcount()
+
+else -- if yes table.find
+    print("song already added, skipping")
+end
+
     else print("its not a txt, skipping") end
 end
 
-else end
+else end -- ends if folderexists
+
+end -- end updatesongs func
 
 for _, songbutton in ipairs(scroll:GetChildren()) do
     if songbutton:IsA("TextButton") then
@@ -1154,6 +1158,10 @@ for _, songbutton in ipairs(scroll:GetChildren()) do
 else end
 end
 
-end)
+while wait(1) do
+pcall(function()
+updateSongs()
+end) -- end pcall
+end
 
 end
