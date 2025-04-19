@@ -179,7 +179,7 @@ end
 if not songexists then
     writefile("TALENTLESS_CUSTOM_SONGS/" .. songName .. ".txt", scriptInput) -- write the file in the song folder as a .txt
     playSound("6493287948", 0.1) 
-    NotificationLibrary:SendNotification("Success", "You have added the song " .. songName .. ". Re-execute the script to see it.", 10)
+    NotificationLibrary:SendNotification("Success", "You have added the song " .. songName .. "to your gui!", 10)
     insertscript.Text = ""
     insertsongName.Text = ""
 end
