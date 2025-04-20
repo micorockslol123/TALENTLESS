@@ -1071,7 +1071,7 @@ local addedCustoms = {}
 -- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
 
 local alreadyAdded
-local function updateSongs()
+function updateSongs()
 
 for _, file in ipairs(listfiles("")) do
     print(tostring(file))
