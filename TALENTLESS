@@ -1161,6 +1161,5 @@ end
 wait(0.5)
 
 updateSongs()
-end
 
 end
