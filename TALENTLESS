@@ -1158,10 +1158,9 @@ for _, songbutton in ipairs(scroll:GetChildren()) do
 else end
 end
 
-while wait(1) do
-pcall(function()
+wait(0.5)
+
 updateSongs()
-end) -- end pcall
 end
 
 end
