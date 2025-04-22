@@ -1,4 +1,5 @@
 -- some parts are skidded from chatgpt
+-- the comments are not from chatgpt though becvause i legitamately need them for debugging and to easily know whats going on if theres an issue
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/notif_lib.lua"))()
 
