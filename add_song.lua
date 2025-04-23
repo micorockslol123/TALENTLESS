@@ -9,7 +9,7 @@ local function playSound(soundId, loudness)
 end
 
 -- StarterGui.ScreenGui
-screengui = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+screengui = Instance.new("ScreenGui", game:GetService("CoreGui"));
 screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 local newsongframe = Instance.new("Frame", screengui);
