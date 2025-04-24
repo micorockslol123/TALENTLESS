@@ -387,9 +387,17 @@ local keyMappings = {
     ["m"] = Enum.KeyCode.M, ["M"] = Enum.KeyCode.M,
 }
 
+
+
 function pressKey(keys, beats, bpm)
-        
-    beats = "useless"
+    
+    local shorts
+    if beats ~= "x" then
+        shorts = true
+    else
+        shorts = false
+    end
+
     
     local shiftRequired, nonShift = {}, {}
     local ctrlRequired = false
@@ -420,11 +428,16 @@ function pressKey(keys, beats, bpm)
             VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.LeftShift, false, game) -- shift if it applies
             print("shift applied")
         end
-
+        
         coroutine.wrap(function()
             VirtualInputManager:SendKeyEvent(true, keyMappings[key], false, game)
-                local waittime = math.random(4, 12) / 100 -- random number from 0.044 to 0.15
-                task.wait(waittime)
+            local waittime
+            if beats ~= x then
+                randomOff = math.random(5, 10) / 100
+                waittime = (beats / bpm) * 60 - randomOff else
+                waittime = math.random(4, 12) / 100 -- beats to secs, OR random number from 0.04 to 0.12
+            end
+            task.wait(waittime)
             VirtualInputManager:SendKeyEvent(false, keyMappings[key], false, game)
         end)()
         
@@ -453,7 +466,12 @@ function pressKey(keys, beats, bpm)
         
             coroutine.wrap(function()
             VirtualInputManager:SendKeyEvent(true, keyMappings[key], false, game)
-            local waittime = math.random(4, 13) / 100
+            local waittime
+            if beats ~= x then
+                randomOff = math.random(5, 10) / 100
+                waittime = (beats / bpm) * 60 - randomOff else
+                waittime = math.random(4, 12) / 100 -- beats to secs, OR random number from 0.044 to 0.12
+            end
             task.wait(waittime)
             VirtualInputManager:SendKeyEvent(false, keyMappings[key], false, game)
             end)()
@@ -474,6 +492,33 @@ function pressKey(keys, beats, bpm)
     
 end
 
+
+
+function adjustVelocity(vel)
+    local velocityMap = "147eyosfjzc"
+
+    -- Ensure vel is clamped between 0 and 1
+    vel = math.clamp(vel, 0, 1)
+
+    -- Explicitly handle the range 0-0.27
+    if vel < 0.27 then
+        topress = "1"
+    elseif vel >= 0.88 then
+        -- Explicitly handle the range 0.88-1
+        topress = "c"
+    else
+        -- Calculate the index for other ranges
+        local index = math.floor((vel - 0.27) / 0.61 * (#velocityMap - 2)) + 2
+        topress = velocityMap:sub(index, index)
+    end
+
+    -- Simulate pressing the key
+    coroutine.wrap(function()
+    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.LeftAlt, false, game)
+    pressKey(topress, 0.01, 500)
+    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftAlt, false, game)
+    end)()
+end
 
 
 
