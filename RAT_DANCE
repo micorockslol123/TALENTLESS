@@ -1,13 +1,13 @@
 -- 1
 
 
-keypress("6", 1, bpm)
+keypress("6", x, bpm)
 rest(1, bpm)
-keypress("3", 1, bpm)
+keypress("3", x, bpm)
 rest(1, bpm)
-keypress("1", 1, bpm)
+keypress("1", x, bpm)
 rest(1, bpm)
-keypress("3", 1, bpm)
+keypress("3", x, bpm)
 rest(1, bpm)
 
 
