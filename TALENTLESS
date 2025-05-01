@@ -397,7 +397,6 @@ FANTAISIE = newSongButton("FANTAISIE IMPROMPTU", 20, {"classic", "chopin", "hard
 FALLEN_DOWN = newSongButton("FALLEN DOWN", 27, {"video game", "popular", "undertale"})
 FINAL_DUET = newSongButton("FINAL DUET", 27, {"omori", "sad"})
 FINALE = newSongButton("FINALE", 27, {"video game", "undertale"})
-FLAMEWALL = newSongButton("FLAME WALL", 27, {})
 FREEDOM_DIVE = newSongButton("FREEDOM DIVE", 27, {"xi"})
 FR = newSongButton("FROM THE START", 25, {"laufey", "love", "popular"})
 FUR_ELISE = newSongButton("FUR ELISE", 27, {"beethoven", "classical"})
@@ -502,159 +501,153 @@ end
 
 
 local songs = {
-    {button = INTERSTELLAR, bpm = "104", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/INTERSTELLAR", cat = {"epic", "movies"}},
-    {button = RUSHE, bpm = "80", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/RUSH_E", cat = {"memes", "popular"}},
-    {button = GOLDENHOUR, bpm = "94", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/GOLDEN_HOUR", cat = {"pop", "best"}},
-    {button = CUPID, bpm = "120", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/CUPID", cat = {"pop"}},
-    {button = RATDANCE, bpm = "120", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/RAT_DANCE", cat = {"memes"}},
-    {button = RUNAWAY, bpm = "85", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/RUNAWAY", cat = {"pop"}},
-    {button = YOUR_REALITY, bpm = "105", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/YOUR_REALITY", cat = {"video games"}},
-    {button = ANOTHER_LOVE, bpm = "123", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ANOTHER_LOVE", cat = {"sad", "pop", "best", "popular", "epic"}},
-    {button = FINAL_DUET, bpm = "84", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FINAL_DUET", cat = {"video games", "omori"}},
-    {button = EXPERIENCE, bpm = "92", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/EXPERIENCE", cat = {"epic", "best"}},
-    {button = CAN_YOU_HEAR, bpm = "80", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/CAN_YOU_HEAR_THE_FUCKING_MUSIC", cat = {"epic"}},
-    {button = HOWLS_MOVING_CASTLE, bpm = "156", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HOWLS_MOVING_CASTLE", cat = {"anime/jpop", "best"}},
-    {button = YOUNG_GIRL_A, bpm = "130", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/YOUNG_GIRL_A", cat = {"anime/jpop", "sad"}},
-    {button = ARIA_MATH, bpm = "84", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ARIA_MATH", cat = {"video game", "minecraft"}},
-    {button = ALL_MY_FELLAS, bpm = "160", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ALL_MY_FELLAS", cat = {"memes"}},
-    {button = THICK_OF_IT, bpm = "146", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/THICK_OF_IT", cat = {"memes"}},
-    {button = ROMANTIC_HOMICIDE, bpm = "132", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ROMANTIC_HOMICIDE", cat = {"sad"}},
-    {button = IF_I_AM_WITH_YOU, bpm = "82", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/IF_I_AM_WITH_YOU", cat = {"anime/jpop", "best", "epic"}},
-    {button = CRADLES, bpm = "79", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/CRADLES", cat = {"electronic"}},
-    {button = IDOL, bpm = "166", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/IDOL", cat = {"anime/jpop"}},
-    {button = RIVER_FLOWS, bpm = "137", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/RIVER_FLOWS_IN_YOU", cat = {"sad"}},
-    {button = NOCTURNE, bpm = "62", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/NOCTURNE", cat = {"classical", "best"}},
-    {button = ISABELLA, bpm = "112", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ISABELLAS_LULLABY", cat = {"video games"}},
-    {button = GIORNO, bpm = "135", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/GIORNO", cat = {"anime/jpop", "memes"}},
-    {button = GIVE_UP, bpm = "113", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/GIVE_UP", cat = {"meme", "pop"}},
-    {button = UNRAVEL, bpm = "135", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/UNRAVEL", cat = {"anime/jpop"}},
-    {button = WINTER_WIND, bpm = "125", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/WINTER_WIND", cat = {"classical"}},
-    {button = SWEATER_WEATHER, bpm = "124", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SWEATER_WEATHER", cat = {"sad"}},
-    {button = VIVA_LA_VIDA, bpm = "138", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/VIVA_LA_VIDA", cat = {"epic", "pop", "best"}},
-    {button = M3, bpm = "163", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/WHAT_THE_FUCKK", cat = {"classical", "best"}},
-    {button = NEVER_MEANT, bpm = "66", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/NEVER_MEANT", cat = {"anime/jpop"}},
-    {button = AVENGERS, bpm = "120", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/AVENGERS", cat = {"epic", "best"}},
-    {button = BEETHOVEN_VIRUS, bpm = "162", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/BEETHOVEN_VIRUS", cat = {"classical", "electronic", "best"}},
-    {button = LA_CAMPANELLA, bpm = "107", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/LA_CAMPANELLA", cat = {"classical"}},
-    {button = KEROSENE, bpm = "116", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/KEROSENE", cat = {"electronic"}},
-    {button = RACING_INTO, bpm = "129", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/RACING_INTO", cat = {"anime/jpop"}},
-    {button = SURVIVE, bpm = "117", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SURVIVE", cat = {"pop"}},
-    {button = MEGALOVANIA, bpm = "120", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MEGALOVANIA", cat = {"video games", "undertale", "memes"}},
-    {button = COCONUT, bpm = "132", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/COCONUT", cat = {"video games"}},
-    {button = FADED, bpm = "90", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FADED", cat = {"electronic"}},
-    {button = SOLAS, bpm = "120", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SOLAS", cat = {"epic"}},
-    {button = KARA, bpm = "88", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/KARA", cat = {"video games"}},
-    {button = MARRIED, bpm = "83", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MARRIED", cat = {"sad"}},
-    {button = BAD_PIGGIES, bpm = "156", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/BAD_PIGGIES", cat = {"video games"}},
-    {button = ASGORE, bpm = "115", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ASGORE", cat = {"video games", "undertale"}},
-    {button = CARELESS, bpm = "153", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/CARELESS", cat = {"memes"}},
-    {button = I_WANT, bpm = "122", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/I_WANT", cat = {"pop"}},
-    {button = IM_STILL, bpm = "177", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/IM_STILL", cat = {"pop"}},
-    {button = HELLO, bpm = "105", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HELLO", cat = {"electronic"}},
-    {button = BAD_APPLE, bpm = "138", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/BAD_APPLE", cat = {"anime/jpop"}},
-    {button = FR, bpm = "82", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FR", cat = {"all"}},
-    {button = DIE_WITH, bpm = "152", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DIE_WITH", cat = {"pop", "best"}},
-    {button = FALLEN_DOWN, bpm = "110", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FALLEN_DOWN", cat = {"video games", "undertale"}},
-    {button = ENIGMATIC, bpm = "50", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ENIGMATIC", cat = {"video games", "undertale", "best"}},
-    {button = DEATH_WALTZ, bpm = "210", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DEATH_WALTZ", cat = {"all"}},
-    {button = MIKU, bpm = "128", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MIKU", cat = {"anime/jpop"}},
-    {button = A_THOUSAND, bpm = "100", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/A_THOUSAND", cat = {"pop"}},
-    {button = SUGAR_PLUM, bpm = "70", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SUGAR_PLUM", cat = {"classical"}},
-    {button = SPEED_OF, bpm = "162", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SPEED_OF", cat = {"video games"}},
-    {button = WET_HANDS, bpm = "74", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/WET_HANDS", cat = {"video games", "minecraft"}},
-    {button = SWEDEN, bpm = "44", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SWEDEN", cat = {"video games", "minecraft"}},
-    {button = SUBWOOFER, bpm = "76", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SUBWOOFER", cat = {"video games", "minecraft"}},
-    {button = MICE_ON, bpm = "56", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MICE_ON", cat = {"video games", "minecraft"}},
-    {button = DRY_HANDS, bpm = "90", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DRY_HANDS", cat = {"video games", "minecraft"}},
-    {button = HAGGSTORM, bpm = "102", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HAGGSTORM", cat = {"video games", "minecraft"}},
-    {button = LIVING_MICE, bpm = "74", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/LIVING_MICE", cat = {"video games", "minecraft"}},
-    {button = KEY, bpm = "70", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/KEY", cat = {"video games", "minecraft"}},
-    {button = MOOG_CITY, bpm = "116", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MOOG_CITY", cat = {"video games", "minecraft"}},
-    {button = MINECRAFT, bpm = "106", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MINECRAFT", cat = {"video games", "minecraft"}},
-    {button = UNDERTALE, bpm = "100", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/UNDERTALE", cat = {"video games", "undertale", "best", "epic"}},
-    {button = HOPES_DREAMS, bpm = "170", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HOPES_DREAMS", cat = {"video games", "undertale", "best", "epic"}},
-    {button = NYEH, bpm = "150", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/NYEH", cat = {"video games", "undertale", "best"}},
-    {button = SPIDER_DANCE, bpm = "115", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SPIDER_DANCE", cat = {"video games", "undertale"}},
-    {button = HEARTACHE, bpm = "160", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HEARTACHE", cat = {"video games", "undertale", "best"}},
-    {button = BATTLE_AGAINST, bpm = "150", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/BATTLE_AGAINST", cat = {"video games", "undertale"}},
-    {button = HIS_THEME, bpm = "90", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HIS_THEME", cat = {"video games", "undertale"}},
-    {button = SNOWY, bpm = "120", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SNOWY", cat = {"video games", "undertale"}},
-    {button = SPEAR_OF, bpm = "130", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SPEAR_OF", cat = {"video games", "undertale", "best"}},
-    {button = DOG_SONG, bpm = "230", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DOG_SONG", cat = {"video games", "undertale"}},
-    {button = ONCE_UPON, bpm = "65", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/ONCE_UPON", cat = {"video games", "undertale"}},
-    {button = NOT_A_SLACKER, bpm = "145", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/NOT_A_SLACKER", cat = {"video games", "undertale"}},
-    {button = SHOP, bpm = "77", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SHOP", cat = {"video games", "undertale"}},
-    {button = FINALE, bpm = "190", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FINALE", cat = {"video games", "undertale"}},
-    {button = BY_YOUR_SIDE, bpm = "88", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/BY_YOUR_SIDE", cat = {"video games", "omori"}},
-    {button = WORLDS_END, bpm = "152", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/WORLDS_END", cat = {"video games", "omori", "best"}},
-    {button = LOST_LIBRARY, bpm = "62", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/LOST_LIBRARY", cat = {"video games", "omori"}},
-    {button = BREADY, bpm = "160", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/BREADY", cat = {"video games", "omori", "best"}},
-    {button = IT_MEANS, bpm = "96", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/IT_MEANS", cat = {"video games", "omori"}},
-    {button = UNDERWATER, bpm = "160", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/UNDERWATER", cat = {"video games", "omori"}},
-    {button = WHERE_WE, bpm = "96", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/WHERE_WE", cat = {"video games", "omori"}},
-    {button = MARI_BOSS, bpm = "169", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MARI_BOSS", cat = {"video games", "omori"}},
-    {button = GOOD_MORNING, bpm = "90", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/GOOD_MORNING", cat = {"video games", "omori"}},
-    {button = FUR_ELISE, bpm = "72", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FUR_ELISE", cat = {"classical"}},
-    {button = MOONLIGHT, bpm = "51", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MOONLIGHT", cat = {"classical"}},
-    {button = FANTAISIE, bpm = "168", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FANTAISIE", cat = {"classical"}},
-    {button = DROWNING_LOVE, bpm = "112", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DROWNING_LOVE", cat = {"epic", "sad", "best"}},
-    {button = CANON_D, bpm = "100", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/CANON_D", cat = {"classical"}},
-    {button = FREEDOM_DIVE, bpm = "220", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FREEDOM_DIVE", cat = {"electronic"}},
-    {button = STAY, bpm = "85", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/STAY", cat = {"pop"}},
-    {button = TURKISH, bpm = "92", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/TURKISH", cat = {"classical"}},
-    {button = SUPER_MARIOS, bpm = "180", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SUPER_MARIOS", cat = {"video games", "memes"}},
-    {button = MII, bpm = "114", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MII", cat = {"video games", "memes"}},
-    {button = LACRIMOSA, bpm = "64", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/LACRIMOSA", cat = {"classical", "memes"}},
-    {button = DESPACITO, bpm = "89", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DESPACITO", cat = {"pop"}},
-    {button = WE_DONT, bpm = "103", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/WE_DONT", cat = {"pop", "movies"}},
-    {button = HUNGARIAN, bpm = "130", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HUNGARIAN", cat = {"classical"}},
-    {button = SKYFALL, bpm = "70", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SKYFALL", cat = {"epic", "best"}},
-    {button = THE_ENTERTAINER, bpm = "60", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/THE_ENTERTAINER", cat = {"memes"}},
-    {button = DONT_STOP, bpm = "118", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DONT_STOP", cat = {"rock"}},
-    {button = DREAM_ON, bpm = "78", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DREAM_ON", cat = {"rock"}},
-    {button = FLAMEWALL, bpm = "300", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FLAMEWALL", cat = {"electronic"}},
-    {button = HIT_THE_ROAD, bpm = "60", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/HIT_THE_ROAD", cat = {"rock"}},
-    {button = TOXIC, bpm = "180", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/TOXIC", cat = {"pop", "sad"}},
-    {button = UNDERSTAND, bpm = "206", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/UNDERSTAND", cat = {"pop", "sad"}},
-    {button = SICK_OF_U, bpm = "185", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/SICK_OF_U", cat = {"pop", "sad"}},
-    {button = IDGAF, bpm = "196", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/IDGAF", cat = {"pop", "sad"}},
-    {button = EASY_ON_ME, bpm = "73", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/EASY_ON_ME", cat = {"pop"}}
+    {button = INTERSTELLAR, bpm = "104", var = false, url = "INTERSTELLAR", cat = {"epic", "movies"}},
+    {button = RUSHE, bpm = "80", var = false, url = "RUSH_E", cat = {"memes", "popular"}},
+    {button = GOLDENHOUR, bpm = "94", var = false, url = "GOLDEN_HOUR", cat = {"pop", "best"}},
+    {button = CUPID, bpm = "120", var = false, url = "CUPID", cat = {"pop"}},
+    {button = RATDANCE, bpm = "120", var = false, url = "RAT_DANCE", cat = {"memes"}},
+    {button = RUNAWAY, bpm = "85", var = false, url = "RUNAWAY", cat = {"pop"}},
+    {button = YOUR_REALITY, bpm = "105", var = false, url = "YOUR_REALITY", cat = {"video games"}},
+    {button = ANOTHER_LOVE, bpm = "123", var = false, url = "ANOTHER_LOVE", cat = {"sad", "pop", "best", "popular", "epic"}},
+    {button = FINAL_DUET, bpm = "84", var = false, url = "FINAL_DUET", cat = {"video games", "omori"}},
+    {button = EXPERIENCE, bpm = "92", var = false, url = "EXPERIENCE", cat = {"epic", "best"}},
+    {button = CAN_YOU_HEAR, bpm = "80", var = false, url = "CAN_YOU_HEAR_THE_FUCKING_MUSIC", cat = {"epic"}},
+    {button = HOWLS_MOVING_CASTLE, bpm = "156", var = false, url = "HOWLS_MOVING_CASTLE", cat = {"anime/jpop", "best"}},
+    {button = YOUNG_GIRL_A, bpm = "130", var = false, url = "YOUNG_GIRL_A", cat = {"anime/jpop", "sad"}},
+    {button = ARIA_MATH, bpm = "84", var = false, url = "ARIA_MATH", cat = {"video game", "minecraft"}},
+    {button = ALL_MY_FELLAS, bpm = "160", var = false, url = "ALL_MY_FELLAS", cat = {"memes"}},
+    {button = THICK_OF_IT, bpm = "146", var = false, url = "THICK_OF_IT", cat = {"memes"}},
+    {button = ROMANTIC_HOMICIDE, bpm = "132", var = false, url = "ROMANTIC_HOMICIDE", cat = {"sad"}},
+    {button = IF_I_AM_WITH_YOU, bpm = "82", var = false, url = "IF_I_AM_WITH_YOU", cat = {"anime/jpop", "best", "epic"}},
+    {button = CRADLES, bpm = "79", var = false, url = "CRADLES", cat = {"electronic"}},
+    {button = IDOL, bpm = "166", var = false, url = "IDOL", cat = {"anime/jpop"}},
+    {button = RIVER_FLOWS, bpm = "137", var = false, url = "RIVER_FLOWS_IN_YOU", cat = {"sad"}},
+    {button = NOCTURNE, bpm = "62", var = false, url = "NOCTURNE", cat = {"classical", "best"}},
+    {button = ISABELLA, bpm = "112", var = false, url = "ISABELLAS_LULLABY", cat = {"video games"}},
+    {button = GIORNO, bpm = "135", var = false, url = "GIORNO", cat = {"anime/jpop", "memes"}},
+    {button = GIVE_UP, bpm = "113", var = false, url = "GIVE_UP", cat = {"meme", "pop"}},
+    {button = UNRAVEL, bpm = "135", var = false, url = "UNRAVEL", cat = {"anime/jpop"}},
+    {button = WINTER_WIND, bpm = "125", var = false, url = "WINTER_WIND", cat = {"classical"}},
+    {button = SWEATER_WEATHER, bpm = "124", var = false, url = "SWEATER_WEATHER", cat = {"sad"}},
+    {button = VIVA_LA_VIDA, bpm = "138", var = false, url = "VIVA_LA_VIDA", cat = {"epic", "pop", "best"}},
+    {button = M3, bpm = "163", var = false, url = "WHAT_THE_FUCKK", cat = {"classical", "best"}},
+    {button = NEVER_MEANT, bpm = "66", var = false, url = "NEVER_MEANT", cat = {"anime/jpop"}},
+    {button = AVENGERS, bpm = "120", var = false, url = "AVENGERS", cat = {"epic", "best"}},
+    {button = BEETHOVEN_VIRUS, bpm = "162", var = false, url = "BEETHOVEN_VIRUS", cat = {"classical", "electronic", "best"}},
+    {button = LA_CAMPANELLA, bpm = "107", var = false, url = "LA_CAMPANELLA", cat = {"classical", "best"}},
+    {button = KEROSENE, bpm = "116", var = false, url = "KEROSENE", cat = {"electronic"}},
+    {button = RACING_INTO, bpm = "129", var = false, url = "RACING_INTO", cat = {"anime/jpop"}},
+    {button = SURVIVE, bpm = "117", var = false, url = "SURVIVE", cat = {"pop"}},
+    {button = MEGALOVANIA, bpm = "120", var = false, url = "MEGALOVANIA", cat = {"video games", "undertale", "memes"}},
+    {button = COCONUT, bpm = "132", var = false, url = "COCONUT", cat = {"video games"}},
+    {button = FADED, bpm = "90", var = false, url = "FADED", cat = {"electronic"}},
+    {button = SOLAS, bpm = "120", var = false, url = "SOLAS", cat = {"epic"}},
+    {button = KARA, bpm = "88", var = false, url = "KARA", cat = {"video games"}},
+    {button = MARRIED, bpm = "83", var = false, url = "MARRIED", cat = {"sad"}},
+    {button = BAD_PIGGIES, bpm = "156", var = false, url = "BAD_PIGGIES", cat = {"video games"}},
+    {button = ASGORE, bpm = "115", var = false, url = "ASGORE", cat = {"video games", "undertale"}},
+    {button = CARELESS, bpm = "153", var = false, url = "CARELESS", cat = {"memes"}},
+    {button = I_WANT, bpm = "122", var = false, url = "I_WANT", cat = {"pop"}},
+    {button = IM_STILL, bpm = "177", var = false, url = "IM_STILL", cat = {"pop"}},
+    {button = HELLO, bpm = "105", var = false, url = "HELLO", cat = {"electronic"}},
+    {button = BAD_APPLE, bpm = "138", var = false, url = "BAD_APPLE", cat = {"anime/jpop"}},
+    {button = FR, bpm = "82", var = false, url = "FR", cat = {"all"}},
+    {button = DIE_WITH, bpm = "152", var = false, url = "DIE_WITH", cat = {"pop", "best"}},
+    {button = FALLEN_DOWN, bpm = "110", var = false, url = "FALLEN_DOWN", cat = {"video games", "undertale"}},
+    {button = ENIGMATIC, bpm = "50", var = false, url = "ENIGMATIC", cat = {"video games", "undertale", "best"}},
+    {button = DEATH_WALTZ, bpm = "210", var = false, url = "DEATH_WALTZ", cat = {"all"}},
+    {button = MIKU, bpm = "128", var = false, url = "MIKU", cat = {"anime/jpop"}},
+    {button = A_THOUSAND, bpm = "100", var = false, url = "A_THOUSAND", cat = {"pop"}},
+    {button = SUGAR_PLUM, bpm = "70", var = false, url = "SUGAR_PLUM", cat = {"classical"}},
+    {button = SPEED_OF, bpm = "162", var = false, url = "SPEED_OF", cat = {"video games"}},
+    {button = WET_HANDS, bpm = "74", var = false, url = "WET_HANDS", cat = {"video games", "minecraft"}},
+    {button = SWEDEN, bpm = "44", var = false, url = "SWEDEN", cat = {"video games", "minecraft"}},
+    {button = SUBWOOFER, bpm = "76", var = false, url = "SUBWOOFER", cat = {"video games", "minecraft"}},
+    {button = MICE_ON, bpm = "56", var = false, url = "MICE_ON", cat = {"video games", "minecraft"}},
+    {button = DRY_HANDS, bpm = "90", var = false, url = "DRY_HANDS", cat = {"video games", "minecraft"}},
+    {button = HAGGSTORM, bpm = "102", var = false, url = "HAGGSTORM", cat = {"video games", "minecraft"}},
+    {button = LIVING_MICE, bpm = "74", var = false, url = "LIVING_MICE", cat = {"video games", "minecraft"}},
+    {button = KEY, bpm = "70", var = false, url = "KEY", cat = {"video games", "minecraft"}},
+    {button = MOOG_CITY, bpm = "116", var = false, url = "MOOG_CITY", cat = {"video games", "minecraft"}},
+    {button = MINECRAFT, bpm = "106", var = false, url = "MINECRAFT", cat = {"video games", "minecraft"}},
+    {button = UNDERTALE, bpm = "100", var = false, url = "UNDERTALE", cat = {"video games", "undertale", "best", "epic"}},
+    {button = HOPES_DREAMS, bpm = "170", var = false, url = "HOPES_DREAMS", cat = {"video games", "undertale", "best", "epic"}},
+    {button = NYEH, bpm = "150", var = false, url = "NYEH", cat = {"video games", "undertale", "best"}},
+    {button = SPIDER_DANCE, bpm = "115", var = false, url = "SPIDER_DANCE", cat = {"video games", "undertale"}},
+    {button = HEARTACHE, bpm = "160", var = false, url = "HEARTACHE", cat = {"video games", "undertale", "best"}},
+    {button = BATTLE_AGAINST, bpm = "150", var = false, url = "BATTLE_AGAINST", cat = {"video games", "undertale"}},
+    {button = HIS_THEME, bpm = "90", var = false, url = "HIS_THEME", cat = {"video games", "undertale"}},
+    {button = SNOWY, bpm = "120", var = false, url = "SNOWY", cat = {"video games", "undertale"}},
+    {button = SPEAR_OF, bpm = "130", var = false, url = "SPEAR_OF", cat = {"video games", "undertale", "best"}},
+    {button = DOG_SONG, bpm = "230", var = false, url = "DOG_SONG", cat = {"video games", "undertale"}},
+    {button = ONCE_UPON, bpm = "65", var = false, url = "ONCE_UPON", cat = {"video games", "undertale"}},
+    {button = NOT_A_SLACKER, bpm = "145", var = false, url = "NOT_A_SLACKER", cat = {"video games", "undertale"}},
+    {button = SHOP, bpm = "77", var = false, url = "SHOP", cat = {"video games", "undertale"}},
+    {button = FINALE, bpm = "190", var = false, url = "FINALE", cat = {"video games", "undertale"}},
+    {button = BY_YOUR_SIDE, bpm = "88", var = false, url = "BY_YOUR_SIDE", cat = {"video games", "omori"}},
+    {button = WORLDS_END, bpm = "152", var = false, url = "WORLDS_END", cat = {"video games", "omori", "best"}},
+    {button = LOST_LIBRARY, bpm = "62", var = false, url = "LOST_LIBRARY", cat = {"video games", "omori"}},
+    {button = BREADY, bpm = "160", var = false, url = "BREADY", cat = {"video games", "omori", "best"}},
+    {button = IT_MEANS, bpm = "96", var = false, url = "IT_MEANS", cat = {"video games", "omori"}},
+    {button = UNDERWATER, bpm = "160", var = false, url = "UNDERWATER", cat = {"video games", "omori"}},
+    {button = WHERE_WE, bpm = "96", var = false, url = "WHERE_WE", cat = {"video games", "omori"}},
+    {button = MARI_BOSS, bpm = "169", var = false, url = "MARI_BOSS", cat = {"video games", "omori"}},
+    {button = GOOD_MORNING, bpm = "90", var = false, url = "GOOD_MORNING", cat = {"video games", "omori"}},
+    {button = FUR_ELISE, bpm = "72", var = false, url = "FUR_ELISE", cat = {"classical"}},
+    {button = MOONLIGHT, bpm = "51", var = false, url = "MOONLIGHT", cat = {"classical"}},
+    {button = FANTAISIE, bpm = "168", var = false, url = "FANTAISIE", cat = {"classical"}},
+    {button = DROWNING_LOVE, bpm = "112", var = false, url = "DROWNING_LOVE", cat = {"epic", "sad", "best"}},
+    {button = CANON_D, bpm = "100", var = false, url = "CANON_D", cat = {"classical"}},
+    {button = FREEDOM_DIVE, bpm = "220", var = false, url = "FREEDOM_DIVE", cat = {"electronic"}},
+    {button = STAY, bpm = "85", var = false, url = "STAY", cat = {"pop"}},
+    {button = TURKISH, bpm = "92", var = false, url = "TURKISH", cat = {"classical"}},
+    {button = SUPER_MARIOS, bpm = "180", var = false, url = "SUPER_MARIOS", cat = {"video games", "memes"}},
+    {button = MII, bpm = "114", var = false, url = "MII", cat = {"video games", "memes"}},
+    {button = LACRIMOSA, bpm = "64", var = false, url = "LACRIMOSA", cat = {"classical", "memes"}},
+    {button = DESPACITO, bpm = "89", var = false, url = "DESPACITO", cat = {"pop"}},
+    {button = WE_DONT, bpm = "103", var = false, url = "WE_DONT", cat = {"pop", "movies"}},
+    {button = HUNGARIAN, bpm = "130", var = false, url = "HUNGARIAN", cat = {"classical"}},
+    {button = SKYFALL, bpm = "70", var = false, url = "SKYFALL", cat = {"epic", "best"}},
+    {button = THE_ENTERTAINER, bpm = "60", var = false, url = "THE_ENTERTAINER", cat = {"memes"}},
+    {button = DONT_STOP, bpm = "118", var = false, url = "DONT_STOP", cat = {"rock"}},
+    {button = DREAM_ON, bpm = "78", var = false, url = "DREAM_ON", cat = {"rock"}},
+    {button = HIT_THE_ROAD, bpm = "60", var = false, url = "HIT_THE_ROAD", cat = {"rock"}},
+    {button = TOXIC, bpm = "180", var = false, url = "TOXIC", cat = {"pop", "sad"}},
+    {button = UNDERSTAND, bpm = "206", var = false, url = "UNDERSTAND", cat = {"pop", "sad"}},
+    {button = SICK_OF_U, bpm = "185", var = false, url = "SICK_OF_U", cat = {"pop", "sad"}},
+    {button = IDGAF, bpm = "196", var = false, url = "IDGAF", cat = {"pop", "sad"}},
+    {button = EASY_ON_ME, bpm = "73", var = false, url = "EASY_ON_ME", cat = {"pop"}}
     
 --[[
 
-    {button = , bpm = "", var = false, url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/", cat = {""}}
+    {button = , bpm = "", var = false, url = "", cat = {""}}
 
 ]]
 
 }
 
 
-local function anotherfuckingsong(songname, textsize, attributes, bpmm, songvar, url, categ)
+local function anotherfuckingsong(songname, textsize, attributes, bpmm, url, categ)
     local buttonvar = string.upper(songname) .. "B" 
 
     _G[buttonvar] = newSongButton(songname, textsize, attributes)
-
-    _G[songvar] = songvar
     
     -- Create the button cell
     local buttoncell = {
         button = _G[buttonvar], 
         bpm = tostring(bpmm), 
-        var = _G[songvar], 
+        var = false, 
         url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. url, 
         cat = categ
     }
     
     -- Insert into the songs table
     table.insert(songs, buttoncell)
-
-    -- Debugging Output
-    print("Created:", buttonvar, "=", _G[buttonvar])
-    print("Created:", songvar, "=", _G[songvar])
-    print("Added to table:", buttoncell.button, buttoncell.bpm, buttoncell.var, buttoncell.url, table.concat(buttoncell.cat, ", "))
 end
 
--- anotherfuckingsong("", 27, {""}, 1, "song", "", {""})
+-- anotherfuckingsong("", 27, {""}, bpm, "song", {""})
+
+
 
 
 
@@ -848,7 +841,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/
 
 for _, song in pairs(songs) do
     if song.var == true then
-        loadstring(game:HttpGet(song.url, true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. song.url, true))()
         break
     end
 end
@@ -885,7 +878,7 @@ end
 local randomSong = getRandomSong()
 
 disable()
-_G[randomSong.var] = true
+randomSong.var = true
 songname.Text = randomSong.button.Name
 bpmbox.Text = randomSong.bpm
 
@@ -940,7 +933,7 @@ PLAYALL.MouseButton1Click:Connect(function()
         disable()
         songname.Text = song.button.name 
         bpmbox.Text = song.bpm
-        _G[song.var] = true
+        song.var = true
         playbuttonclicked()
         wait(1)
     end
@@ -962,7 +955,7 @@ LOOPRANDOM.MouseButton1Click:Connect(function()
         if not playingall then break end
         
         disable()
-        _G[randomSong.var] = true
+        randomSong.var = true
         songname.Text = randomSong.button.Name
         bpmbox.Text = randomSong.bpm
         playbuttonclicked()
