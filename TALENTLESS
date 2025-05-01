@@ -410,7 +410,7 @@ HEARTACHE = newSongButton("HEARTACHE", 27, {"video game", "undertale"})
 HELLO = newSongButton("HELLO X I LOVE YOU", 26, {"meme", "omfg"})
 HIS_THEME = newSongButton("HIS THEME", 27, {"video game", "undertale"})
 HIT_THE_ROAD = newSongButton("HIT THE ROAD, JACK", 24, {"shake"})
-HOPES_DREAMS = newSongButton("HOPES AND DREAMS", 23, {"video game", "undertale"})
+HOPES_DREAMS = newSongButton("HOPES AND DREAMS", 23, {"video game", "undertale", "asriel"})
 HOWLS_MOVING_CASTLE = newSongButton("HOWLS MOVING CASTLE", 20, {"anime", "movie", "cinematic", "popular", "japan"})
 HUNGARIAN = newSongButton("HUNGARIAN DANCE", 23, {})
 IDGAF = newSongButton("IDGAF", 27, {"boywithuke", "blackbear"})
@@ -597,7 +597,7 @@ local songs = {
     {button = FUR_ELISE, bpm = "72", var = "furelisesong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FUR_ELISE", cat = {"classical"}},
     {button = MOONLIGHT, bpm = "51", var = "moonlightsong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/MOONLIGHT", cat = {"classical"}},
     {button = FANTAISIE, bpm = "168", var = "fantaisiesong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FANTAISIE", cat = {"classical"}},
-    {button = DROWNING_LOVE, bpm = "112", var = "drowninglovesong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DROWNING_LOVE", cat = {"epic", "sad"}},
+    {button = DROWNING_LOVE, bpm = "112", var = "drowninglovesong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/DROWNING_LOVE", cat = {"epic", "sad", "best"}},
     {button = CANON_D, bpm = "100", var = "canondsong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/CANON_D", cat = {"classical"}},
     {button = FREEDOM_DIVE, bpm = "220", var = "freedomdivesong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/FREEDOM_DIVE", cat = {"electronic"}},
     {button = STAY, bpm = "85", var = "staysong", url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/STAY", cat = {"pop"}},
@@ -1070,8 +1070,9 @@ local addedCustoms = {}
 
 -- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
 
-local alreadyAdded
 function updateSongs()
+
+local alreadyAdded
 
 for _, file in ipairs(listfiles("")) do
     print(tostring(file))
