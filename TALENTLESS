@@ -386,6 +386,7 @@ CUPID = newSongButton("CUPID", 27, {"love"})
 DESPACITO = newSongButton("DESPACITO", 27, {""})
 DOG_SONG = newSongButton("DOG SONG", 27, {"video game", "undertale"})
 DONT_STOP = newSongButton("DONT STOP BELIEVIN'", 21, {"journey"})
+DRAMAM = newSongButton("DRAMAMIME", 27, {"flawed mangoes"})
 DREAM_ON = newSongButton("DREAM ON", 27, {"aerosmith"})
 DROWNING_LOVE = newSongButton("DROWNING LOVE", 27, {"epic"})
 DRY_HANDS = newSongButton("DRY HANDS", 27, {"video games", "minecraft", "c418"})
@@ -428,9 +429,12 @@ LA_CAMPANELLA = newSongButton("LA CAMPANELLA", 27, {"etude", "classic", "hard", 
 LACRIMOSA = newSongButton("LACRIMOSA - REQUIEM", 22, {"mozart", "noot noot"})
 LIVING_MICE = newSongButton("LIVING MICE", 27, {"video games", "minecraft", "c418"})
 LOST_LIBRARY = newSongButton("LOST LIBRARY", 27, {"video game", "omori"})
+LOST_UMB = newSongButton("LOST UMBRELLA", 27, {"cute depressed", "vocaloid"})
+LOVELY_B = newSongButton("LOVELY BASTARDS", 27, {"phonk"})
 MARI_BOSS = newSongButton("MARI BOSS FIGHT", 25, {"video game", "omori"})
 MARRIED = newSongButton("MARRIED LIFE", 27, {"love", "movie", "popular"})
 MEGALOVANIA = newSongButton("MEGALOVANIA", 27, {"video game", "meme", "popular", "undertale"})
+METAMORPH = newSongButton("METAMORPHOSIS", 27, {"phonk"})
 MICE_ON = newSongButton("MICE ON VENUS", 27, {"video games", "minecraft", "c418"})
 MII = newSongButton("MII CHANNEL THEME", 24, {"wii"})
 MIKU = newSongButton("MIKU", 27, {"anime", "vocaloid", "japan"})
@@ -461,10 +465,12 @@ SUBWOOFER = newSongButton("SUBWOOFER LULLABY", 20, {"video games", "minecraft", 
 SUGAR_PLUM = newSongButton("DANCE OF THE SUGAR PLUM FAIRY", 13, {"christmas", "hard", "classic"})
 SUPER_MARIOS = newSongButton("SUPER MARIO BROS", 23, {""})
 SWEATER_WEATHER = newSongButton("SWEATER WEATHER", 23, {"the neighbourhood", "sad", "love", "popular"})
+SWIMMING = newSongButton("SWIMMING", 27, {"flawed mangoes", "dramamime"})
 SWEDEN = newSongButton("SWEDEN", 27, {"video games", "minecraft", "c418"})
 THE_ENTERTAINER = newSongButton("THE ENTERTAINER", 25, {})
 THICK_OF_IT = newSongButton("THICK OF IT", 27, {"nigga", "ksi", "shit", "popular", "meme"})
 TOXIC = newSongButton("TOXIC (BOYWITHUKE)", 22, {""})
+TRAP_R = newSongButton("TRAP ROYALTY", 27, {"fetty wap"})
 TURKISH = newSongButton("TURKISH MARCH", 27, {"mozart", "rondo alla turca"})
 UNDERSTAND = newSongButton("UNDERSTAND", 27, {"boywithuke"})
 UNDERTALE = newSongButton("UNDERTALE", 27, {"video game", "undertale"})
@@ -478,7 +484,8 @@ WINTER_WIND = newSongButton("WINTER WIND (ETUDE OP.25 NO.11)", 13, {"classic", "
 WORLDS_END = newSongButton("WORLDS END VALENTINE", 18, {"video game", "omori"})
 YOUNG_GIRL_A = newSongButton("YOUNG GIRL A", 27, {"siinamota", "anime", "sad", "japan", "vocaloid"})
 YOUR_REALITY = newSongButton("YOUR REALITY", 27, {"ddlc", "doki"})
-DEATH_WALTZ = newSongButton("DEATH WALTZ (WARNING)", 19, {"hard"})
+MANGOMANGOMANGO = newSongButton("MANGO MANGO MANGO", 27, {""})
+DEATH_WALTZ = newSongButton("DEATH WALTZ (WARNING)", 19, {""})
 
 
 
@@ -501,7 +508,7 @@ end
 
 
 local songs = {
-    {button = INTERSTELLAR, bpm = "104", var = false, url = "INTERSTELLAR", cat = {"epic", "movies"}},
+    {button = INTERSTELLAR, bpm = "104", var = false, url = "INTERSTELLAR", cat = {"epic"}},
     {button = RUSHE, bpm = "80", var = false, url = "RUSH_E", cat = {"memes", "popular"}},
     {button = GOLDENHOUR, bpm = "94", var = false, url = "GOLDEN_HOUR", cat = {"pop", "best"}},
     {button = CUPID, bpm = "120", var = false, url = "CUPID", cat = {"pop"}},
@@ -605,7 +612,7 @@ local songs = {
     {button = MII, bpm = "114", var = false, url = "MII", cat = {"video games", "memes"}},
     {button = LACRIMOSA, bpm = "64", var = false, url = "LACRIMOSA", cat = {"classical", "memes"}},
     {button = DESPACITO, bpm = "89", var = false, url = "DESPACITO", cat = {"pop"}},
-    {button = WE_DONT, bpm = "103", var = false, url = "WE_DONT", cat = {"pop", "movies"}},
+    {button = WE_DONT, bpm = "103", var = false, url = "WE_DONT", cat = {"pop"}},
     {button = HUNGARIAN, bpm = "130", var = false, url = "HUNGARIAN", cat = {"classical"}},
     {button = SKYFALL, bpm = "70", var = false, url = "SKYFALL", cat = {"epic", "best"}},
     {button = THE_ENTERTAINER, bpm = "60", var = false, url = "THE_ENTERTAINER", cat = {"memes"}},
@@ -616,7 +623,14 @@ local songs = {
     {button = UNDERSTAND, bpm = "206", var = false, url = "UNDERSTAND", cat = {"pop", "sad"}},
     {button = SICK_OF_U, bpm = "185", var = false, url = "SICK_OF_U", cat = {"pop", "sad"}},
     {button = IDGAF, bpm = "196", var = false, url = "IDGAF", cat = {"pop", "sad"}},
-    {button = EASY_ON_ME, bpm = "73", var = false, url = "EASY_ON_ME", cat = {"pop"}}
+    {button = EASY_ON_ME, bpm = "73", var = false, url = "EASY_ON_ME", cat = {"pop"}},
+    {button = METAMORPH, bpm = "180", var = false, url = "METAMORPH", cat = {"electronic"}},
+    {button = SWIMMING, bpm = "165", var= false, url = "SWIMMING", cat = {"epic", "best"}},
+    {button = DRAMAM, bpm = "224", var = false, url = "DRAMAM", cat = {"epic"}},
+    {button = LOST_UMB , bpm = "133", var = false, url = "LOST_UMB", cat = {"electronic", "anime/jpop"}},
+    {button = LOVELY_B , bpm = "150", var = false, url = "LOVELY_B", cat = {"memes"}},
+    {button = TRAP_R , bpm = "151", var = false, url = "TRAP_R", cat = {"memes", "epic", "best"}},
+    {button = MANGOMANGOMANGO , bpm = "110", var = false, url = "MANGOMANGOMANGO", cat = {"epic"}},
     
 --[[
 
@@ -626,28 +640,13 @@ local songs = {
 
 }
 
-
-local function anotherfuckingsong(songname, textsize, attributes, bpmm, url, categ)
-    local buttonvar = string.upper(songname) .. "B" 
-
-    _G[buttonvar] = newSongButton(songname, textsize, attributes)
-    
-    -- Create the button cell
-    local buttoncell = {
-        button = _G[buttonvar], 
-        bpm = tostring(bpmm), 
-        var = false, 
-        url = "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. url, 
-        cat = categ
-    }
-    
-    -- Insert into the songs table
-    table.insert(songs, buttoncell)
+for _, song in ipairs(songs) do
+    print("song loaded: " .. song.button.Name)
 end
 
--- anotherfuckingsong("", 27, {""}, bpm, "song", {""})
-
-
+local categories = {
+    "best", "epic", "video games", "memes", "classical", "pop", "sad", "rock", "anime/jpop", "electronic", "undertale", "omori", "minecraft"
+}  -- The main table for unique categories
 
 
 
@@ -657,8 +656,6 @@ local customsongs = {}
 print("initiating buttons")
 
 print("fetching songs")
-
-local categories = {"best", "video games", "memes", "movies", "epic", "classical", "pop", "sad", "rock", "anime/jpop", "electronic", "undertale", "omori", "minecraft"}  -- The main table for unique categories
 
 local specsong = {button = AVRIL_14, bpm = "79", var = false, url = "https://pastefy.app/NY5KqR8m/raw", cat = {}}
 if game.Players.LocalPlayer.Name == "4BCQA" then
@@ -853,7 +850,6 @@ playsong.MouseButton1Click:Connect(playbuttonclicked)
 
 
 for _, song in ipairs(songs) do
-    print("song loaded: " .. song.button.Name)
     song.button.MouseButton1Click:Connect(function()
         disable()
         song.var = true
