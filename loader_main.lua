@@ -392,10 +392,10 @@ local keyMappings = {
 function pressKey(keys, beats, bpm)
     
     local shorts
-    if beats ~= "x" then
-        shorts = true
-    else
+    if type(beats) == "number" then
         shorts = false
+    else
+        shorts = true
     end
 
     
@@ -432,10 +432,12 @@ function pressKey(keys, beats, bpm)
         coroutine.wrap(function()
             VirtualInputManager:SendKeyEvent(true, keyMappings[key], false, game)
             local waittime
-            if beats ~= x then
-                randomOff = math.random(5, 10) / 100
-                waittime = (beats / bpm) * 60 - randomOff else
-                waittime = math.random(4, 12) / 100 -- beats to secs, OR random number from 0.04 to 0.12
+            local randomOff
+            if shorts == false then
+                local maxRan = (beats / bpm) * 60 / 2 -- half of note hold time
+                randomOff = math.random() * maxRan -- num from 0 to maxRan (half of note hold time)
+                waittime = (beats / bpm) * 60 - randomOff else -- beats to time, or if short notes...
+                waittime = math.random(4, 12) / 100 -- random number from 0.04 to 0.12
             end
             task.wait(waittime)
             VirtualInputManager:SendKeyEvent(false, keyMappings[key], false, game)
@@ -467,8 +469,10 @@ function pressKey(keys, beats, bpm)
             coroutine.wrap(function()
             VirtualInputManager:SendKeyEvent(true, keyMappings[key], false, game)
             local waittime
-            if beats ~= x then
-                randomOff = math.random(5, 10) / 100
+            local randomOff
+            if shorts == false then
+                local maxRan = (beats / bpm) * 60 / 2 -- half of note hold time
+                randomOff = math.random() * maxRan -- num from 0 to maxRan (half of note hold time)
                 waittime = (beats / bpm) * 60 - randomOff else
                 waittime = math.random(4, 12) / 100 -- beats to secs, OR random number from 0.044 to 0.12
             end
@@ -497,22 +501,17 @@ end
 function adjustVelocity(vel)
     local velocityMap = "147eyosfjzc"
 
-    -- Ensure vel is clamped between 0 and 1
     vel = math.clamp(vel, 0, 1)
 
-    -- Explicitly handle the range 0-0.27
     if vel < 0.27 then
         topress = "1"
     elseif vel >= 0.88 then
-        -- Explicitly handle the range 0.88-1
         topress = "c"
     else
-        -- Calculate the index for other ranges
         local index = math.floor((vel - 0.27) / 0.61 * (#velocityMap - 2)) + 2
         topress = velocityMap:sub(index, index)
     end
 
-    -- Simulate pressing the key
     coroutine.wrap(function()
     VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.LeftAlt, false, game)
     pressKey(topress, 0.01, 500)
