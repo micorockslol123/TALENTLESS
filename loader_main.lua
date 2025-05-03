@@ -11,6 +11,8 @@ function playSound(soundId, loudness)
     sound:Play()
 end
 
+x = "hi"
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/load.lua", true))()
 
 wait(0.3)
