@@ -3,10 +3,6 @@
 -- Short Notes: ON --
 -- Note Velocity: OFF --
 
-bpm = 108
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/loader_main.lua", true))()
-
 keypress("a", x, bpm)
 keypress("k", x, bpm)
 keypress("*", x, bpm)
