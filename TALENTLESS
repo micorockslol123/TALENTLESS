@@ -1,26 +1,29 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/discordpopup/main/discordpopup.lua", true))()
+loadstring(
+    game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/discordpopup/main/discordpopup.lua", true)
+)()
 
-local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/notif_lib.lua"))()
+local NotificationLibrary =
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/notif_lib.lua"))()
 
 local function playSound(soundId, loudness)
     local sound = Instance.new("Sound")
     sound.SoundId = "rbxassetid://" .. soundId
     sound.Parent = game.Players.LocalPlayer.Character or game.Players.LocalPlayer
-    sound.Volume = loudness or 1 
+    sound.Volume = loudness or 1
     sound:Play()
 end
 
 -- StarterGui.ScreenGui
-local screengui = Instance.new("ScreenGui", game:GetService("CoreGui"));
-screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+local screengui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
 
 -- StarterGui.ScreenGui.Frame
-local frame = Instance.new("Frame", screengui);
-frame["BorderSizePixel"] = 0;
-frame["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
-frame["Size"] = UDim2.new(0, 500, 0, 272);
-frame["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-frame["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+local frame = Instance.new("Frame", screengui)
+frame["BorderSizePixel"] = 0
+frame["BackgroundColor3"] = Color3.fromRGB(46, 46, 46)
+frame["Size"] = UDim2.new(0, 500, 0, 272)
+frame["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+frame["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 
 -- StarterGui.ScreenGui.Frame.closebutton
 local closeButton = Instance.new("TextButton", frame)
@@ -47,49 +50,50 @@ infoButton.Font = Enum.Font.SourceSansBold
 infoButton.ZIndex = 5
 
 -- StarterGui.ScreenGui.Frame.ImageLabel
-local imagelabel = Instance.new("ImageLabel", frame);
-imagelabel["BorderSizePixel"] = 0;
-imagelabel["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-imagelabel["Image"] = [[rbxassetid://99301557478296]];
-imagelabel["Size"] = UDim2.new(1, 0, 0, 73);
-imagelabel["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-imagelabel["Position"] = UDim2.new(0, 0, 0.74299, 0);
+local imagelabel = Instance.new("ImageLabel", frame)
+imagelabel["BorderSizePixel"] = 0
+imagelabel["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+imagelabel["Image"] = [[rbxassetid://99301557478296]]
+imagelabel["Size"] = UDim2.new(1, 0, 0, 73)
+imagelabel["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+imagelabel["Position"] = UDim2.new(0, 0, 0.74299, 0)
 
 -- StarterGui.ScreenGui.Frame.title
-local title = Instance.new("TextLabel", frame);
-title["BorderSizePixel"] = 0;
-title["BackgroundColor3"] = Color3.fromRGB(207, 48, 43);
-title["TextSize"] = 46;
-title["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-title["TextColor3"] = Color3.fromRGB(0, 0, 0);
-title["Size"] = UDim2.new(1, 0, 0, 50);
-title["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-title["Text"] = [[TALENTLESS]];
-title["Name"] = [[title]];
+local title = Instance.new("TextLabel", frame)
+title["BorderSizePixel"] = 0
+title["BackgroundColor3"] = Color3.fromRGB(207, 48, 43)
+title["TextSize"] = 46
+title["FontFace"] =
+    Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+title["TextColor3"] = Color3.fromRGB(0, 0, 0)
+title["Size"] = UDim2.new(1, 0, 0, 50)
+title["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+title["Text"] = [[TALENTLESS]]
+title["Name"] = [[title]]
 
 -- StarterGui.ScreenGui.Frame.ImageLabel.UICorner
-local uic1 = Instance.new("UICorner", imagelabel);
-uic1["CornerRadius"] = UDim.new(0, 4);
+local uic1 = Instance.new("UICorner", imagelabel)
+uic1["CornerRadius"] = UDim.new(0, 4)
 
 -- StarterGui.ScreenGui.Frame.UICorner
-local uic2 = Instance.new("UICorner", frame);
-uic2["CornerRadius"] = UDim.new(0, 4);
+local uic2 = Instance.new("UICorner", frame)
+uic2["CornerRadius"] = UDim.new(0, 4)
 
 -- StarterGui.ScreenGui.Frame.title.UICorner
-local uic3 = Instance.new("UICorner", title);
-uic3["CornerRadius"] = UDim.new(0, 4);
+local uic3 = Instance.new("UICorner", title)
+uic3["CornerRadius"] = UDim.new(0, 4)
 
-local categoriesFrame = Instance.new("ScrollingFrame", frame);
-categoriesFrame["Active"] = true;
-categoriesFrame["ZIndex"] = 0;
-categoriesFrame["BorderSizePixel"] = 0;
-categoriesFrame["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
-categoriesFrame["Name"] = [[categoriesFrame]];
-categoriesFrame["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-categoriesFrame["Size"] = UDim2.new(0, 150, 0, 152);
-categoriesFrame["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-categoriesFrame["Position"] = UDim2.new(0.00242, 0, 0.18382, 0);
-categoriesFrame["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+local categoriesFrame = Instance.new("ScrollingFrame", frame)
+categoriesFrame["Active"] = true
+categoriesFrame["ZIndex"] = 0
+categoriesFrame["BorderSizePixel"] = 0
+categoriesFrame["BackgroundColor3"] = Color3.fromRGB(46, 46, 46)
+categoriesFrame["Name"] = [[categoriesFrame]]
+categoriesFrame["AutomaticCanvasSize"] = Enum.AutomaticSize.Y
+categoriesFrame["Size"] = UDim2.new(0, 150, 0, 152)
+categoriesFrame["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0)
+categoriesFrame["Position"] = UDim2.new(0.00242, 0, 0.18382, 0)
+categoriesFrame["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 
 local categoriesLayout = Instance.new("UIListLayout", categoriesFrame)
 categoriesLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -100,75 +104,78 @@ categoriesPadding.PaddingTop = UDim.new(0, 5)
 categoriesPadding.PaddingLeft = UDim.new(0, 5)
 categoriesPadding.PaddingRight = UDim.new(0, 5)
 
-local bar = Instance.new("ScrollingFrame", frame);
-bar["Active"] = true;
-bar["ZIndex"] = 0;
-bar["BorderSizePixel"] = 0;
-bar["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
-bar["Name"] = [[scrolltab]];
-bar["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-bar["Size"] = UDim2.new(0, 160, 0, 152);
-bar["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-bar["Position"] = UDim2.new(1, -173, 0.18382, 0);
-bar["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+local bar = Instance.new("ScrollingFrame", frame)
+bar["Active"] = true
+bar["ZIndex"] = 0
+bar["BorderSizePixel"] = 0
+bar["BackgroundColor3"] = Color3.fromRGB(46, 46, 46)
+bar["Name"] = [[scrolltab]]
+bar["AutomaticCanvasSize"] = Enum.AutomaticSize.Y
+bar["Size"] = UDim2.new(0, 160, 0, 152)
+bar["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0)
+bar["Position"] = UDim2.new(1, -173, 0.18382, 0)
+bar["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 
 -- StarterGui.talentles.Frame.scrolltab.songname
-local songname = Instance.new("TextLabel", bar);
-songname["TextWrapped"] = true;
-songname["ZIndex"] = -5;
-songname["BorderSizePixel"] = 4;
-songname["TextScaled"] = true;
-songname["BackgroundColor3"] = Color3.fromRGB(207, 48, 43);
-songname["TextSize"] = 23;
-songname["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-songname["TextColor3"] = Color3.fromRGB(255, 255, 255);
-songname["Size"] = UDim2.new(0, 125, 0, 34);
-songname["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-songname["Text"] = [[SONG NAME]];
-songname["Name"] = [[songname]];
-songname["Position"] = UDim2.new(0.06891, 0, 0.08553, 0);
+local songname = Instance.new("TextLabel", bar)
+songname["TextWrapped"] = true
+songname["ZIndex"] = -5
+songname["BorderSizePixel"] = 4
+songname["TextScaled"] = true
+songname["BackgroundColor3"] = Color3.fromRGB(207, 48, 43)
+songname["TextSize"] = 23
+songname["FontFace"] =
+    Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+songname["TextColor3"] = Color3.fromRGB(255, 255, 255)
+songname["Size"] = UDim2.new(0, 125, 0, 34)
+songname["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+songname["Text"] = [[SONG NAME]]
+songname["Name"] = [[songname]]
+songname["Position"] = UDim2.new(0.06891, 0, 0.08553, 0)
 
 -- StarterGui.talentles.Frame.scrolltab.bpm
-local bpmbox = Instance.new("TextBox", bar);
-bpmbox["CursorPosition"] = -1;
-bpmbox["TextColor3"] = Color3.fromRGB(0, 0, 0);
-bpmbox["PlaceholderColor3"] = Color3.fromRGB(72, 72, 72);
-bpmbox["BorderSizePixel"] = 0;
-bpmbox["TextWrapped"] = true;
-bpmbox["TextSize"] = 14;
-bpmbox["Name"] = [[bpmbox]];
-bpmbox["TextScaled"] = true;
-bpmbox["BackgroundColor3"] = Color3.fromRGB(176, 176, 176);
-bpmbox["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-bpmbox["PlaceholderText"] = [[bpm]];
-bpmbox["Size"] = UDim2.new(0, 90, 0, 20);
-bpmbox["Position"] = UDim2.new(0.1631, 0, 0.6127, 0);
-bpmbox["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-bpmbox["Text"] = [[]];
+local bpmbox = Instance.new("TextBox", bar)
+bpmbox["CursorPosition"] = -1
+bpmbox["TextColor3"] = Color3.fromRGB(0, 0, 0)
+bpmbox["PlaceholderColor3"] = Color3.fromRGB(72, 72, 72)
+bpmbox["BorderSizePixel"] = 0
+bpmbox["TextWrapped"] = true
+bpmbox["TextSize"] = 14
+bpmbox["Name"] = [[bpmbox]]
+bpmbox["TextScaled"] = true
+bpmbox["BackgroundColor3"] = Color3.fromRGB(176, 176, 176)
+bpmbox["FontFace"] =
+    Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+bpmbox["PlaceholderText"] = [[bpm]]
+bpmbox["Size"] = UDim2.new(0, 90, 0, 20)
+bpmbox["Position"] = UDim2.new(0.1631, 0, 0.6127, 0)
+bpmbox["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+bpmbox["Text"] = [[]]
 
 -- StarterGui.talentles.Frame.scrolltab.play
-local playsong = Instance.new("TextButton", bar);
-playsong["BorderSizePixel"] = 0;
-playsong["TextSize"] = 25;
-playsong["TextColor3"] = Color3.fromRGB(0, 0, 0);
-playsong["BackgroundColor3"] = Color3.fromRGB(108, 108, 108);
-playsong["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-playsong["Size"] = UDim2.new(0, 125, 0, 27);
-playsong["Name"] = [[play]];
-playsong["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-playsong["Text"] = [[play song !]];
-playsong["Position"] = UDim2.new(0.06891, 0, 0.38816, 0);
+local playsong = Instance.new("TextButton", bar)
+playsong["BorderSizePixel"] = 0
+playsong["TextSize"] = 25
+playsong["TextColor3"] = Color3.fromRGB(0, 0, 0)
+playsong["BackgroundColor3"] = Color3.fromRGB(108, 108, 108)
+playsong["FontFace"] =
+    Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+playsong["Size"] = UDim2.new(0, 125, 0, 27)
+playsong["Name"] = [[play]]
+playsong["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+playsong["Text"] = [[play song !]]
+playsong["Position"] = UDim2.new(0.06891, 0, 0.38816, 0)
 
-local scroll = Instance.new("ScrollingFrame", frame);
-scroll["Active"] = true;
-scroll["BorderSizePixel"] = 0;
-scroll["BackgroundColor3"] = Color3.fromRGB(46, 46, 46);
-scroll["HorizontalScrollBarInset"] = Enum.ScrollBarInset.Always;
-scroll["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-scroll["Size"] = UDim2.new(0, 220, 0, 152); 
-scroll["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-scroll["Position"] = UDim2.new(0.21666, 0, 0.18382, 0);
-scroll["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+local scroll = Instance.new("ScrollingFrame", frame)
+scroll["Active"] = true
+scroll["BorderSizePixel"] = 0
+scroll["BackgroundColor3"] = Color3.fromRGB(46, 46, 46)
+scroll["HorizontalScrollBarInset"] = Enum.ScrollBarInset.Always
+scroll["AutomaticCanvasSize"] = Enum.AutomaticSize.Y
+scroll["Size"] = UDim2.new(0, 220, 0, 152)
+scroll["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0)
+scroll["Position"] = UDim2.new(0.21666, 0, 0.18382, 0)
+scroll["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 
 local listLayout = Instance.new("UIListLayout", scroll)
 listLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -179,39 +186,41 @@ local padding = Instance.new("UIPadding", scroll)
 padding.PaddingTop = UDim.new(0, 20)
 
 -- StarterGui.ScreenGui.Frame.scrolltab.searchbar
-local searchbar = Instance.new("TextBox", scroll);
-searchbar["CursorPosition"] = -1;
-searchbar["TextColor3"] = Color3.fromRGB(0, 0, 0);
-searchbar["PlaceholderColor3"] = Color3.fromRGB(72, 72, 72);
-searchbar["BorderSizePixel"] = 0;
-searchbar["TextWrapped"] = true;
-searchbar["TextSize"] = 14;
-searchbar["Name"] = [[searchbar]];
-searchbar["TextScaled"] = true;
-searchbar["BackgroundColor3"] = Color3.fromRGB(176, 176, 176);
-searchbar["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-searchbar["PlaceholderText"] = [[Search...]];
-searchbar["Size"] = UDim2.new(0, 150, 0, 20);
-searchbar["Position"] = UDim2.new(0.1631, 0, 0.05, 0);
-searchbar["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-searchbar["Text"] = [[]];
+local searchbar = Instance.new("TextBox", scroll)
+searchbar["CursorPosition"] = -1
+searchbar["TextColor3"] = Color3.fromRGB(0, 0, 0)
+searchbar["PlaceholderColor3"] = Color3.fromRGB(72, 72, 72)
+searchbar["BorderSizePixel"] = 0
+searchbar["TextWrapped"] = true
+searchbar["TextSize"] = 14
+searchbar["Name"] = [[searchbar]]
+searchbar["TextScaled"] = true
+searchbar["BackgroundColor3"] = Color3.fromRGB(176, 176, 176)
+searchbar["FontFace"] =
+    Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+searchbar["PlaceholderText"] = [[Search...]]
+searchbar["Size"] = UDim2.new(0, 150, 0, 20)
+searchbar["Position"] = UDim2.new(0.1631, 0, 0.05, 0)
+searchbar["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+searchbar["Text"] = [[]]
 
 -- StarterGui.ScreenGui.Frame.creds
-local creds = Instance.new("TextLabel", frame);
-creds["TextWrapped"] = true;
-creds["BorderSizePixel"] = 0;
-creds["TextTransparency"] = 0.32;
-creds["TextScaled"] = true;
-creds["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-creds["TextSize"] = 14;
-creds["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-creds["TextColor3"] = Color3.fromRGB(255, 254, 255);
-creds["BackgroundTransparency"] = 1;
-creds["Size"] = UDim2.new(0, 314, 0, 26);
-creds["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-creds["Text"] = [[piano autoplayer by hellohellohell012321]];
-creds["Name"] = [[creds]];
-creds["Position"] = UDim2.new(0.5, 0, 0.19, 0);
+local creds = Instance.new("TextLabel", frame)
+creds["TextWrapped"] = true
+creds["BorderSizePixel"] = 0
+creds["TextTransparency"] = 0.32
+creds["TextScaled"] = true
+creds["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+creds["TextSize"] = 14
+creds["FontFace"] =
+    Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+creds["TextColor3"] = Color3.fromRGB(255, 254, 255)
+creds["BackgroundTransparency"] = 1
+creds["Size"] = UDim2.new(0, 314, 0, 26)
+creds["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+creds["Text"] = [[piano autoplayer by hellohellohell012321]]
+creds["Name"] = [[creds]]
+creds["Position"] = UDim2.new(0.5, 0, 0.19, 0)
 creds["AnchorPoint"] = Vector2.new(0.5, 0.5)
 
 local function filterSongs(query)
@@ -245,17 +254,15 @@ local function filterSongs(query)
     end
 end
 
-searchbar:GetPropertyChangedSignal("Text"):Connect(function()
-    filterSongs(searchbar.Text)
-end)
+searchbar:GetPropertyChangedSignal("Text"):Connect(
+    function()
+        filterSongs(searchbar.Text)
+    end
+)
 
 filterSongs("")
 
-
-
 -- drag script (not mince)
-
-
 
 local UserInputService = game:GetService("UserInputService")
 
@@ -265,75 +272,80 @@ local dragging
 local dragInput
 local dragStart
 local startPos
-	
+
 local function update(input)
-	local delta = input.Position - dragStart
-	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-	end
-	
-gui.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-		dragging = true
-		dragStart = input.Position
-		startPos = gui.Position
-	
-		input.Changed:Connect(function()
-			if input.UserInputState == Enum.UserInputState.End then
-				dragging = false
-			end
-		end)
-	end
-end)
-	
-gui.InputChanged:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-		dragInput = input
-	end
-end)
-	
-UserInputService.InputChanged:Connect(function(input)
-	if input == dragInput and dragging then
-		update(input)
+    local delta = input.Position - dragStart
+    gui.Position =
+        UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
 end
-end)
 
+gui.InputBegan:Connect(
+    function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = gui.Position
 
+            input.Changed:Connect(
+                function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragging = false
+                    end
+                end
+            )
+        end
+    end
+)
+
+gui.InputChanged:Connect(
+    function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end
+)
+
+UserInputService.InputChanged:Connect(
+    function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end
+)
 
 -- RGB button (not mine)
 
-coroutine.wrap(function()
-
-while wait() do
-	playsong.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
-	for i = 0,255,10 do
-		wait()
-		playsong.BackgroundColor3 = Color3.new(255/255,i/255,0/255)
-	end
-	for i = 255,0,-10 do
-		wait()
-		playsong.BackgroundColor3 = Color3.new(i/255,255/255,0/255)
-	end
-	for i = 0,255,10 do
-		wait()
-		playsong.BackgroundColor3 = Color3.new(0/255,255/255,i/255)
-	end
-	for i = 255,0,-10 do
-		wait()
-		playsong.BackgroundColor3 = Color3.new(0/255,i/255,255/255)
-	end
-	for i = 0,255,10 do
-		wait()
-		playsong.BackgroundColor3 = Color3.new(i/255,0/255,255/255)
-	end
-	for i = 255,0,-10 do
-		wait()
-		playsong.BackgroundColor3 = Color3.new(255/255,0/255,i/255)
-	end
-end
-
-end)()
-
-
+coroutine.wrap(
+    function()
+        while wait() do
+            playsong.BackgroundColor3 = Color3.new(255 / 255, 0 / 255, 0 / 255)
+            for i = 0, 255, 10 do
+                wait()
+                playsong.BackgroundColor3 = Color3.new(255 / 255, i / 255, 0 / 255)
+            end
+            for i = 255, 0, -10 do
+                wait()
+                playsong.BackgroundColor3 = Color3.new(i / 255, 255 / 255, 0 / 255)
+            end
+            for i = 0, 255, 10 do
+                wait()
+                playsong.BackgroundColor3 = Color3.new(0 / 255, 255 / 255, i / 255)
+            end
+            for i = 255, 0, -10 do
+                wait()
+                playsong.BackgroundColor3 = Color3.new(0 / 255, i / 255, 255 / 255)
+            end
+            for i = 0, 255, 10 do
+                wait()
+                playsong.BackgroundColor3 = Color3.new(i / 255, 0 / 255, 255 / 255)
+            end
+            for i = 255, 0, -10 do
+                wait()
+                playsong.BackgroundColor3 = Color3.new(255 / 255, 0 / 255, i / 255)
+            end
+        end
+    end
+)()
 
 local function newSongButton(name, textsize, alternateNames)
     local button = Instance.new("TextButton")
@@ -341,7 +353,8 @@ local function newSongButton(name, textsize, alternateNames)
     button.BorderSizePixel = 4
     button.TextColor3 = Color3.fromRGB(255, 255, 255)
     button.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-    button.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+    button.FontFace =
+        Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
     button.Size = UDim2.new(0, 175, 0, 35)
     button.BorderColor3 = Color3.fromRGB(207, 48, 43)
     button.TextSize = tonumber(textsize)
@@ -352,8 +365,6 @@ local function newSongButton(name, textsize, alternateNames)
 
     return button
 end
-
-
 
 -- newSongButton("", 27, {})
 
@@ -368,7 +379,8 @@ seperator.Size = UDim2.new(0, 200, 0, 8)
 
 if game.Players.LocalPlayer.Name == "4BCQA" or game.Players.LocalPlayer.Name == "fredoggins" then
     AVRIL_14 = newSongButton("AVRIL 14", 27, {})
-else end
+else
+end
 
 ALL_GIRLS = newSongButton("ALL GIRLS ARE THE SAME", 19, {"juice wrld"})
 ALL_MY_FELLAS = newSongButton("ALL MY FELLAS", 27, {"popular"})
@@ -380,7 +392,7 @@ ASGORE = newSongButton("ASGORE", 27, {})
 SPEED_OF = newSongButton("AT THE SPEED OF LIGHT", 20, {"geometry dash"})
 A_THOUSAND = newSongButton("A THOUSAND MILES", 24, {"popular"})
 AVENGERS = newSongButton("AVENGERS (EPIC COVER)", 20, {"popular", "movie", "hard"})
-BAD_APPLE = newSongButton("BAD APPLE!!", 27, { "popular"})
+BAD_APPLE = newSongButton("BAD APPLE!!", 27, {"popular"})
 BAD_PIGGIES = newSongButton("BAD PIGGIES", 27, {"popular"})
 BATTLE_AGAINST = newSongButton("BATTLE AGAINST A TRUE HERO", 15, {})
 BEETHOVEN_VIRUS = newSongButton("BEETHOVEN VIRUS", 24, {"beethoven", "popular", "hard"})
@@ -388,8 +400,14 @@ BIRDS_OF_A = newSongButton("BIRDS OF A FEATHER", 23, {"billie eilish"})
 BLOODY = newSongButton("BLOODY MARY", 27, {"lady gaga", "wednesday"})
 BREADY = newSongButton("BREADY, SET, GO!", 25, {"omori"})
 BY_YOUR_SIDE = newSongButton("BY YOUR SIDE", 27, {"omori"})
-CAN_YOU_HEAR = newSongButton("CAN YOU HEAR THE MUSIC", 18, {"cinematic", "hans zimmer", "oppenheimer", "movie", "popular"})
-CAN_YOU_HEAR_EPIC = newSongButton("CAN YOU HEAR THE MUSIC (INSANE COVER)", 9, {"cinematic", "hans zimmer", "oppenheimer", "movie", "popular"})
+CAN_YOU_HEAR =
+    newSongButton("CAN YOU HEAR THE MUSIC", 18, {"cinematic", "hans zimmer", "oppenheimer", "movie", "popular"})
+CAN_YOU_HEAR_EPIC =
+    newSongButton(
+    "CAN YOU HEAR THE MUSIC (INSANE COVER)",
+    9.5,
+    {"cinematic", "hans zimmer", "oppenheimer", "movie", "popular"}
+)
 CANON_D = newSongButton("CANON IN D", 27, {""})
 CARELESS = newSongButton("CARELESS WHISPER", 24, {"love", "popular"})
 CANT_LET = newSongButton("CANT LET GO", 27, {"geometry dash"})
@@ -407,17 +425,18 @@ DRAMAM = newSongButton("DRAMAMIME", 27, {"flawed mangoes"})
 DREAM_FL = newSongButton("DREAM FLOWER", 27, {"klydix"})
 DREAM_ON = newSongButton("DREAM ON", 27, {"aerosmith"})
 DROWNING_LOVE = newSongButton("DROWNING LOVE", 27, {"chasing kou"})
-DRY_HANDS = newSongButton("DRY HANDS", 27, { "c418"})
+DRY_HANDS = newSongButton("DRY HANDS", 27, {"c418"})
 DUMB_DUMB = newSongButton("DUMB DUMB", 27, {"everyone is dumb"})
 DUVET = newSongButton("DUVET", 27, {"boa"})
 EASY_ON_ME = newSongButton("EASY ON ME", 27, {"adele"})
 EXPERIENCE = newSongButton("EXPERIENCE", 27, {"cinematic", "love"})
 FADED = newSongButton("FADED", 27, {"popular", "ncs", "alan walker"})
-FANTAISIE = newSongButton("FANTAISIE IMPROMPTU", 20, { "chopin", "hard"})
-FALLEN_DOWN = newSongButton("FALLEN DOWN", 27, {"popular", })
+FANTAISIE = newSongButton("FANTAISIE IMPROMPTU", 20, {"chopin", "hard"})
+FALLEN_DOWN = newSongButton("FALLEN DOWN", 27, {"popular"})
 FINAL_DUET = newSongButton("FINAL DUET", 27, {"omori"})
 FINALE = newSongButton("FINALE", 27, {})
-FIVE_NIGHTS_1 = newSongButton("FIVE NIGHTS AT FREDDYS 1", 18, {"fnaf", "five nights at freddys", "the living tombstone"})
+FIVE_NIGHTS_1 =
+    newSongButton("FIVE NIGHTS AT FREDDYS 1", 18, {"fnaf", "five nights at freddys", "the living tombstone"})
 FLASHING = newSongButton("FLASHING LIGHTS", 27, {"kanye west", "graduation"})
 FREEDOM_DIVE = newSongButton("FREEDOM DIVE", 27, {"xi"})
 FR = newSongButton("FROM THE START", 25, {"laufey", "love", "popular"})
@@ -428,18 +447,18 @@ GIORNO = newSongButton("GIORNO'S THEME", 27, {"popular"})
 GIVE_UP = newSongButton("NEVER GONNA GIVE YOU UP", 17, {"popular"})
 GOLDENHOUR = newSongButton("GOLDEN HOUR", 27, {"jvke", "love, sad", "popular"})
 GOOD_MORNING = newSongButton("GOOD MORNING (OMORI)", 18, {"omori"})
-HAGGSTORM = newSongButton("HAGGSTORM", 27, { "c418"})
+HAGGSTORM = newSongButton("HAGGSTORM", 27, {"c418"})
 HEARTACHE = newSongButton("HEARTACHE", 27, {})
 HEATHENS = newSongButton("HEATHENS", 27, {"twenty one pilots", "suicide squad"})
 HELLO = newSongButton("HELLO X I LOVE YOU", 26, {"omfg"})
 HIS_THEME = newSongButton("HIS THEME", 27, {})
 HIT_THE_ROAD = newSongButton("HIT THE ROAD, JACK", 24, {"shake"})
 HOPES_DREAMS = newSongButton("HOPES AND DREAMS", 23, {"asriel"})
-HOWLS_MOVING_CASTLE = newSongButton("HOWLS MOVING CASTLE", 20, { "movie", "cinematic", "popular"})
+HOWLS_MOVING_CASTLE = newSongButton("HOWLS MOVING CASTLE", 20, {"movie", "cinematic", "popular"})
 HUNGARIAN = newSongButton("HUNGARIAN DANCE", 23, {})
 IDGAF = newSongButton("IDGAF", 27, {"boywithuke", "blackbear"})
-IDOL = newSongButton("IDOL", 27, { "oshi no ko", "yoasobi"})
-IF_I_AM_WITH_YOU = newSongButton("IF I AM WITH YOU", 27, { "jjk", "jujitsu", "hollow purple"})
+IDOL = newSongButton("IDOL", 27, {"oshi no ko", "yoasobi"})
+IF_I_AM_WITH_YOU = newSongButton("IF I AM WITH YOU", 27, {"jjk", "jujitsu", "hollow purple"})
 IM_STILL = newSongButton("IM STILL STANDING", 26, {"popular"})
 INTERSTELLAR = newSongButton("INTERSTELLAR", 27, {"hans zimmer", "cinematic", "movie", "popular"})
 ISABELLA = newSongButton("ISABELLA'S LULLABY", 24, {})
@@ -448,13 +467,13 @@ ITS_BEEN_SO = newSongButton("ITS BEEN SO LONG", 27, {"the living tombstone", "fi
 I_WANT = newSongButton("I WANT IT THAT WAY", 24, {"love", "popular"})
 SURVIVE = newSongButton("I WILL SURVIVE", 27, {""})
 KEROSENE = newSongButton("KEROSENE", 27, {"popular"})
-KEY = newSongButton("KEY", 27, { "c418"})
+KEY = newSongButton("KEY", 27, {"c418"})
 L = newSongButton("L", 27, {"death note"})
 LA_CAMPANELLA = newSongButton("LA CAMPANELLA", 27, {"etude", "hard", "liszt"})
 LACRIMOSA = newSongButton("LACRIMOSA - REQUIEM", 22, {"mozart", "noot noot"})
 LALALA = newSongButton("LALALA", 27, {"bbno"})
 LIGHTS = newSongButton("LIGHTS THEME", 27, {"death note"})
-LIVING_MICE = newSongButton("LIVING MICE", 27, { "c418"})
+LIVING_MICE = newSongButton("LIVING MICE", 27, {"c418"})
 LOST_LIBRARY = newSongButton("LOST LIBRARY", 27, {"omori"})
 LOST_UMB = newSongButton("LOST UMBRELLA", 27, {"cute depressed", "vocaloid"})
 LOVELY_B = newSongButton("LOVELY BASTARDS", 27, {"phonk"})
@@ -464,13 +483,13 @@ MARRIED = newSongButton("MARRIED LIFE", 27, {"love", "movie", "popular"})
 MARY_ON = newSongButton("MARY ON A CROSS", 27, {""})
 MEGALOVANIA = newSongButton("MEGALOVANIA", 27, {"popular"})
 METAMORPH = newSongButton("METAMORPHOSIS", 27, {"phonk"})
-MICE_ON = newSongButton("MICE ON VENUS", 27, { "c418"})
+MICE_ON = newSongButton("MICE ON VENUS", 27, {"c418"})
 MII = newSongButton("MII CHANNEL THEME", 24, {"wii"})
-MIKU = newSongButton("MIKU", 27, { "vocaloid"})
-MINECRAFT = newSongButton("MINECRAFT", 27, { "c418"})
-MOOG_CITY = newSongButton("MOOG CITY", 27, { "c418"})
-MOONLIGHT = newSongButton("MOONLIGHT SONATA - FIRST MOVEMENT", 10, { "beethoven", "popular"})
-M3 = newSongButton("MOONLIGHT SONATA - THIRD MOVEMENT", 10, { "beethoven", "popular", "hard"})
+MIKU = newSongButton("MIKU", 27, {"vocaloid"})
+MINECRAFT = newSongButton("MINECRAFT", 27, {"c418"})
+MOOG_CITY = newSongButton("MOOG CITY", 27, {"c418"})
+MOONLIGHT = newSongButton("MOONLIGHT SONATA - FIRST MOVEMENT", 10, {"beethoven", "popular"})
+M3 = newSongButton("MOONLIGHT SONATA - THIRD MOVEMENT", 10, {"beethoven", "popular", "hard"})
 NEVER_MEANT = newSongButton("NEVER MEANT TO BELONG", 18, {"popular"})
 NOCTURNE = newSongButton("NOCTURNE", 27, {"chopin"})
 NOT_A_SLACKER = newSongButton("NOT A SLACKER ANYMORE", 18, {})
@@ -478,7 +497,7 @@ NYEH = newSongButton("NYEH HEH HEH!", 27, {"papyrus"})
 ONCE_UPON = newSongButton("ONCE UPON A TIME", 26, {})
 POKEMON = newSongButton("POKEMON MAIN THEME", 18, {"popular"})
 POKEMON_RED = newSongButton("POKEMON RED AND BLUE", 18, {"popular"})
-RACING_INTO = newSongButton("RACING INTO THE NIGHT", 20, { "yoasobi"})
+RACING_INTO = newSongButton("RACING INTO THE NIGHT", 20, {"yoasobi"})
 RATDANCE = newSongButton("RAT DANCE", 27, {"chess", "popular"})
 RIVER_FLOWS = newSongButton("RIVER FLOWS IN YOU", 23, {"popular"})
 ROMANTIC_HOMICIDE = newSongButton("ROMANTIC HOMICIDE", 22, {"love"})
@@ -498,14 +517,14 @@ SPEAR_OF = newSongButton("SPEAR OF JUSTICE", 26, {})
 SPIDER_DANCE = newSongButton("SPIDER DANCE", 27, {"muffet"})
 STAY = newSongButton("STAY", 27, {"justin bieber", "kid laroi"})
 STEREO_MADNESS = newSongButton("STEREO MADNESS", 27, {"geometry dash"})
-SUBWOOFER = newSongButton("SUBWOOFER LULLABY", 20, { "c418"})
+SUBWOOFER = newSongButton("SUBWOOFER LULLABY", 20, {"c418"})
 SUGAR_PLUM = newSongButton("DANCE OF THE SUGAR PLUM FAIRY", 13, {"christmas", "hard"})
 SUNFLOWER = newSongButton("SUNFLOWER", 27, {"spider man"})
 SUPER_MARIOS = newSongButton("SUPER MARIO BROS", 23, {""})
 SUZUME = newSongButton("SUZUME NO TOJIMARI", 22, {"suzume", "radwimps"})
 SWEATER_WEATHER = newSongButton("SWEATER WEATHER", 23, {"the neighbourhood", "love", "popular"})
 SWIMMING = newSongButton("SWIMMING", 27, {"flawed mangoes", "dramamime"})
-SWEDEN = newSongButton("SWEDEN", 27, { "c418"})
+SWEDEN = newSongButton("SWEDEN", 27, {"c418"})
 THE_BEN = newSongButton("THE BENONI", 27, {""})
 THE_ENTERTAINER = newSongButton("THE ENTERTAINER", 25, {})
 THE_NIGHTS = newSongButton("THE NIGHTS", 27, {"avicii"})
@@ -521,15 +540,15 @@ UNRAVEL = newSongButton("UNRAVEL", 27, {"japan"})
 UNRAVEL_EPIC = newSongButton("UNRAVEL (INSANE COVER)", 18, {"japan"})
 VAMPIRE = newSongButton("VAMPIRE", 27, {"love", "olivia rodrigo"})
 VIVA_LA_VIDA = newSongButton("VIVA LA VIDA", 27, {"popular", "coldplay"})
-WAITING_FOR =  newSongButton("WAITING FOR LOVE", 26, {"avici"})
+WAITING_FOR = newSongButton("WAITING FOR LOVE", 26, {"avici"})
 WAKE_ME = newSongButton("WAKE ME UP", 27, {"avicii"})
 WASHING = newSongButton("WASHING MACHINE HEART", 18, {""})
 WE_DONT = newSongButton("WE DONT TALK ABOUT BRUNO", 15, {"encanto"})
-WET_HANDS = newSongButton("WET HANDS", 27, { "c418"})
+WET_HANDS = newSongButton("WET HANDS", 27, {"c418"})
 WHERE_WE = newSongButton("WHERE WE PLAYED", 25, {"omori"})
-WINTER_WIND = newSongButton("WINTER WIND (ETUDE OP.25 NO.11)", 13, { "chopin", "hard"})
+WINTER_WIND = newSongButton("WINTER WIND (ETUDE OP.25 NO.11)", 13, {"chopin", "hard"})
 WORLDS_END = newSongButton("WORLDS END VALENTINE", 18, {"omori"})
-YOUNG_GIRL_A = newSongButton("YOUNG GIRL A", 27, {"siinamota",  "vocaloid"})
+YOUNG_GIRL_A = newSongButton("YOUNG GIRL A", 27, {"siinamota", "vocaloid"})
 YOUR_REALITY = newSongButton("YOUR REALITY", 27, {"ddlc", "doki"})
 MANGOMANGOMANGO = newSongButton("MANGO MANGO MANGO", 27, {""})
 DEATH_WALTZ = newSongButton("DEATH WALTZ (WARNING)", 19, {""})
@@ -542,27 +561,34 @@ for _, button in ipairs(frame:GetChildren()) do
     end
 end
 
-table.sort(framebuttons, function(a, b)
-    return a.Name:lower() < b.Name:lower()
-end)
+table.sort(
+    framebuttons,
+    function(a, b)
+        return a.Name:lower() < b.Name:lower()
+    end
+)
 
 for index, button in ipairs(framebuttons) do
     button.LayoutOrder = index
 end
 
-
-
 local songs = {
-    {button = INTERSTELLAR, bpm = "104", var = false, url = "INTERSTELLAR", cat = {"epic"}},
+    {button = INTERSTELLAR, bpm = "104", var = false, url = "INTERSTELLAR", cat = {"epic", "beautiful"}},
     {button = RUSHE, bpm = "80", var = false, url = "RUSH_E", cat = {"memes", "popular"}},
     {button = GOLDENHOUR, bpm = "94", var = false, url = "GOLDEN_HOUR", cat = {"pop", "best"}},
     {button = CUPID, bpm = "120", var = false, url = "CUPID", cat = {"pop"}},
     {button = RATDANCE, bpm = "120", var = false, url = "RAT_DANCE", cat = {"memes"}},
     {button = RUNAWAY, bpm = "85", var = false, url = "RUNAWAY", cat = {"pop"}},
     {button = YOUR_REALITY, bpm = "105", var = false, url = "YOUR_REALITY", cat = {"video games"}},
-    {button = ANOTHER_LOVE, bpm = "123", var = false, url = "ANOTHER_LOVE", cat = {"sad", "pop", "best", "popular", "epic"}},
+    {
+        button = ANOTHER_LOVE,
+        bpm = "123",
+        var = false,
+        url = "ANOTHER_LOVE",
+        cat = {"sad", "pop", "best", "popular", "epic", "beautiful"}
+    },
     {button = FINAL_DUET, bpm = "84", var = false, url = "FINAL_DUET", cat = {"video games", "omori"}},
-    {button = EXPERIENCE, bpm = "92", var = false, url = "EXPERIENCE", cat = {"epic", "best"}},
+    {button = EXPERIENCE, bpm = "92", var = false, url = "EXPERIENCE", cat = {"epic", "best", "beautiful"}},
     {button = CAN_YOU_HEAR, bpm = "80", var = false, url = "CAN_YOU_HEAR_THE_FUCKING_MUSIC", cat = {"epic"}},
     {button = HOWLS_MOVING_CASTLE, bpm = "156", var = false, url = "HOWLS_MOVING_CASTLE", cat = {"anime/jpop", "best"}},
     {button = YOUNG_GIRL_A, bpm = "130", var = false, url = "YOUNG_GIRL_A", cat = {"anime/jpop", "sad"}},
@@ -570,7 +596,13 @@ local songs = {
     {button = ALL_MY_FELLAS, bpm = "160", var = false, url = "ALL_MY_FELLAS", cat = {"memes"}},
     {button = THICK_OF_IT, bpm = "146", var = false, url = "THICK_OF_IT", cat = {"memes"}},
     {button = ROMANTIC_HOMICIDE, bpm = "132", var = false, url = "ROMANTIC_HOMICIDE", cat = {"sad"}},
-    {button = IF_I_AM_WITH_YOU, bpm = "82", var = false, url = "IF_I_AM_WITH_YOU", cat = {"anime/jpop", "best", "epic"}},
+    {
+        button = IF_I_AM_WITH_YOU,
+        bpm = "82",
+        var = false,
+        url = "IF_I_AM_WITH_YOU",
+        cat = {"anime/jpop", "best", "beautiful"}
+    },
     {button = CRADLES, bpm = "79", var = false, url = "CRADLES", cat = {"electronic"}},
     {button = IDOL, bpm = "166", var = false, url = "IDOL", cat = {"anime/jpop"}},
     {button = RIVER_FLOWS, bpm = "137", var = false, url = "RIVER_FLOWS_IN_YOU", cat = {"sad"}},
@@ -585,7 +617,13 @@ local songs = {
     {button = M3, bpm = "163", var = false, url = "WHAT_THE_FUCKK", cat = {"classical", "best"}},
     {button = NEVER_MEANT, bpm = "66", var = false, url = "NEVER_MEANT", cat = {"anime/jpop"}},
     {button = AVENGERS, bpm = "120", var = false, url = "AVENGERS", cat = {"epic", "best"}},
-    {button = BEETHOVEN_VIRUS, bpm = "162", var = false, url = "BEETHOVEN_VIRUS", cat = {"classical", "electronic", "best"}},
+    {
+        button = BEETHOVEN_VIRUS,
+        bpm = "162",
+        var = false,
+        url = "BEETHOVEN_VIRUS",
+        cat = {"classical", "electronic", "best"}
+    },
     {button = LA_CAMPANELLA, bpm = "107", var = false, url = "LA_CAMPANELLA", cat = {"classical", "best"}},
     {button = KEROSENE, bpm = "116", var = false, url = "KEROSENE", cat = {"electronic"}},
     {button = RACING_INTO, bpm = "129", var = false, url = "RACING_INTO", cat = {"anime/jpop"}},
@@ -593,7 +631,7 @@ local songs = {
     {button = MEGALOVANIA, bpm = "120", var = false, url = "MEGALOVANIA", cat = {"video games", "undertale", "memes"}},
     {button = COCONUT, bpm = "132", var = false, url = "COCONUT", cat = {"video games"}},
     {button = FADED, bpm = "90", var = false, url = "FADED", cat = {"electronic"}},
-    {button = SOLAS, bpm = "120", var = false, url = "SOLAS", cat = {"epic"}},
+    {button = SOLAS, bpm = "120", var = false, url = "SOLAS", cat = {"beautiful"}},
     {button = MARRIED, bpm = "83", var = false, url = "MARRIED", cat = {"sad"}},
     {button = BAD_PIGGIES, bpm = "156", var = false, url = "BAD_PIGGIES", cat = {"video games"}},
     {button = ASGORE, bpm = "115", var = false, url = "ASGORE", cat = {"video games", "undertale"}},
@@ -610,7 +648,7 @@ local songs = {
     {button = MIKU, bpm = "128", var = false, url = "MIKU", cat = {"anime/jpop"}},
     {button = A_THOUSAND, bpm = "100", var = false, url = "A_THOUSAND", cat = {"pop"}},
     {button = SUGAR_PLUM, bpm = "70", var = false, url = "SUGAR_PLUM", cat = {"classical"}},
-    {button = SPEED_OF, bpm = "162", var = false, url = "SPEED_OF", cat = {"video games", }, "electronic"},
+    {button = SPEED_OF, bpm = "162", var = false, url = "SPEED_OF", cat = {"video games"}, "electronic"},
     {button = WET_HANDS, bpm = "74", var = false, url = "WET_HANDS", cat = {"video games", "minecraft"}},
     {button = SWEDEN, bpm = "44", var = false, url = "SWEDEN", cat = {"video games", "minecraft"}},
     {button = SUBWOOFER, bpm = "76", var = false, url = "SUBWOOFER", cat = {"video games", "minecraft"}},
@@ -621,8 +659,20 @@ local songs = {
     {button = KEY, bpm = "70", var = false, url = "KEY", cat = {"video games", "minecraft"}},
     {button = MOOG_CITY, bpm = "116", var = false, url = "MOOG_CITY", cat = {"video games", "minecraft"}},
     {button = MINECRAFT, bpm = "106", var = false, url = "MINECRAFT", cat = {"video games", "minecraft"}},
-    {button = UNDERTALE, bpm = "100", var = false, url = "UNDERTALE", cat = {"video games", "undertale", "best", "epic"}},
-    {button = HOPES_DREAMS, bpm = "170", var = false, url = "HOPES_DREAMS", cat = {"video games", "undertale", "best", "epic"}},
+    {
+        button = UNDERTALE,
+        bpm = "100",
+        var = false,
+        url = "UNDERTALE",
+        cat = {"video games", "undertale", "best", "epic"}
+    },
+    {
+        button = HOPES_DREAMS,
+        bpm = "170",
+        var = false,
+        url = "HOPES_DREAMS",
+        cat = {"video games", "undertale", "best", "epic"}
+    },
     {button = NYEH, bpm = "150", var = false, url = "NYEH", cat = {"video games", "undertale", "best"}},
     {button = SPIDER_DANCE, bpm = "115", var = false, url = "SPIDER_DANCE", cat = {"video games", "undertale"}},
     {button = HEARTACHE, bpm = "160", var = false, url = "HEARTACHE", cat = {"video games", "undertale"}},
@@ -647,7 +697,7 @@ local songs = {
     {button = FUR_ELISE, bpm = "72", var = false, url = "FUR_ELISE", cat = {"classical"}},
     {button = MOONLIGHT, bpm = "51", var = false, url = "MOONLIGHT", cat = {"classical"}},
     {button = FANTAISIE, bpm = "168", var = false, url = "FANTAISIE", cat = {"classical"}},
-    {button = DROWNING_LOVE, bpm = "112", var = false, url = "DROWNING_LOVE", cat = {"epic", "sad", "best"}},
+    {button = DROWNING_LOVE, bpm = "112", var = false, url = "DROWNING_LOVE", cat = {"beautiful", "sad", "best"}},
     {button = CANON_D, bpm = "100", var = false, url = "CANON_D", cat = {"classical"}},
     {button = FREEDOM_DIVE, bpm = "220", var = false, url = "FREEDOM_DIVE", cat = {"electronic"}},
     {button = STAY, bpm = "85", var = false, url = "STAY", cat = {"pop"}},
@@ -669,12 +719,12 @@ local songs = {
     {button = IDGAF, bpm = "196", var = false, url = "IDGAF", cat = {"pop", "sad"}},
     {button = EASY_ON_ME, bpm = "73", var = false, url = "EASY_ON_ME", cat = {"pop"}},
     {button = METAMORPH, bpm = "180", var = false, url = "METAMORPH", cat = {"electronic"}},
-    {button = SWIMMING, bpm = "165", var= false, url = "SWIMMING", cat = {"epic", "best"}},
-    {button = DRAMAM, bpm = "224", var = false, url = "DRAMAM", cat = {"epic"}},
-    {button = LOST_UMB , bpm = "133", var = false, url = "LOST_UMB", cat = {"electronic", "anime/jpop"}},
-    {button = LOVELY_B , bpm = "150", var = false, url = "LOVELY_B", cat = {"memes", "best"}},
-    {button = TRAP_R , bpm = "151", var = false, url = "TRAP_R", cat = {"memes", "epic", "best"}},
-    {button = MANGOMANGOMANGO , bpm = "110", var = false, url = "MANGOMANGOMANGO", cat = {"epic"}},
+    {button = SWIMMING, bpm = "165", var = false, url = "SWIMMING", cat = {"beautiful", "best"}},
+    {button = DRAMAM, bpm = "224", var = false, url = "DRAMAM", cat = {"beautiful"}},
+    {button = LOST_UMB, bpm = "133", var = false, url = "LOST_UMB", cat = {"electronic", "anime/jpop"}},
+    {button = LOVELY_B, bpm = "150", var = false, url = "LOVELY_B", cat = {"memes", "best"}},
+    {button = TRAP_R, bpm = "151", var = false, url = "TRAP_R", cat = {"memes", "epic", "best"}},
+    {button = MANGOMANGOMANGO, bpm = "110", var = false, url = "MANGOMANGOMANGO", cat = {"epic"}},
     {button = DREAM_FL, bpm = "150", var = false, url = "DREAM_FL", cat = {"electronic"}},
     {button = LALALA, bpm = "130", var = false, url = "LALALA", cat = {"pop"}},
     {button = THE_BEN, bpm = "180", var = false, url = "THE_BEN", cat = {"classical", "epic", "best"}},
@@ -698,7 +748,7 @@ local songs = {
     {button = CHRISTMAS_KIDS, bpm = "152", var = false, url = "CHRISTMAS_KIDS", cat = {"sad"}},
     {button = DARK_BEACH, bpm = "130", var = false, url = "DARK_BEACH", cat = {"sad", "best"}},
     {button = FUKASHIGI, bpm = "90", var = false, url = "FUKASHIGI", cat = {"anime/jpop"}},
-    {button = SPARKLE, bpm = "192", var = false, url = "SPARKLE", cat = {"anime/jpop", "best", "epic"}},
+    {button = SPARKLE, bpm = "192", var = false, url = "SPARKLE", cat = {"anime/jpop", "best", "beautiful"}},
     {button = SHIKAIRO, bpm = "182", var = false, url = "SHIKAIRO", cat = {"anime/jpop", "memes"}},
     {button = WASHING, bpm = "114", var = false, url = "WASHING", cat = {"sad"}},
     {button = CAN_YOU_HEAR_EPIC, bpm = "102", var = false, url = "CAN_YOU_HEAR_EPIC", cat = {"epic", "best"}},
@@ -708,21 +758,26 @@ local songs = {
     {button = BIRDS_OF_A, bpm = "105", var = false, url = "BIRDS_OF_A", cat = {"pop"}},
     {button = CANT_LET, bpm = "160", var = false, url = "CANT_LET", cat = {"video games", "electronic"}},
     {button = DEADLOCKED, bpm = "140", var = false, url = "DEADLOCKED", cat = {"video games", "electronic"}},
-    {button = DUVET, bpm = "91", var = false, url = "DUVET", cat = {"sad", "epic", "best"}},
-    {button = FIVE_NIGHTS_1, bpm = "108", var = false, url = "FIVE_NIGHTS_1", cat = {"video games", "electronic", "epic"}},
+    {button = DUVET, bpm = "91", var = false, url = "DUVET", cat = {"sad", "beautiful", "best"}},
+    {
+        button = FIVE_NIGHTS_1,
+        bpm = "108",
+        var = false,
+        url = "FIVE_NIGHTS_1",
+        cat = {"video games", "electronic", "epic"}
+    },
     {button = ITS_BEEN_SO, bpm = "96", var = false, url = "ITS_BEEN_SO", cat = {"video games", "electronic"}},
     {button = STEREO_MADNESS, bpm = "160", var = false, url = "STEREO_MADNESS", cat = {"video games", "electronic"}},
     {button = SUNFLOWER, bpm = "90", var = false, url = "SUNFLOWER", cat = {"pop"}},
     {button = WAITING_FOR, bpm = "129", var = false, url = "WAITING_FOR", cat = {"pop", "electronic", "best"}},
     {button = WAKE_ME, bpm = "110", var = false, url = "WAKE_ME_UP", cat = {"pop", "electronic"}},
-    {button = GEOMETRY_DASH, bpm = "128", var = false, url = "GEOMETRY_DASH", cat = {"video games", "electronic"}},
+    {button = GEOMETRY_DASH, bpm = "128", var = false, url = "GEOMETRY_DASH", cat = {"video games", "electronic"}}
 
---[[
+    --[[
 
     {button = , bpm = "", var = false, url = "", cat = {""}}
 
 ]]
-
 }
 
 for _, song in ipairs(songs) do
@@ -730,10 +785,21 @@ for _, song in ipairs(songs) do
 end
 
 local categories = {
-    "best", "epic", "video games", "memes", "classical", "pop", "sad", "rock", "anime/jpop", "electronic", "undertale", "omori", "minecraft"
-}  -- The main table for unique categories
-
-
+    "best",
+    "epic",
+    "beautiful",
+    "video games",
+    "memes",
+    "classical",
+    "pop",
+    "sad",
+    "rock",
+    "anime/jpop",
+    "electronic",
+    "undertale",
+    "omori",
+    "minecraft"
+} -- The main table for unique categories
 
 local folderexists = false
 local customsongs = {}
@@ -747,19 +813,18 @@ if game.Players.LocalPlayer.Name == "4BCQA" then
     table.insert(songs, specsong)
 end
 
-
 local customnotice = Instance.new("TextLabel")
 customnotice.Parent = scroll -- Make sure 'scroll' exists
 customnotice.BorderSizePixel = 4
 customnotice.TextColor3 = Color3.fromRGB(255, 255, 255)
 customnotice.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
-customnotice.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+customnotice.FontFace =
+    Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 customnotice.Size = UDim2.new(0, 175, 0, 75)
 customnotice.BorderColor3 = Color3.fromRGB(207, 48, 43)
 customnotice.TextSize = 25
 customnotice.TextWrapped = true
-customnotice.Text = "Your executor does not support this feature."
-
+customnotice.Text = "Your executor might not support this feature."
 
 local customcat = Instance.new("TextButton", categoriesFrame)
 customcat.Text = "custom songs (0)"
@@ -771,22 +836,22 @@ customcat.TextColor3 = Color3.fromRGB(255, 255, 255)
 customcat.Font = Enum.Font.SourceSansBold
 customcat.TextSize = 14
 
-customcat.MouseButton1Click:Connect(function()
-    
-    for _, song in ipairs(songs) do
-        song.button.Visible = false
-    end
-    
-    for _, song in ipairs(customsongs) do
-        song.Visible = true
-    end
+customcat.MouseButton1Click:Connect(
+    function()
+        for _, song in ipairs(songs) do
+            song.button.Visible = false
+        end
 
-    PLAYALL.Visible = false
-    PLAYRANDOM.Visible = false
-    LOOPRANDOM.Visible = false
-    customnotice.Visible = true
-    
-end)
+        for _, song in ipairs(customsongs) do
+            song.Visible = true
+        end
+
+        PLAYALL.Visible = false
+        PLAYRANDOM.Visible = false
+        LOOPRANDOM.Visible = false
+        customnotice.Visible = true
+    end
+)
 
 function updatecustomcount()
     customcat.Text = "custom songs (" .. tostring(#customsongs - 1) .. ")"
@@ -802,22 +867,21 @@ othercats.TextColor3 = Color3.fromRGB(255, 255, 255)
 othercats.Font = Enum.Font.SourceSansBold
 othercats.TextSize = 14
 
-othercats.MouseButton1Click:Connect(function()
-    for _, song in ipairs(songs) do
-        song.button.Visible = false
-    end
-    for _, song in ipairs(customsongs) do
-        song.Visible = false
-    end
-    
-    PLAYALL.Visible = true
-    PLAYRANDOM.Visible = true
-    LOOPRANDOM.Visible = true
-    customnotice.Visible = false
-    
-end)
+othercats.MouseButton1Click:Connect(
+    function()
+        for _, song in ipairs(songs) do
+            song.button.Visible = false
+        end
+        for _, song in ipairs(customsongs) do
+            song.Visible = false
+        end
 
-
+        PLAYALL.Visible = true
+        PLAYRANDOM.Visible = true
+        LOOPRANDOM.Visible = true
+        customnotice.Visible = false
+    end
+)
 
 local allcats = Instance.new("TextButton", categoriesFrame)
 allcats.Text = "all (" .. tostring(#songs) .. ")"
@@ -829,29 +893,26 @@ allcats.TextColor3 = Color3.fromRGB(255, 255, 255)
 allcats.Font = Enum.Font.SourceSansBold
 allcats.TextSize = 14
 
-allcats.MouseButton1Click:Connect(function()
-    for _, song in ipairs(songs) do
-        song.button.Visible = true
+allcats.MouseButton1Click:Connect(
+    function()
+        for _, song in ipairs(songs) do
+            song.button.Visible = true
+        end
+
+        for _, song in ipairs(customsongs) do
+            song.Visible = false
+        end
+
+        PLAYALL.Visible = true
+        PLAYRANDOM.Visible = true
+        LOOPRANDOM.Visible = true
+        customnotice.Visible = false
     end
-    
-    for _, song in ipairs(customsongs) do
-        song.Visible = false
-    end
-
-    PLAYALL.Visible = true
-    PLAYRANDOM.Visible = true
-    LOOPRANDOM.Visible = true
-    customnotice.Visible = false
-    
-end)
-
-
+)
 
 local existing = {}
 
-
 for _, categoryName in pairs(categories) do
-    
     local numsongs = {}
     for _, song in ipairs(songs) do
         for _, category in ipairs(song.cat) do
@@ -860,7 +921,7 @@ for _, categoryName in pairs(categories) do
             end
         end
     end
-    
+
     local categoryButton = Instance.new("TextButton", categoriesFrame)
     categoryButton.Text = categoryName .. " (" .. tostring(#numsongs) .. ")"
     categoryButton.Size = UDim2.new(0, 100, 0, 25)
@@ -870,30 +931,29 @@ for _, categoryName in pairs(categories) do
     categoryButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     categoryButton.Font = Enum.Font.SourceSansBold
     categoryButton.TextSize = 14
-    
-    
-    categoryButton.MouseButton1Click:Connect(function()
-        PLAYALL.Visible = false
-        PLAYRANDOM.Visible = false
-        LOOPRANDOM.Visible = false
-        
-        for _, song in ipairs(songs) do
-            song.button.Visible = false
-            for _, category in ipairs(song.cat) do
-                if category == categoryName then
-                    song.button.Visible = true
+
+    categoryButton.MouseButton1Click:Connect(
+        function()
+            PLAYALL.Visible = false
+            PLAYRANDOM.Visible = false
+            LOOPRANDOM.Visible = false
+
+            for _, song in ipairs(songs) do
+                song.button.Visible = false
+                for _, category in ipairs(song.cat) do
+                    if category == categoryName then
+                        song.button.Visible = true
+                    end
                 end
             end
-        end
-        
-        for _, song in ipairs(customsongs) do
-        song.Visible = false
-        end
-        customnotice.Visible = false
-    end)
-end
 
-    
+            for _, song in ipairs(customsongs) do
+                song.Visible = false
+            end
+            customnotice.Visible = false
+        end
+    )
+end
 
 function disable()
     for _, song in ipairs(songs) do
@@ -906,76 +966,71 @@ disable()
 songisplaying = false
 
 function playbuttonclicked()
-
-
-if songisplaying then
-    playSound("6493287948", 0.1) 
-    NotificationLibrary:SendNotification("Error", "A song is already playing.", 1) return
-end
-
-songisplaying = true
-
-bpm = tonumber(bpmbox.Text)
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/loader_main.lua", true))()
-
--- find which song to play
-
-for _, song in pairs(songs) do
-    if song.var == true then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. song.url, true))()
-        break
+    if songisplaying then
+        playSound("6493287948", 0.1)
+        NotificationLibrary:SendNotification("Error", "A song is already playing.", 1)
+        return
     end
-end
 
+    songisplaying = true
+
+    bpm = tonumber(bpmbox.Text)
+
+    loadstring(
+        game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/loader_main.lua", true)
+    )()
+
+    -- find which song to play
+
+    for _, song in pairs(songs) do
+        if song.var == true then
+            loadstring(
+                game:HttpGet(
+                    "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. song.url,
+                    true
+                )
+            )()
+            break
+        end
+    end
 end -- close the play song onclick function
-
 
 playsong.MouseButton1Click:Connect(playbuttonclicked)
 
-
 for _, song in ipairs(songs) do
-    song.button.MouseButton1Click:Connect(function()
-        disable()
-        song.var = true
-        songname.Text = song.button.Text
-        bpmbox.Text = song.bpm
-    end)
+    song.button.MouseButton1Click:Connect(
+        function()
+            disable()
+            song.var = true
+            songname.Text = song.button.Text
+            bpmbox.Text = song.bpm
+        end
+    )
 end
-
-
 
 -- play random function
 
+PLAYRANDOM.MouseButton1Click:Connect(
+    function()
+        local function getRandomSong()
+            local ransong = math.random(1, #songs)
+            return songs[ransong]
+        end
 
+        local randomSong = getRandomSong()
 
-PLAYRANDOM.MouseButton1Click:Connect(function()
-    
-local function getRandomSong()
-    local ransong = math.random(1, #songs)
-    return songs[ransong]
-end
+        disable()
+        randomSong.var = true
+        songname.Text = randomSong.button.Name
+        bpmbox.Text = randomSong.bpm
 
-local randomSong = getRandomSong()
-
-disable()
-randomSong.var = true
-songname.Text = randomSong.button.Name
-bpmbox.Text = randomSong.bpm
-
-playbuttonclicked()
-
-end)
-
-
+        playbuttonclicked()
+    end
+)
 
 -- play all function
 
-
-
 playingall = false
-
-
 
 function createstopbutton()
     if not STOPLOOP then
@@ -985,7 +1040,8 @@ function createstopbutton()
         STOPLOOP["TextSize"] = 14
         STOPLOOP["TextColor3"] = Color3.fromRGB(255, 255, 255)
         STOPLOOP["BackgroundColor3"] = Color3.fromRGB(109, 109, 109)
-        STOPLOOP["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+        STOPLOOP["FontFace"] =
+            Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
         STOPLOOP["AutomaticSize"] = Enum.AutomaticSize.XY
         STOPLOOP["Size"] = UDim2.new(0, 131, 0, 29)
         STOPLOOP["Name"] = [[stoploop]]
@@ -993,127 +1049,131 @@ function createstopbutton()
         STOPLOOP["Text"] = [[STOP LOOPING SONGS]]
         STOPLOOP["Position"] = UDim2.new(0.07476, 0, 0.80575, 0)
 
-        STOPLOOP.MouseButton1Click:Connect(function()
-            playingall = false
-            STOPLOOP:Destroy()
-            stopPlayingSongs()
-            STOPLOOP = nil
-        end)
+        STOPLOOP.MouseButton1Click:Connect(
+            function()
+                playingall = false
+                STOPLOOP:Destroy()
+                stopPlayingSongs()
+                STOPLOOP = nil
+            end
+        )
     end
 end
 
-
-
-PLAYALL.MouseButton1Click:Connect(function()
-    if playingall then return end
-    playingall = true
-    createstopbutton()
-    
-    for _, song in ipairs(songs) do
-        if not playingall then break end
-        disable()
-        songname.Text = song.button.name 
-        bpmbox.Text = song.bpm
-        song.var = true
-        playbuttonclicked()
-        wait(1)
-    end
-end)
-
-
-
-LOOPRANDOM.MouseButton1Click:Connect(function()
-    if playingall then return end
-    playingall = true
-    createstopbutton()
-    
-    while true do
-        local function getRandomSong()
-            local ransong = math.random(1, #songs)
-            return songs[ransong]
+PLAYALL.MouseButton1Click:Connect(
+    function()
+        if playingall then
+            return
         end
-        local randomSong = getRandomSong()
-        if not playingall then break end
-        
-        disable()
-        randomSong.var = true
-        songname.Text = randomSong.button.Name
-        bpmbox.Text = randomSong.bpm
-        playbuttonclicked()
-        wait(1)
+        playingall = true
+        createstopbutton()
+
+        for _, song in ipairs(songs) do
+            if not playingall then
+                break
+            end
+            disable()
+            songname.Text = song.button.name
+            bpmbox.Text = song.bpm
+            song.var = true
+            playbuttonclicked()
+            wait(1)
+        end
     end
-end)
+)
 
+LOOPRANDOM.MouseButton1Click:Connect(
+    function()
+        if playingall then
+            return
+        end
+        playingall = true
+        createstopbutton()
 
+        while true do
+            local function getRandomSong()
+                local ransong = math.random(1, #songs)
+                return songs[ransong]
+            end
+            local randomSong = getRandomSong()
+            if not playingall then
+                break
+            end
+
+            disable()
+            randomSong.var = true
+            songname.Text = randomSong.button.Name
+            bpmbox.Text = randomSong.bpm
+            playbuttonclicked()
+            wait(1)
+        end
+    end
+)
 
 -- close function
 
+closeButton.MouseButton1Click:Connect(
+    function()
+        screengui:Destroy()
+        STOPLOOP = nil
+        playingall = false
+        playsong = nil -- so the rgb wont get messed up[]
+        stopAllSongs()
+    end
+)
 
-
-closeButton.MouseButton1Click:Connect(function()
-    screengui:Destroy()
-    STOPLOOP = nil
-    playingall = false
-    playsong = nil -- so the rgb wont get messed up[]
-    stopAllSongs()
-end)
-
-infoButton.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/info.lua", true))()
-end)
-
-    
+infoButton.MouseButton1Click:Connect(
+    function()
+        loadstring(
+            game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/info.lua", true)
+        )()
+    end
+)
 
 -- function to make the song buttons
 
-
-
 local function newCustomSongButton(name)
+    local customsongframe = Instance.new("Frame")
+    local test = Instance.new("TextButton")
+    local ImageButton = Instance.new("ImageButton")
 
-local customsongframe = Instance.new("Frame")
-local test = Instance.new("TextButton")
-local ImageButton = Instance.new("ImageButton")
+    customsongframe.Name = "customsongframe"
+    customsongframe.Parent = scroll
+    customsongframe.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
+    customsongframe.BorderColor3 = Color3.fromRGB(207, 48, 43)
+    customsongframe.BorderSizePixel = 4
+    customsongframe.Position = UDim2.new(0.272727281, 0, 0.431818187, 0)
+    customsongframe.Size = UDim2.new(0, 175, 0, 35)
+    customsongframe.SizeConstraint = Enum.SizeConstraint.RelativeYY
 
-customsongframe.Name = "customsongframe"
-customsongframe.Parent = scroll
-customsongframe.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
-customsongframe.BorderColor3 = Color3.fromRGB(207, 48, 43)
-customsongframe.BorderSizePixel = 4
-customsongframe.Position = UDim2.new(0.272727281, 0, 0.431818187, 0)
-customsongframe.Size = UDim2.new(0, 175, 0, 35)
-customsongframe.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    test.Name = name
+    test.Parent = customsongframe
+    test.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
+    test.BackgroundTransparency = 1.000
+    test.BorderColor3 = Color3.fromRGB(207, 48, 43)
+    test.BorderSizePixel = 0
+    test.Size = UDim2.new(0, 135, 0, 35)
+    test.Font = Enum.Font.SourceSansBold
+    test.Text = name
+    test.TextColor3 = Color3.fromRGB(255, 255, 255)
+    test.TextScaled = true
+    test.TextSize = 25.000
+    test.TextWrapped = true
 
-test.Name = name
-test.Parent = customsongframe
-test.BackgroundColor3 = Color3.fromRGB(84, 70, 156)
-test.BackgroundTransparency = 1.000
-test.BorderColor3 = Color3.fromRGB(207, 48, 43)
-test.BorderSizePixel = 0
-test.Size = UDim2.new(0, 135, 0, 35)
-test.Font = Enum.Font.SourceSansBold
-test.Text = name
-test.TextColor3 = Color3.fromRGB(255, 255, 255)
-test.TextScaled = true
-test.TextSize = 25.000
-test.TextWrapped = true
+    ImageButton.Parent = customsongframe
+    ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ImageButton.BackgroundTransparency = 1.000
+    ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ImageButton.BorderSizePixel = 0
+    ImageButton.Position = UDim2.new(0.816999972, 0, 0.115000002, 0)
+    ImageButton.Size = UDim2.new(0, 26, 0, 27)
+    ImageButton.Image = "http://www.roblox.com/asset/?id=107642956245185"
 
-ImageButton.Parent = customsongframe
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 1.000
-ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.816999972, 0, 0.115000002, 0)
-ImageButton.Size = UDim2.new(0, 26, 0, 27)
-ImageButton.Image = "http://www.roblox.com/asset/?id=107642956245185"
-
-return {button = test, delbutton = ImageButton, frame = customsongframe}
+    return {button = test, delbutton = ImageButton, frame = customsongframe}
 end
-
-
 
 -- testing if the executor supports
 -- listfiles(""), listfiles([[./TALENTLESS_CUSTOM_SONGS]])
-
 
 local function test(name, _, func)
     print("Running test: " .. name)
@@ -1130,29 +1190,54 @@ end
 local function runTests()
     local allPassed = true
 
-    allPassed = test("makefolder", {}, function()
-        makefolder("TALENTLESS_makefolder")
-        assert(isfolder("TALENTLESS_makefolder"), "Did not create the folder")
-    end) and allPassed
+    allPassed =
+        test(
+        "makefolder",
+        {},
+        function()
+            makefolder("TALENTLESS_makefolder")
+            assert(isfolder("TALENTLESS_makefolder"), "Did not create the folder")
+        end
+    ) and allPassed
 
-    allPassed = test("listfiles", {}, function()
-        assert(#listfiles("") > 0, "Did not return a list of files")
-    end) and allPassed
+    allPassed =
+        test(
+        "listfiles",
+        {},
+        function()
+            assert(#listfiles("") > 0, "Did not return a list of files")
+        end
+    ) and allPassed
 
-    allPassed = test("writefile", {}, function()
-        writefile("TALENTLESS_makefolder/writefile.txt", "success")
-        testfile = listfiles("./TALENTLESS_makefolder")[1]
-        assert(readfile(testfile) == "success", "Did not write the file")
-    end) and allPassed
+    allPassed =
+        test(
+        "writefile",
+        {},
+        function()
+            writefile("TALENTLESS_makefolder/writefile.txt", "success")
+            testfile = listfiles("./TALENTLESS_makefolder")[1]
+            assert(readfile(testfile) == "success", "Did not write the file")
+        end
+    ) and allPassed
 
-    allPassed = test("listfiles2", {}, function()
-        assert(#listfiles("./TALENTLESS_makefolder") > 0, "Did not return a list of files")
-    end) and allPassed
+    allPassed =
+        test(
+        "listfiles2",
+        {},
+        function()
+            assert(#listfiles("./TALENTLESS_makefolder") > 0, "Did not return a list of files")
+        end
+    ) and allPassed
 
-    allPassed = test("delfile", {}, function()
-        delfile(testfile)
-        assert(not isfile(testfile), "Did not delete the file")
-    end) and allPassed
+    allPassed =
+        test(
+        "delfile",
+        {},
+        function()
+            delfile(testfile)
+            assert(not isfile(testfile), "Did not delete the file")
+        end
+    ) and allPassed
 
     return allPassed
 end
@@ -1160,145 +1245,156 @@ end
 local result = runTests()
 
 if result == true then
-
-print("this executor supports custom songs")
-
-customnotice:Destroy()
-
-NEWSONGBUTTON = newSongButton("+", 30, {""})
-NEWSONGBUTTON.Visible = false
-print("loaded NEWSONGBUTTON")
-
-NEWSONGBUTTON.MouseButton1Click:Connect(function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/add_song.lua", true))()
-
-end)
-
-table.insert(customsongs, NEWSONGBUTTON)
-local addedCustoms = {}
-
--- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
-
-function updateSongs()
-
-local alreadyAdded
-
-for _, file in ipairs(listfiles("")) do
-    print(tostring(file))
-    if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then folderexists = true print("custom songs folder found") break end
+    print("this executor supports custom songs")
+    customnotice:Destroy()
 end
 
-print("searching for custom song files...")
+    NEWSONGBUTTON = newSongButton("+", 30, {""})
+    NEWSONGBUTTON.Visible = false
+    print("loaded NEWSONGBUTTON")
 
-if folderexists then
+    NEWSONGBUTTON.MouseButton1Click:Connect(
+        function()
+            loadstring(
+                game:HttpGet(
+                    "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/add_song.lua",
+                    true
+                )
+            )()
+        end
+    )
 
-for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
-    alreadyAdded = false
+    table.insert(customsongs, NEWSONGBUTTON)
+    local addedCustoms = {}
 
-    print("song file found: " .. tostring(custom))
-    
-    local filepath = tostring(custom) -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
+    -- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
 
-    if not table.find(addedCustoms, filepath) then
+    function updateSongs()
+        local alreadyAdded
 
-    if filepath:match("%.txt$") then -- if it has .txt at the end
-    print("its a txt file, continuing")
-
-    table.insert(addedCustoms, filepath) -- add the file to the addedCustoms table
-    local tsongname = filepath:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "Error" -- remove the /, \, and .txt 
-    print("song name: " .. tsongname)
-    
-    local hello = newCustomSongButton(tsongname) -- make the song button
-    local songbutton = hello.button -- get the button
-    local delsongbutton = hello.delbutton
-    local songframe = hello.frame -- get the frame
-    table.insert(customsongs, songframe)
-    songbutton.Visible = false
-
-    print("created song button for " .. tsongname)
-    
-    local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "Error" -- read the file and look for the string after bpm = 
-    print("songbpm found: " .. songbpm)
-
-    songbutton.Visible = true
-
-    songbutton.MouseButton1Click:Connect(function()
-        print("clicked!")
-        
-        if songisplaying then
-            playSound("6493287948", 0.1) 
-            NotificationLibrary:SendNotification("Error", "A song is already playing.", 1) return
-        else 
-        
-        local songcode = readfile(custom) -- define the contents of the song file
-        local func, err = loadstring(songcode) -- load it
-
-        if func then
-            print("running scrip....")
-            songname.Text = tsongname
-            bpmbox.Text = songbpm
-            playSound("6493287948", 0.1) 
-            NotificationLibrary:SendNotification("Success", "Began playing song.", 1)
-            songisplaying = true
-            func()
-        else
-            print("invalid script") 
-            playSound("6493287948", 0.1) 
-            NotificationLibrary:SendNotification("Error", "Your song script is broken. If confused, contact support in the discord.", 5)
+        for _, file in ipairs(listfiles("")) do
+            print(tostring(file))
+            if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then
+                folderexists = true
+                print("custom songs folder found")
+                break
             end
         end
-    end)
 
-    -- Initialize variables outside the event handler
-    local clickTime = 0.5
-    local lastClick = 0
+        print("searching for custom song files...")
 
-    -- Create a single event connection
-    delsongbutton.MouseButton1Click:Connect(function()
-        local now = tick()
-        if now - lastClick <= clickTime then
-            -- Double-click detected
-            print("Double-click detected. Deleting song...")
-            delfile(filepath) -- Delete the file
-            songframe:Destroy()
-            table.remove(customsongs, table.find(customsongs, songbutton))
-            table.remove(addedCustoms, table.find(addedCustoms, filepath))
-            updatecustomcount()
-            playSound("6493287948", 0.1)
-            NotificationLibrary:SendNotification("Success", "Your song has been deleted.", 5)
+        if folderexists then
+            for _, custom in ipairs(listfiles([[./TALENTLESS_CUSTOM_SONGS]])) do
+                alreadyAdded = false
+
+                print("song file found: " .. tostring(custom))
+
+                local filepath = tostring(custom) -- converts it into the format /TALENTLESS_CUSTOM_SONGS\example.txt
+
+                if not table.find(addedCustoms, filepath) then
+                    if filepath:match("%.txt$") then -- if it has .txt at the end
+                        print("its a txt file, continuing")
+
+                        table.insert(addedCustoms, filepath) -- add the file to the addedCustoms table
+                        local tsongname = filepath:gsub([[\]], "/"):match(".*/([^/]+)%.txt$") or "Error" -- remove the /, \, and .txt
+                        print("song name: " .. tsongname)
+
+                        local hello = newCustomSongButton(tsongname) -- make the song button
+                        local songbutton = hello.button -- get the button
+                        local delsongbutton = hello.delbutton
+                        local songframe = hello.frame -- get the frame
+                        table.insert(customsongs, songframe)
+                        songbutton.Visible = false
+
+                        print("created song button for " .. tsongname)
+
+                        local songbpm = readfile(custom):match("bpm%s*=%s*(%d+)") or "Error" -- read the file and look for the string after bpm =
+                        print("songbpm found: " .. songbpm)
+
+                        songbutton.Visible = true
+
+                        songbutton.MouseButton1Click:Connect(
+                            function()
+                                print("clicked!")
+
+                                if songisplaying then
+                                    playSound("6493287948", 0.1)
+                                    NotificationLibrary:SendNotification("Error", "A song is already playing.", 1)
+                                    return
+                                else
+                                    local songcode = readfile(custom) -- define the contents of the song file
+                                    local func, err = loadstring(songcode) -- load it
+
+                                    if func then
+                                        print("running scrip....")
+                                        songname.Text = tsongname
+                                        bpmbox.Text = songbpm
+                                        playSound("6493287948", 0.1)
+                                        NotificationLibrary:SendNotification("Success", "Began playing song.", 1)
+                                        songisplaying = true
+                                        func()
+                                    else
+                                        print("invalid script")
+                                        playSound("6493287948", 0.1)
+                                        NotificationLibrary:SendNotification(
+                                            "Error",
+                                            "Your song script is broken. If confused, contact support in the discord.",
+                                            5
+                                        )
+                                    end
+                                end
+                            end
+                        )
+
+                        -- Initialize variables outside the event handler
+                        local clickTime = 0.5
+                        local lastClick = 0
+
+                        -- Create a single event connection
+                        delsongbutton.MouseButton1Click:Connect(
+                            function()
+                                local now = tick()
+                                if now - lastClick <= clickTime then
+                                    -- Double-click detected
+                                    print("Double-click detected. Deleting song...")
+                                    delfile(filepath) -- Delete the file
+                                    songframe:Destroy()
+                                    table.remove(customsongs, table.find(customsongs, songbutton))
+                                    table.remove(addedCustoms, table.find(addedCustoms, filepath))
+                                    updatecustomcount()
+                                    playSound("6493287948", 0.1)
+                                    NotificationLibrary:SendNotification("Success", "Your song has been deleted.", 5)
+                                else
+                                    -- Single-click detected
+                                    print("Single-click detected. Showing notification...")
+                                    playSound("6493287948", 0.1)
+                                    NotificationLibrary:SendNotification("Info", "Double-click to delete the song.", 3)
+                                end
+                                lastClick = now -- Update the last click time
+                            end
+                        )
+
+                        updatecustomcount()
+                    else -- if yes table.find
+                        print("song already added, skipping")
+                    end
+                else
+                    print("its not a txt, skipping")
+                end
+            end
         else
-            -- Single-click detected
-            print("Single-click detected. Showing notification...")
-            playSound("6493287948", 0.1)
-            NotificationLibrary:SendNotification("Info", "Double-click to delete the song.", 3)
+        end -- ends if folderexists
+    end -- end updatesongs func
+
+    for _, songbutton in ipairs(scroll:GetChildren()) do
+        if songbutton:IsA("TextButton") then
+            if songbutton.Text == "error" then
+                songbutton:Destroy()
+            end
+        else
         end
-        lastClick = now -- Update the last click time
-    end)
-
-    updatecustomcount()
-
-else -- if yes table.find
-    print("song already added, skipping")
-end
-
-    else print("its not a txt, skipping") end
-end
-
-else end -- ends if folderexists
-
-end -- end updatesongs func
-
-for _, songbutton in ipairs(scroll:GetChildren()) do
-    if songbutton:IsA("TextButton") then
-        if songbutton.Text == "error" then
-        songbutton:Destroy()
     end
-else end
-end
 
-wait(0.5)
+    wait(0.5)
 
-updateSongs()
-
-end
+    updateSongs()
