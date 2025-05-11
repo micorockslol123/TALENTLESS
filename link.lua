@@ -1,4 +1,4 @@
-local link = "https://direct-link.net/1347567/talentless"
+local link = "https://www.hellohellohell0.com/talentless"
 
 -- Gui to Lua
 -- Version: 3.2
