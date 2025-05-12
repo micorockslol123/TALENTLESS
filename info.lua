@@ -7,139 +7,100 @@ local function playSound(soundId, loudness)
     sound.Volume = loudness or 1  -- Default to full volume if no loudness is provided
     sound:Play()
 end
+-- Gui to Lua
+-- Version: 3.2
 
--- StarterGui.ScreenGui
-screengui = Instance.new("ScreenGui", game:GetService("CoreGui"));
-screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+-- Instances:
 
-local frame = Instance.new("ScrollingFrame", screengui);
-frame["BorderSizePixel"] = 0;
-frame["BackgroundColor3"] = Color3.fromRGB(47, 47, 47);
-frame["Size"] = UDim2.new(0, 275, 0, 326);
-frame["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-frame["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-frame.AnchorPoint = Vector2.new(0.5, 0.5)
+local infogui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local UIPadding = Instance.new("UIPadding")
+local copy = Instance.new("TextButton")
+local desc = Instance.new("TextLabel")
+local title = Instance.new("TextLabel")
+local dismiss = Instance.new("TextButton")
 
-local listLayout = Instance.new("UIListLayout", frame)
-listLayout.SortOrder = Enum.SortOrder.LayoutOrder
-listLayout.Padding = UDim.new(0, 15)
-listLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+--Properties:
 
-local padding = Instance.new("UIPadding", frame)
-padding.PaddingTop = UDim.new(0, 10)
+infogui.Name = "infogui"
+infogui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+infogui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
--- StarterGui.ScreenGui.Frame.TextLabel
-local newsongLabel = Instance.new("TextLabel", frame);
-newsongLabel["TextWrapped"] = true;
-newsongLabel["BorderSizePixel"] = 3;
-newsongLabel["TextSize"] = 50;
-newsongLabel["BackgroundColor3"] = Color3.fromRGB(208, 49, 44);
-newsongLabel["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-newsongLabel["TextColor3"] = Color3.fromRGB(255, 255, 255);
-newsongLabel["Size"] = UDim2.new(0, 250, 0, 50);
-newsongLabel["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-newsongLabel["Text"] = [[stuff]];
+Frame.Parent = infogui
+Frame.BackgroundColor3 = Color3.fromRGB(33, 33, 41)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.Size = UDim2.new(0, 285, 0, 269)
 
-local midi2lualabel = Instance.new("TextLabel", frame);
-midi2lualabel["BorderSizePixel"] = 3;
-midi2lualabel["TextSize"] = 14;
-midi2lualabel["TextColor3"] = Color3.fromRGB(255, 255, 255);
-midi2lualabel["BackgroundColor3"] = Color3.fromRGB(208, 49, 44);
-midi2lualabel["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-midi2lualabel["Size"] = UDim2.new(0, 240, 0, 35);
-midi2lualabel["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-midi2lualabel["Text"] = [[wanna convert MIDI files into autoplay scripts? use my new website, MIDI2LUA!]];
-midi2lualabel["TextWrapped"] = true;
+UIListLayout.Parent = Frame
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 15)
 
-local midi2lua = Instance.new("TextButton", frame);
-midi2lua["BorderSizePixel"] = 3;
-midi2lua["TextSize"] = 14;
-midi2lua["TextColor3"] = Color3.fromRGB(255, 255, 255);
-midi2lua["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
-midi2lua["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-midi2lua["Size"] = UDim2.new(0, 218, 0, 25);
-midi2lua["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-midi2lua["Text"] = [[copy link to MIDI2LUA]];
-midi2lua["TextWrapped"] = true;
+UIPadding.Parent = Frame
+UIPadding.PaddingTop = UDim.new(0, 15)
 
-midi2lua.MouseButton1Click:Connect(function()
-    setclipboard("https://bit.ly/midi2lua")
-    playSound("6493287948", 0.1) 
-    NotificationLibrary:SendNotification("Success", "MIDI2LUA link copied.", 1) return
-end)
+copy.Name = "copy"
+copy.Parent = Frame
+copy.BackgroundColor3 = Color3.fromRGB(76, 82, 101)
+copy.BorderColor3 = Color3.fromRGB(64, 68, 90)
+copy.BorderSizePixel = 4
+copy.LayoutOrder = 3
+copy.Position = UDim2.new(0.117543861, 0, 0.677165329, 0)
+copy.Size = UDim2.new(0, 234, 0, 25)
+copy.Font = Enum.Font.SourceSansBold
+copy.Text = "copy!"
+copy.TextColor3 = Color3.fromRGB(255, 255, 255)
+copy.TextSize = 14.000
+copy.TextWrapped = true
 
-local customsongslabel = Instance.new("TextLabel", frame);
-customsongslabel["BorderSizePixel"] = 3;
-customsongslabel["TextSize"] = 14;
-customsongslabel["TextColor3"] = Color3.fromRGB(255, 255, 255);
-customsongslabel["BackgroundColor3"] = Color3.fromRGB(208, 49, 44);
-customsongslabel["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-customsongslabel["Size"] = UDim2.new(0, 240, 0, 35);
-customsongslabel["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-customsongslabel["Text"] = [[need help with adding custom songs to TALENTLESS? watch the tutorial!]];
-customsongslabel["TextWrapped"] = true;
+desc.Name = "desc"
+desc.Parent = Frame
+desc.BackgroundColor3 = Color3.fromRGB(76, 82, 101)
+desc.BorderColor3 = Color3.fromRGB(64, 68, 90)
+desc.BorderSizePixel = 4
+desc.LayoutOrder = 2
+desc.Position = UDim2.new(0.0701754391, 0, 0.255905509, 0)
+desc.Size = UDim2.new(0, 255, 0, 92)
+desc.Font = Enum.Font.SourceSansBold
+desc.Text = "Need help with TALENTLESS? Want to turn MIDI files into autoplay scripts, find tutorials, or get help from the Discord server? Click the button below to copy the link to my official website!"
+desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+desc.TextSize = 14.000
+desc.TextWrapped = true
 
-local customsongs = Instance.new("TextButton", frame);
-customsongs["BorderSizePixel"] = 3;
-customsongs["TextSize"] = 14;
-customsongs["TextColor3"] = Color3.fromRGB(255, 255, 255);
-customsongs["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
-customsongs["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-customsongs["Size"] = UDim2.new(0, 218, 0, 25);
-customsongs["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-customsongs["Text"] = [[copy link to custom songs tutorial]];
-customsongs["TextWrapped"] = true;
+title.Name = "title"
+title.Parent = Frame
+title.BackgroundColor3 = Color3.fromRGB(76, 82, 101)
+title.BorderColor3 = Color3.fromRGB(64, 68, 90)
+title.BorderSizePixel = 4
+title.LayoutOrder = 1
+title.Size = UDim2.new(0, 250, 0, 50)
+title.Font = Enum.Font.SourceSansBold
+title.Text = "resources"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 50.000
+title.TextWrapped = true
 
-customsongs.MouseButton1Click:Connect(function()
-    setclipboard("https://youtu.be/4CpJ-fx0rQI")
-    playSound("6493287948", 0.1) 
-    NotificationLibrary:SendNotification("Success", "customsongs link copied.", 1) return
-end)
-
-local discordlabel = Instance.new("TextLabel", frame);
-discordlabel["BorderSizePixel"] = 3;
-discordlabel["TextSize"] = 14;
-discordlabel["TextColor3"] = Color3.fromRGB(255, 255, 255);
-discordlabel["BackgroundColor3"] = Color3.fromRGB(208, 49, 44);
-discordlabel["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-discordlabel["Size"] = UDim2.new(0, 240, 0, 25);
-discordlabel["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-discordlabel["Text"] = [[need more support? ask in the discord!]];
-discordlabel["TextWrapped"] = true;
-
-local copydiscord = Instance.new("TextButton", frame);
-copydiscord["BorderSizePixel"] = 3;
-copydiscord["TextSize"] = 14;
-copydiscord["TextColor3"] = Color3.fromRGB(255, 255, 255);
-copydiscord["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
-copydiscord["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-copydiscord["Size"] = UDim2.new(0, 218, 0, 25);
-copydiscord["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-copydiscord["Text"] = [[copy discord server link]];
-copydiscord["TextWrapped"] = true;
-
-copydiscord.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/MP9nZgEeQD")
-    playSound("6493287948", 0.1) 
-    NotificationLibrary:SendNotification("Success", "Discord link copied.", 1) return
-end)
-
--- Create the cancel button
-local cancelButton = Instance.new("TextButton")
-cancelButton.Size = UDim2.new(0, 218, 0, 30)
-cancelButton.AnchorPoint = Vector2.new(1, 0)
-cancelButton.Text = "dismiss"
-cancelButton.BackgroundColor3 = Color3.fromRGB(208, 49, 44)
-cancelButton.BorderSizePixel = 3
-cancelButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
-cancelButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-cancelButton.TextSize = 30
-cancelButton.FontFace = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-cancelButton.Parent = frame
+dismiss.Name = "dismiss"
+dismiss.Parent = Frame
+dismiss.BackgroundColor3 = Color3.fromRGB(76, 82, 101)
+dismiss.BorderColor3 = Color3.fromRGB(64, 68, 90)
+dismiss.BorderSizePixel = 4
+dismiss.LayoutOrder = 3
+dismiss.Position = UDim2.new(0.117543861, 0, 0.834645689, 0)
+dismiss.Size = UDim2.new(0, 234, 0, 25)
+dismiss.Font = Enum.Font.SourceSansBold
+dismiss.Text = "nevermind"
+dismiss.TextColor3 = Color3.fromRGB(255, 255, 255)
+dismiss.TextSize = 14.000
+dismiss.TextWrapped = true
 
 local UserInputService = game:GetService("UserInputService")
 
-local gui = frame
+local gui = Frame
 
 local dragging
 local dragInput
@@ -177,7 +138,14 @@ UserInputService.InputChanged:Connect(function(input)
 end
 end)
 
--- Function for the cancel button (closes the popup)
-cancelButton.MouseButton1Click:Connect(function()
-    screengui:Destroy()
+copy.MouseButton1Click:Connect(function()
+    setclipboard("https://www.hellohellohell0.com")
+    NotificationLibrary:SendNotification("Copied!", "https://hellohellohell0.com has been copied to your clipboard!", 5)
+    playSound(6493287948, 0.1)
+    wait(0.5)
+    infogui:Destroy()
+end)
+
+dismiss.MouseButton1Click:Connect(function()
+    infogui:Destroy()
 end)
