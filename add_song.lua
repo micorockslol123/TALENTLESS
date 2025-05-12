@@ -8,90 +8,109 @@ local function playSound(soundId, loudness)
     sound:Play()
 end
 
--- StarterGui.ScreenGui
-screengui = Instance.new("ScreenGui", game:GetService("CoreGui"));
-screengui["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+-- Gui to Lua
+-- Version: 3.2
 
-local newsongframe = Instance.new("Frame", screengui);
-newsongframe["BorderSizePixel"] = 0;
-newsongframe["BackgroundColor3"] = Color3.fromRGB(47, 47, 47);
-newsongframe["Size"] = UDim2.new(0, 254, 0, 326);
-newsongframe["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-newsongframe["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-newsongframe.AnchorPoint = Vector2.new(0.5, 0.5)
+-- Instances:
 
-
--- StarterGui.ScreenGui.Frame.TextBox
-local insertscript = Instance.new("TextBox", newsongframe);
-insertscript["CursorPosition"] = -1;
-insertscript["BorderSizePixel"] = 3;
-insertscript["TextSize"] = 14;
-insertscript["TextColor3"] = Color3.fromRGB(255, 255, 255);
-insertscript["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
-insertscript["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-insertscript["PlaceholderText"] = "Convert a MIDI file into a song script using MIDI2LUA (bit.ly/midi2lua). Then, paste the full, unedited script here to add the song to your GUI in TALENTLESS!";
-insertscript["Size"] = UDim2.new(0, 218, 0, 123);
-insertscript["Position"] = UDim2.new(0.07087, 0, 0.25767, 0);
-insertscript["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-insertscript["Text"] = [[]];
-insertscript["TextWrapped"] = true;-- StarterGui.ScreenGui.Frame
-
-
--- StarterGui.ScreenGui.Frame.TextLabel
-local newsongLabel = Instance.new("TextLabel", newsongframe);
-newsongLabel["TextWrapped"] = true;
-newsongLabel["BorderSizePixel"] = 3;
-newsongLabel["TextSize"] = 18;
-newsongLabel["BackgroundColor3"] = Color3.fromRGB(208, 49, 44);
-newsongLabel["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-newsongLabel["TextColor3"] = Color3.fromRGB(255, 255, 255);
-newsongLabel["Size"] = UDim2.new(0, 218, 0, 50);
-newsongLabel["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-newsongLabel["Text"] = [[Insert your song script and the name of your song.]];
-newsongLabel["Position"] = UDim2.new(0.07087, 0, 0.05521, 0);
-
-
--- StarterGui.ScreenGui.Frame.TextBox
-local insertsongName = Instance.new("TextBox", newsongframe);
-insertsongName["CursorPosition"] = -1;
-insertsongName["BorderSizePixel"] = 3;
-insertsongName["TextWrapped"] = true;
-insertsongName["TextSize"] = 22;
-insertsongName["TextColor3"] = Color3.fromRGB(255, 255, 255);
-insertsongName["BackgroundColor3"] = Color3.fromRGB(80, 80, 80);
-insertsongName["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-insertsongName["PlaceholderText"] = [[What's the name off your song?]];
-insertsongName["Size"] = UDim2.new(0, 218, 0, 32);
-insertsongName["Position"] = UDim2.new(0.07087, 0, 0.69325, 0);
-insertsongName["BorderColor3"] = Color3.fromRGB(255, 255, 255);
-insertsongName["Text"] = [[]];
-
-
--- StarterGui.ScreenGui.Frame.TextButton
-local submitSong = Instance.new("TextButton", newsongframe);
-submitSong["BorderSizePixel"] = 0;
-submitSong["TextColor3"] = Color3.fromRGB(255, 255, 255);
-submitSong["TextSize"] = 43;
-submitSong["BackgroundColor3"] = Color3.fromRGB(78, 197, 53);
-submitSong["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-submitSong["Size"] = UDim2.new(0, 218, 0, 41);
-submitSong["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-submitSong["Text"] = [[SUBMIT!]];
-submitSong["Position"] = UDim2.new(0.07087, 0, 0.83436, 0);
-
--- Create the cancel button
+local addgui = Instance.new("ScreenGui")
+local newsongframe = Instance.new("Frame")
+local insertscript = Instance.new("TextBox")
+local newsonglabel = Instance.new("TextLabel")
 local cancelButton = Instance.new("TextButton")
-cancelButton.Size = UDim2.new(0, 40, 0, 40)
+local insertsongName = Instance.new("TextBox")
+local submitSong = Instance.new("TextButton")
+local UIListLayout = Instance.new("UIListLayout")
+
+--Properties:
+
+addgui.Name = "addgui"
+addgui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+addgui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+newsongframe.Name = "newsongframe"
+newsongframe.Parent = addgui
+newsongframe.AnchorPoint = Vector2.new(0.5, 0.5)
+newsongframe.BackgroundColor3 = Color3.fromRGB(33, 33, 41)
+newsongframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+newsongframe.BorderSizePixel = 0
+newsongframe.Position = UDim2.new(0.5, 0, 0.5, 0)
+newsongframe.Size = UDim2.new(0, 254, 0, 326)
+
+insertscript.Name = "insertscript"
+insertscript.Parent = newsongframe
+insertscript.BackgroundColor3 = Color3.fromRGB(96, 102, 121)
+insertscript.BorderColor3 = Color3.fromRGB(76, 82, 101)
+insertscript.BorderSizePixel = 4
+insertscript.LayoutOrder = 2
+insertscript.Position = UDim2.new(0.0708699971, 0, 0.257669985, 0)
+insertscript.Size = UDim2.new(0, 218, 0, 123)
+insertscript.Font = Enum.Font.SourceSans
+insertscript.PlaceholderText = "Convert a MIDI file into a song script using MIDI2LUA (bit.ly/midi2lua). Then, paste the full, unedited script here to add the song to your GUI in TALENTLESS!"
+insertscript.Text = ""
+insertscript.TextColor3 = Color3.fromRGB(255, 255, 255)
+insertscript.TextSize = 14.000
+insertscript.TextWrapped = true
+
+newsonglabel.Name = "newsonglabel"
+newsonglabel.Parent = newsongframe
+newsonglabel.BackgroundColor3 = Color3.fromRGB(76, 82, 101)
+newsonglabel.BorderColor3 = Color3.fromRGB(64, 68, 90)
+newsonglabel.BorderSizePixel = 4
+newsonglabel.LayoutOrder = 1
+newsonglabel.Position = UDim2.new(0.0708699971, 0, 0.0552100018, 0)
+newsonglabel.Size = UDim2.new(0, 218, 0, 50)
+newsonglabel.Font = Enum.Font.SourceSansBold
+newsonglabel.Text = "Insert your song script and the name of your song."
+newsonglabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+newsonglabel.TextSize = 18.000
+newsonglabel.TextWrapped = true
+
+cancelButton.Name = "cancelButton"
+cancelButton.Parent = newsonglabel
 cancelButton.AnchorPoint = Vector2.new(1, 0)
-cancelButton.Position = UDim2.new(1, 10, 0, -10)
-cancelButton.Text = "X"
-cancelButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-cancelButton.BorderSizePixel = 1
+cancelButton.BackgroundColor3 = Color3.fromRGB(170, 85, 85)
 cancelButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+cancelButton.Position = UDim2.new(1.10091746, 10, -0.400000006, -10)
+cancelButton.Size = UDim2.new(0, 40, 0, 40)
+cancelButton.Font = Enum.Font.SourceSansBold
+cancelButton.Text = "X"
 cancelButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-cancelButton.TextSize = 45
-cancelButton.FontFace = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-cancelButton.Parent = newsongframe
+cancelButton.TextSize = 45.000
+
+insertsongName.Name = "insertsongName"
+insertsongName.Parent = newsongframe
+insertsongName.BackgroundColor3 = Color3.fromRGB(96, 102, 121)
+insertsongName.BorderColor3 = Color3.fromRGB(64, 68, 90)
+insertsongName.BorderSizePixel = 4
+insertsongName.LayoutOrder = 3
+insertsongName.Position = UDim2.new(0.0708699971, 0, 0.69325, 0)
+insertsongName.Size = UDim2.new(0, 218, 0, 32)
+insertsongName.Font = Enum.Font.SourceSans
+insertsongName.PlaceholderText = "What's the name of your song?"
+insertsongName.Text = ""
+insertsongName.TextColor3 = Color3.fromRGB(255, 255, 255)
+insertsongName.TextSize = 20
+insertsongName.TextWrapped = true
+
+submitSong.Name = "submitSong"
+submitSong.Parent = newsongframe
+submitSong.BackgroundColor3 = Color3.fromRGB(85, 170, 85)
+submitSong.BorderColor3 = Color3.fromRGB(0, 0, 0)
+submitSong.BorderSizePixel = 0
+submitSong.LayoutOrder = 4
+submitSong.Position = UDim2.new(0.0708699971, 0, 0.834360003, 0)
+submitSong.Size = UDim2.new(0, 218, 0, 41)
+submitSong.Font = Enum.Font.SourceSansBold
+submitSong.Text = "SUBMIT!"
+submitSong.TextColor3 = Color3.fromRGB(255, 255, 255)
+submitSong.TextSize = 43.000
+
+UIListLayout.Parent = newsongframe
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 15)
 
 -- drag script (not mince)
 
