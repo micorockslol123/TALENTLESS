@@ -242,6 +242,9 @@ function stopPlayingSongs()
     function finishedSong()
     end
 
+    adjustVelocity(h)
+    end
+    
     songisplaying = false
 
     playSound("6493287948", 0.1)
