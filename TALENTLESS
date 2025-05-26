@@ -1,3 +1,16 @@
+print([[
+
+
+
+ __ __|   \     |      ____|   \  | __ __|  |      ____|   ___|   ___|  
+    |    _ \    |      __|      \ |    |    |      __|   \___ \ \___ \  
+    |   ___ \   |      |      |\  |    |    |      |           |      | 
+   _| _/    _\ _____| _____| _| \_|   _|   _____| _____| _____/ _____/  
+                                                                        
+
+
+]])
+
 loadstring(
     game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/discordpopup/main/discordpopup.lua", true)
 )()
@@ -266,9 +279,10 @@ local function filterSongs(query)
                 matchFound = true
             else
                 for _, altName in pairs(alternateNames) do
-                    if altName:lower():find(query) then
-                        matchFound = true
-                        break
+                    if matchFound == false then
+                        if altName:lower():find(query) then
+                            matchFound = true
+                        end
                     end
                 end
             end
@@ -386,6 +400,7 @@ ANOTHER_LOVE = newSongButton("ANOTHER LOVE", 27, {"sad, love"})
 ANYONE_CAN = newSongButton("ANYONE CAN BE FIND LOVE (except you.)", 10, {"breakcore"})
 ARIA_MATH = newSongButton("ARIA MATH", 27, {"c418"})
 ARUARIAN = newSongButton("ARUARIAN DANCE", 27, {"nujabes"})
+AS_IT_WAS = newSongButton("AS IT WAS", 27, {"harry styles"})
 ASGORE = newSongButton("ASGORE", 27, {})
 ASTRONAMIA = newSongButton("ASTRONAMIA (COFFIN DANCE)", 15, {""})
 SPEED_OF = newSongButton("AT THE SPEED OF LIGHT", 20, {"geometry dash"})
@@ -399,12 +414,13 @@ BLOODY = newSongButton("BLOODY MARY", 27, {"lady gaga", "wednesday"})
 BLUE = newSongButton("BLUE (DA BA DEE)", 27, {"im blue", "im good"})
 BREADY = newSongButton("BREADY, SET, GO!", 25, {"omori"})
 BY_YOUR_SIDE = newSongButton("BY YOUR SIDE", 27, {"omori"})
-CAN_YOU_HEAR = newSongButton("CAN YOU HEAR THE MUSIC", 18, {"cinematic", "hans zimmer", "oppenheimer", "movie", "popular"})
+CAN_YOU_HEAR = newSongButton("CAN YOU HEAR THE MUSIC", 18, {"cinematic", "oppenheimer", "movie", "popular"})
 CAN_YOU_HEAR_EPIC = newSongButton("CAN YOU HEAR THE MUSIC (INSANE COVER)", 10, {"cinematic", "hans zimmer", "oppenheimer", "movie", "popular"})
 CANDYLAND = newSongButton("CANDYLAND", 27, {"tobu", "ncs", "no copyright sounds"})
 CANON_D = newSongButton("CANON IN D", 27, {""})
 CARELESS = newSongButton("CARELESS WHISPER", 24, {"love", "popular"})
 CANT_LET = newSongButton("CANT LET GO", 27, {"geometry dash"})
+CENTIMETER = newSongButton("CENTIMETER", 27, {"rent a girlfriend"})
 CHRISTMAS_KIDS = newSongButton("CHRISTMAS KIDS", 27, {"roar"})
 CLOUD_9 = newSongButton("CLOUD 9", 27, {"tobu", "ncs", "no copyright sounds"})
 COCONUT = newSongButton("COCONUT MALL !!", 27, {"popular"})
@@ -416,6 +432,7 @@ DARK_BEACH = newSongButton("DARK BEACH", 27, {"pastel ghost"})
 DAYLIGHT = newSongButton("DAYLIGHT", 27, {"david kushner"})
 DEADLOCKED = newSongButton("DEADLOCKED", 27, {"geometry dash"})
 DESPACITO = newSongButton("DESPACITO", 27, {""})
+DETROIT = newSongButton("DETROIT: BECOME HUMAN - OPENING", 11, {""})
 DIE_WITH = newSongButton("DIE WITH A SMILE", 27, {"popular", "bruno mars"})
 DOG_SONG = newSongButton("DOG SONG", 27, {})
 DONT_STOP = newSongButton("DONT STOP BELIEVIN'", 21, {"journey"})
@@ -465,6 +482,7 @@ IDGAF = newSongButton("IDGAF", 27, {"boywithuke", "blackbear"})
 IDOL = newSongButton("IDOL", 27, {"oshi no ko", "yoasobi"})
 IF_I_AM_WITH_YOU = newSongButton("IF I AM WITH YOU", 27, {"jjk", "jujitsu", "hollow purple"})
 IM_STILL = newSongButton("IM STILL STANDING", 26, {"sing", "elton john"})
+IMMORTAL = newSongButton("IMMORTAL", 27, {"playboi carti"})
 IN_THE_NAME = newSongButton("IN THE NAME OF LOVE", 22, {""})
 INSANE = newSongButton("INSANE", 27, {"hazbin hotel"})
 INTERSTELLAR = newSongButton("INTERSTELLAR", 27, {"hans zimmer", "cinematic", "movie", "popular"})
@@ -545,7 +563,9 @@ SWEATER_WEATHER = newSongButton("SWEATER WEATHER", 23, {"the neighbourhood", "lo
 SWIMMING = newSongButton("SWIMMING", 27, {"flawed mangoes", "dramamime"})
 SWEDEN = newSongButton("SWEDEN", 27, {"c418"})
 THE_BEN = newSongButton("THE BENONI", 27, {""})
+THE_ECSTASY_OF_GOLD = newSongButton("THE ECSTASY OF GOLD", 22, {"the good, the bad and the ugly", "the good the bad and the ugly"})
 THE_ENTERTAINER = newSongButton("THE ENTERTAINER", 25, {})
+THE_GREAT_FAIRY = newSongButton("THE GREAT FAIRY FOUNTAIN", 17, {"zelda", "the legend of zelda"})
 THE_NIGHTS = newSongButton("THE NIGHTS", 27, {"avicii"})
 THE_WORLD = newSongButton("THE WORLD", 27, {"death note"})
 THICK_OF_IT = newSongButton("THICK OF IT", 27, {"nigga", "ksi", "shit", "popular"})
@@ -559,10 +579,10 @@ UNDERSTAND = newSongButton("UNDERSTAND", 27, {"boywithuke"})
 UNDERTALE = newSongButton("UNDERTALE", 27, {})
 UNDERWATER = newSongButton("UNDERWATER PROM QUEENS", 14, {"omori"})
 UNITY = newSongButton("UNITY", 27, {"thefatrat", "ncs", "no copyright sounds"}) 
-UNRAVEL = newSongButton("UNRAVEL", 27, {"japan"})
-UNRAVEL_EPIC = newSongButton("UNRAVEL (INSANE COVER)", 18, {"japan"})
+UNRAVEL = newSongButton("UNRAVEL", 27, {"tokyo ghoul"})
+UNRAVEL_EPIC = newSongButton("UNRAVEL (INSANE COVER)", 18, {"tokyo ghoul"})
 VAMPIRE = newSongButton("VAMPIRE", 27, {"love", "olivia rodrigo"})
-VIVA_LA_VIDA = newSongButton("VIVA LA VIDA", 27, {"popular", "coldplay"})
+VIVA_LA_VIDA = newSongButton("VIVA LA VIDA", 27, {"coldplay"})
 WAITING_FOR = newSongButton("WAITING FOR LOVE", 26, {"avicii"})
 WAKE_ME = newSongButton("WAKE ME UP", 27, {"avicii"})
 WASHING = newSongButton("WASHING MACHINE HEART", 18, {""})
@@ -571,6 +591,7 @@ WET_HANDS = newSongButton("WET HANDS", 27, {"c418"})
 WHERE_WE = newSongButton("WHERE WE PLAYED", 25, {"omori"})
 WINTER_WIND = newSongButton("WINTER WIND (ETUDE OP.25 NO.11)", 13, {"chopin", "hard"})
 WORLDS_END = newSongButton("WORLDS END VALENTINE", 18, {"omori"})
+XO_TOUR = newSongButton("XO TOUR LLIF3", 27, {"lil uzi vert"})
 YOUNG_GIRL_A = newSongButton("YOUNG GIRL A", 27, {"siinamota", "vocaloid"})
 YOUR_REALITY = newSongButton("YOUR REALITY", 27, {"ddlc", "doki"})
 MANGOMANGOMANGO = newSongButton("MANGO MANGO MANGO", 27, {""})
@@ -621,7 +642,7 @@ local songs = {
     {button = ISABELLA, bpm = "112", var = false, url = "ISABELLAS_LULLABY", cat = {"video games"}},
     {button = GIORNO, bpm = "135", var = false, url = "GIORNO", cat = {"anime/jpop", "memes"}},
     {button = GIVE_UP, bpm = "113", var = false, url = "GIVE_UP", cat = {"memes", "pop/hiphop"}},
-    {button = UNRAVEL, bpm = "135", var = false, url = "UNRAVEL", cat = {"anime/jpop"}},
+    {button = UNRAVEL, bpm = "135", var = false, url = "UNRAVEL", cat = {"anime/jpop",, "beautiful"}},
     {button = WINTER_WIND, bpm = "125", var = false, url = "WINTER_WIND", cat = {"classical"}},
     {button = SWEATER_WEATHER, bpm = "124", var = false, url = "SWEATER_WEATHER", cat = {"sad"}},
     {button = VIVA_LA_VIDA, bpm = "138", var = false, url = "VIVA_LA_VIDA", cat = {"epic", "beautiful", "best"}},
@@ -745,7 +766,7 @@ local songs = {
     {button = SHIKAIRO, bpm = "182", var = false, url = "SHIKAIRO", cat = {"anime/jpop", "memes"}},
     {button = WASHING, bpm = "114", var = false, url = "WASHING", cat = {"sad"}},
     {button = CAN_YOU_HEAR_EPIC, bpm = "102", var = false, url = "CAN_YOU_HEAR_EPIC", cat = {"epic", "best"}},
-    {button = UNRAVEL_EPIC, bpm = "132", var = false, url = "UNRAVEL_EPIC", cat = {"epic", "best"}},
+    {button = UNRAVEL_EPIC, bpm = "132", var = false, url = "UNRAVEL_EPIC", cat = {"epic", "best", "beautiful"}},
     {button = A_SKY_FULL, bpm = "120", var = false, url = "A_SKY_FULL", cat = {"epic", "pop/hiphop"}},
     {button = THE_NIGHTS, bpm = "128", var = false, url = "THE_NIGHTS", cat = {"pop/hiphop", "electronic", "epic"}},
     {button = BIRDS_OF_A, bpm = "105", var = false, url = "BIRDS_OF_A", cat = {"pop/hiphop"}},
@@ -755,7 +776,7 @@ local songs = {
     {button = FIVE_NIGHTS_1, bpm = "108", var = false, url = "FIVE_NIGHTS_1", cat = {"video games", "electronic", "epic"}},
     {button = ITS_BEEN_SO, bpm = "96", var = false, url = "ITS_BEEN_SO", cat = {"video games", "electronic"}},
     {button = STEREO_MADNESS, bpm = "160", var = false, url = "STEREO_MADNESS", cat = {"video games", "electronic"}},
-    {button = SUNFLOWER, bpm = "90", var = false, url = "SUNFLOWER", cat = {"pop/hiphop"}},
+    {button = SUNFLOWER, bpm = "90", var = false, url = "SUNFLOWER", cat = {"pop/hiphop", "beautiful"}},
     {button = WAITING_FOR, bpm = "129", var = false, url = "WAITING_FOR", cat = {"pop/hiphop", "electronic", "best", "epic"}},
     {button = WAKE_ME, bpm = "110", var = false, url = "WAKE_ME_UP", cat = {"pop/hiphop", "electronic"}},
     {button = GEOMETRY_DASH, bpm = "128", var = false, url = "GEOMETRY_DASH", cat = {"video games", "electronic"}},
@@ -795,7 +816,13 @@ local songs = {
     {button = MONODY, bpm = "107", var = false, url = "MONODY", cat = {"electronic", "epic", "best"}},
     {button = THIS_IS_WHAT_HEARTBREAK, bpm = "50", var = false, url = "THIS_IS_WHAT_HEARTBREAK", cat = {"sad", "pop/hiphop"}},
     {button = CANDYLAND, bpm = "130", var = false, url = "CANDYLAND", cat = {"electronic", "best", "best"}},
-
+    {button = AS_IT_WAS, bpm = "174", var = false, url = "AS_IT_WAS", cat = {"pop/hiphop", "best"}},
+    {button = CENTIMETER, bpm = "140", var = false, url = "CENTIMETER", cat = {"anime/jpop"}},
+    {button = DETROIT, bpm = "60", var = false, url = "DETROIT", cat = {"video games", "beautiful"}},
+    {button = THE_GREAT_FAIRY, bpm = "80", var = false, url = "THE_GREAT_FAIRY", cat = {"video games"}},
+    {button = IMMORTAL, bpm = "60", var = false, url = "IMMORTAL", cat = {"pop/hiphop"}},
+    {button = XO_TOUR, bpm = "142", var = false, url = "XO_TOUR", cat = {"pop/hiphop"}},
+    {button = THE_ECSTASY_OF_GOLD, bpm = "85", var = false, url = "THE_ECSTASY_OF_GOLD", cat = {"epic", "beautiful"}},
 
 
     --[[
@@ -991,15 +1018,18 @@ function playbuttonclicked()
 
     -- find which song to play
 
+    local songFound = false
     for _, song in pairs(songs) do
-        if song.var == true then
-            loadstring(
-                game:HttpGet(
-                    "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. song.url,
-                    true
-                )
-            )()
-            break
+        if songFound == false then
+            if song.var == true then
+                loadstring(
+                    game:HttpGet(
+                        "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. song.url,
+                        true
+                    )
+                )()
+            songFound = true
+            end
         end
     end
 end -- close the play song onclick function
@@ -1083,9 +1113,10 @@ LOOPRANDOM.MouseButton1Click:Connect(
                 local ransong = math.random(1, #songs)
                 return songs[ransong]
             end
+
             local randomSong = getRandomSong()
             if not playingall then
-                break
+                return
             end
 
             disable()
@@ -1246,17 +1277,18 @@ NEWSONGBUTTON.MouseButton1Click:Connect(
 table.insert(customsongs, NEWSONGBUTTON)
 local addedCustoms = {}
 
--- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont break.
+-- function for listing songs in your custom songs folder. this runs at the end so if ur exec doesnt support it, the script wont die.
 
 function updateSongs()
     local alreadyAdded
 
     for _, file in ipairs(listfiles("")) do
         print(tostring(file))
-        if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then
-            folderexists = true
-            print("custom songs folder found")
-            break
+        if folderexists == false then
+            if string.find(tostring(file), "TALENTLESS_CUSTOM_SONGS") then
+                folderexists = true
+                print("custom songs folder found")
+            end
         end
     end
 
