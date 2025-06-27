@@ -402,6 +402,7 @@ ARIA_MATH = newSongButton("ARIA MATH", 27, {"c418"})
 ARUARIAN = newSongButton("ARUARIAN DANCE", 27, {"nujabes"})
 AS_IT_WAS = newSongButton("AS IT WAS", 27, {"harry styles"})
 ASGORE = newSongButton("ASGORE", 27, {})
+ASSUMPTIONS = newSongButton("ASSUMPTIONS", 27, {""})
 ASTRONAMIA = newSongButton("ASTRONAMIA (COFFIN DANCE)", 15, {""})
 SPEED_OF = newSongButton("AT THE SPEED OF LIGHT", 20, {"geometry dash"})
 AVENGERS = newSongButton("AVENGERS (EPIC COVER)", 20, {"popular", "movie", "hard"})
@@ -430,8 +431,10 @@ CRADLES = newSongButton("CRADLES", 27, {"ncs", "no copyright sounds", "sub urban
 CUPID = newSongButton("CUPID", 27, {"love"})
 DAMNED = newSongButton("DAMNED (COD ZOMBIES)", 19, {"cod zombies theme", "call of duty", "creepy"})
 DARK_BEACH = newSongButton("DARK BEACH", 27, {"pastel ghost"})
+DAWN_OF = newSongButton("DAWN OF THE DOORS", 22, {"doors", "roblox", "lsplash"})
 DAYLIGHT = newSongButton("DAYLIGHT", 27, {"david kushner"})
 DEADLOCKED = newSongButton("DEADLOCKED", 27, {"geometry dash"})
+DEATH_BED = newSongButton("DEATH BED", 27, {"powfu", "beabadoobee"})
 DESPACITO = newSongButton("DESPACITO", 27, {""})
 DETROIT = newSongButton("DETROIT: BECOME HUMAN - OPENING", 11, {""})
 DIE_WITH = newSongButton("DIE WITH A SMILE", 27, {"popular", "bruno mars"})
@@ -445,6 +448,8 @@ DRY_HANDS = newSongButton("DRY HANDS", 27, {"c418"})
 DUMB_DUMB = newSongButton("DUMB DUMB", 27, {"everyone is dumb"})
 DUVET = newSongButton("DUVET", 27, {"boa"})
 EASY_ON_ME = newSongButton("EASY ON ME", 27, {"adele"})
+ELEVATOR_JAM = newSongButton("ELEVATOR JAM", 27, {"doors", "roblox", "lsplash"})
+ELEVATOR_JAM_2 = newSongButton("ELEVATOR JAM x HERE I COME", 16, {"doors", "roblox", "lsplash"})
 ENEMY = newSongButton("ENEMY", 27, {"imagine dragons", "arcane"})
 EVERGREEN = newSongButton("EVERGREEN", 27, {""})
 EXPERIENCE = newSongButton("EXPERIENCE", 27, {"cinematic", "love"})
@@ -472,6 +477,7 @@ HEARTACHE = newSongButton("HEARTACHE", 27, {})
 HEAT_WAVE = newSongButton("HEAT WAVE", 27, {"glass animals"})
 HEATHENS = newSongButton("HEATHENS", 27, {"twenty one pilots", "suicide squad"})
 HELLO = newSongButton("HELLO X I LOVE YOU", 25.5, {"omfg"})
+HERE_I_COME = newSongButton("HERE I COME", 27, {"doors", "roblox", "lsplash"})
 HERE_WITH = newSongButton("HERE WITH ME", 27, {"d4vd", "romantic homicide"})
 HES_A_PIRATE = newSongButton("HES A PIRATE", 27, {"hans zimmer", "pirates of the caribbean"})
 HIGH_HOPES = newSongButton("HIGH HOPES", 27, {"panic at the disco", "panic!", "house of memories"})
@@ -519,6 +525,7 @@ MII = newSongButton("MII CHANNEL THEME", 24, {"wii"})
 MIKU = newSongButton("MIKU", 27, {"vocaloid"})
 MINECRAFT = newSongButton("MINECRAFT", 27, {"c418"})
 MONODY = newSongButton("MONODY", 27, {"ncs", "no copyright sounds", "thefatrat"})
+MONTAGEM_TOMADA = newSongButton("MONTAGEM TOMADA", 23, {"phonk"})
 MOOD = newSongButton("MOOD", 27, {"24kgoldn"})
 MOOG_CITY = newSongButton("MOOG CITY", 27, {"c418"})
 MOONLIGHT = newSongButton("MOONLIGHT SONATA - FIRST MOVEMENT", 10, {"beethoven"})
@@ -526,6 +533,7 @@ M3 = newSongButton("MOONLIGHT SONATA - THIRD MOVEMENT", 10, {"beethoven", "hard"
 NEVER_MEANT = newSongButton("NEVER MEANT TO BELONG", 18, {"bleach"})
 NOCTURNE = newSongButton("NOCTURNE", 27, {"chopin"})
 NOT_A_SLACKER = newSongButton("NOT A SLACKER ANYMORE", 18, {})
+NOTION = newSongButton("NOTION", 27, {"the rare occasions"})
 NYEH = newSongButton("NYEH HEH HEH!", 27, {"papyrus"})
 ONCE_UPON = newSongButton("ONCE UPON A TIME", 26, {""})
 PAST_LIVES = newSongButton("PAST LIVES", 27, {""})
@@ -535,6 +543,7 @@ RACING_INTO = newSongButton("RACING INTO THE NIGHT", 20, {"yoasobi"})
 RATDANCE = newSongButton("RAT DANCE", 27, {"chess", ""})
 RESONANCE = newSongButton("RESONANCE", 27, {"home"})
 RISE_UP = newSongButton("RISE UP", 27, {"thefatrat", "ncs", "no copyright sounds"})
+RISES_THE = newSongButton("RISES THE MOON", 27, {"liana flores"})
 RIVER_FLOWS = newSongButton("RIVER FLOWS IN YOU", 23, {""})
 ROMANTIC_HOMICIDE = newSongButton("ROMANTIC HOMICIDE", 22, {"dv4d", "here with me"})
 RUNAWAY = newSongButton("RUNAWAY", 27, {"kanye", "popular", "rap", "hip"})
@@ -682,7 +691,7 @@ local songs = {
     {button = MIKU, bpm = "128", var = false, url = "MIKU", cat = {"anime/jpop"}},
     {button = A_THOUSAND, bpm = "100", var = false, url = "A_THOUSAND", cat = {"pop/hiphop"}},
     {button = SUGAR_PLUM, bpm = "70", var = false, url = "SUGAR_PLUM", cat = {"classical"}},
-    {button = SPEED_OF, bpm = "162", var = false, url = "SPEED_OF", cat = {"video games", "electronic"}},
+    {button = SPEED_OF, bpm = "162", var = false, url = "SPEED_OF", cat = {"video games", "electronic", "epic", "best"}},
     {button = WET_HANDS, bpm = "74", var = false, url = "WET_HANDS", cat = {"video games", "minecraft"}},
     {button = SWEDEN, bpm = "44", var = false, url = "SWEDEN", cat = {"video games", "minecraft"}},
     {button = SUBWOOFER, bpm = "76", var = false, url = "SUBWOOFER", cat = {"video games", "minecraft"}},
@@ -758,7 +767,7 @@ local songs = {
     {button = LIGHTS, bpm = "132", var = false, url = "LIGHTS", cat = {"anime/jpop"}},
     {button = THE_WORLD, bpm = "96", var = false, url = "THE_WORLD", cat = {"anime/jpop"}},
     {button = L, bpm = "71", var = false, url = "L", cat = {"anime/jpop", "memes"}},
-    {button = BLOODY, bpm = "100", var = false, url = "BLOODY", cat = {"pop/hiphop"}},
+    {button = BLOODY, bpm = "100", var = false, url = "BLOODY", cat = {"pop/hiphop", "epic", "best"}},
     {button = SPACE_SONG, bpm = "75", var = false, url = "SPACE_SONG", cat = {"sad", "pop/hiphop"}},
     {button = HEATHENS, bpm = "90", var = false, url = "HEATHENS", cat = {"sad"}},
     {button = VAMPIRE, bpm = "135", var = false, url = "VAMPIRE", cat = {"pop/hiphop"}},
@@ -813,7 +822,7 @@ local songs = {
     {button = FLARE, bpm = "150", var = false, url = "FLARE", cat = {"electronic"}},
     {button = THIS_IS_WHAT_WINTER, bpm = "115", var = false, url = "THIS_IS_WHAT_WINTER", cat = {"beautiful", "pop/hiphop", "best"}},
     {button = HEAT_WAVE, bpm = "81", var = false, url = "HEAT_WAVE", cat = {"pop/hiphop"}},
-    {button = HIGH_HOPES, bpm = "164", var = false, url = "HIGH_HOPES", cat = {"pop/hiphop"}},
+    {button = HIGH_HOPES, bpm = "164", var = false, url = "HIGH_HOPES", cat = {"pop/hiphop", "epic"}},
     {button = HOUSE_OF, bpm = "112", var = false, url = "HOUSE_OF", cat = {"pop/hiphop"}},
     {button = IN_THE_NAME, bpm = "134", var = false, url = "IN_THE_NAME", cat = {"pop/hiphop", "electronic", "best", "epic", "beautiful"}},
     {button = PAST_LIVES, bpm = "110", var = false, url = "PAST_LIVES", cat = {"sad", "beautiful"}},
@@ -839,6 +848,15 @@ local songs = {
     {button = SANS, bpm = "120", var = false, url = "SANS", cat = {"video games", "undertale", "memes"}},
     {button = THE_SLAUGHTER_CONT, bpm = "150", var = false, url = "THE_SLAUGHTER_CONT", cat = {"video games", "undertale"}},
     {button = SONG_THAT_MIGHT, bpm = "120", var = false, url = "SONG_THAT_MIGHT", cat = {"video games", "undertale"}},
+    {button = ASSUMPTIONS, bpm = "126", var = false, url = "ASSUMPTIONS", cat = {"pop/hiphop", "memes", "electronic"}},
+    {button = DEATH_BED, bpm = "120", var = false, url = "DEATH_BED", cat = {"pop/hiphop", "sad", "beautiful"}},
+    {button = DAWN_OF, bpm = "72", var = false, url = "DAWN_OF", cat = {"video games"}},
+    {button = ELEVATOR_JAM, bpm = "146", var = false, url = "ELEVATOR_JAM", cat = {"video games"}},
+    {button = ELEVATOR_JAM_2, bpm = "146", var = false, url = "ELEVATOR_JAM_2", cat = {"video games", "epic", "best"}},
+    {button = HERE_I_COME, bpm = "144", var = false, url = "HERE_I_COME", cat = {"video games"}},
+    {button = MONTAGEM_TOMADA, bpm = "120", var = false, url = "MONTAGEM_TOMADA", cat = {"electronic"}},
+    {button = NOTION, bpm = "160", var = false, url = "NOTION", cat = {"rock", "sad"}},
+    {button = RISES_THE, bpm = "127", var = false, url = "RISES_THE", cat = {"sad", "beautiful"}},
 
     --[[
 
@@ -1090,18 +1108,17 @@ local function createstopbutton()
     if not STOPLOOP then
         -- StarterGui.ScreenGui.Frame.scrolltab.stoploop
         STOPLOOP = Instance.new("TextButton", bar)
-        STOPLOOP["BorderSizePixel"] = 3
+        STOPLOOP["BorderSizePixel"] = 4
         STOPLOOP["TextSize"] = 14
         STOPLOOP["TextColor3"] = Color3.fromRGB(255, 255, 255)
-        STOPLOOP["BackgroundColor3"] = Color3.fromRGB(109, 109, 109)
+        STOPLOOP["BackgroundColor3"] = Color3.fromRGB(76, 82, 101)
         STOPLOOP["FontFace"] =
             Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
         STOPLOOP["AutomaticSize"] = Enum.AutomaticSize.XY
-        STOPLOOP["Size"] = UDim2.new(0, 131, 0, 29)
+        STOPLOOP["Size"] = UDim2.new(0, 125, 0, 27)
         STOPLOOP["Name"] = [[stoploop]]
-        STOPLOOP["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+        STOPLOOP["BorderColor3"] = Color3.fromRGB(64, 68, 90)
         STOPLOOP["Text"] = [[STOP LOOPING SONGS]]
-        STOPLOOP["Position"] = UDim2.new(0.07476, 0, 0.80575, 0)
         STOPLOOP.LayoutOrder = 4
 
         STOPLOOP.MouseButton1Click:Connect(
