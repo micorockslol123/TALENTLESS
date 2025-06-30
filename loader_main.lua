@@ -703,3 +703,11 @@ function keysequence16(keys, beats, bpm)
         end
     )()
 end
+
+function pedalDown()
+    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+end
+
+function pedalUp()
+    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+end
