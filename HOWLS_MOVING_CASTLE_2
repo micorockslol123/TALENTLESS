@@ -4,9 +4,6 @@
 -- Note Velocity: OFF --
 -- Sustain Pedal: OFF --
 
-bpm = 130
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/loader_main.lua", true))()
 
 keypress("P", x, bpm)
 keypress("d", x, bpm)
