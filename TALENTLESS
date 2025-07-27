@@ -1,9 +1,6 @@
-loadstring(
-    game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/discordpopup/main/discordpopup.lua", true)
-)()
 
 local NotificationLibrary =
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/notif_lib.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/notif_lib.lua"))()
 
 local function playSound(soundId, loudness)
     local sound = Instance.new("Sound")
@@ -175,7 +172,7 @@ creds.BorderSizePixel = 0
 creds.Position = UDim2.new(0.5, 0, 0.189999998, 0)
 creds.Size = UDim2.new(0, 314, 0, 26)
 creds.Font = Enum.Font.LuckiestGuy
-creds.Text = "piano autoplayer by hellohellohell012321"
+creds.Text = "piano autoplayer by micorockslol123"
 creds.TextColor3 = Color3.fromRGB(255, 254, 255)
 creds.TextScaled = true
 creds.TextSize = 14.000
@@ -1123,7 +1120,7 @@ function playbuttonclicked()
     bpm = tonumber(bpmbox.Text)
 
     loadstring(
-        game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/loader_main.lua", true)
+        game:HttpGet("https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/loader_main.lua", true)
     )()
 
     -- find which song to play
@@ -1134,7 +1131,7 @@ function playbuttonclicked()
             if song.var == true then
                 loadstring(
                     game:HttpGet(
-                        "https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/" .. song.url,
+                        "https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/" .. song.url,
                         true
                     )
                 )()
@@ -1266,7 +1263,7 @@ closeButton.MouseButton1Click:Connect(
 infoButton.MouseButton1Click:Connect(
     function()
         loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/info.lua", true)
+            game:HttpGet("https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/info.lua", true)
         )()
     end
 )
@@ -1392,7 +1389,7 @@ print("loaded NEWSONGBUTTON")
 NEWSONGBUTTON.MouseButton1Click:Connect(
     function()
         loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/add_song.lua", true)
+            game:HttpGet("https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/add_song.lua", true)
         )()
     end
 )
