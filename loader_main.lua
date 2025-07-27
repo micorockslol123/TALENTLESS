@@ -2,7 +2,7 @@
 -- the comments are not from chatgpt though becvause i legitamately need them for debugging and to easily know whats going on if theres an issue
 
 local NotificationLibrary =
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/notif_lib.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/notif_lib.lua"))()
 
 function playSound(soundId, loudness)
     local sound = Instance.new("Sound")
@@ -14,7 +14,7 @@ end
 
 x = "hi"
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/load.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/micorockslol123/TALENTLESS/main/load.lua", true))()
 
 wait(0.3)
 
@@ -170,7 +170,7 @@ info["FontFace"] =
 info["TextColor3"] = Color3.fromRGB(0, 0, 0)
 info["Size"] = UDim2.new(0, 126, 0, 39)
 info["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-info["Text"] = [[created by hellohellohell012321 at stxllar scripts!]]
+info["Text"] = [[created by micorockslol123 at stxllar scripts!]]
 info["Name"] = [[info]]
 info["Position"] = UDim2.new(0.56919, 0, 0.56487, 0)
 
